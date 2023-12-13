@@ -25,26 +25,26 @@
 
         <!-- Aanvoerder (Captain) -->
         <div class="mt-4">
-            <x-input-label for="aanvoerder" :value="__('Aanvoerder')" />
+            <x-input-label for="teamleader" :value="__('Aanvoerder')" />
             <div>
-                <input id="aanvoerder_yes" type="radio" name="aanvoerder" value="1">
+                <input id="aanvoerder_yes" type="radio" name="teamleader" value="1">
                 <label for="aanvoerder_yes">Yes</label>
             </div>
             <div>
-                <input id="aanvoerder_no" type="radio" name="aanvoerder" value="0" checked>
+                <input id="aanvoerder_no" type="radio" name="teamleader" value="0" checked>
                 <label for="aanvoerder_no">No</label>
             </div>
         </div>
 
         <!-- Reservespeler (Reserve Player) -->
         <div class="mt-4">
-            <x-input-label for="reservespeler" :value="__('Reservespeler')" />
+            <x-input-label for="reserveplayer" :value="__('Reservespeler')" />
             <div>
-                <input id="reservespeler_yes" type="radio" name="reservespeler" value="1">
+                <input id="reservespeler_yes" type="radio" name="reserveplayer" value="1">
                 <label for="reservespeler_yes">Yes</label>
             </div>
             <div>
-                <input id="reservespeler_no" type="radio" name="reservespeler" value="0" checked>
+                <input id="reservespeler_no" type="radio" name="reserveplayer" value="0" checked>
                 <label for="reservespeler_no">No</label>
             </div>
         </div>

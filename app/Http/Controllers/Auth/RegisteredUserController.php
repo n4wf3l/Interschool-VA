@@ -39,11 +39,12 @@ class RegisteredUserController extends Controller
             'reserveplayer'=>['required'],
             'teamleader'=>['required'],
             'password' => ['required', 'confirmed'],
-            dd($request)
+            
         ]);
         
         
-        $user = User::create([
+        
+        $user = new User([
             
             'name' => $request->name,
             'surname'=>$request->surname,
@@ -51,15 +52,19 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $user->save();
+
+        
+
         $player = players::create([
 
             'name'=>$user->name,
             'surname'=>$user->surname,
             'email'=>$user->email,
-
+            'teamID'=> 1,
             'reserveplayer'=>$request->reserveplayer,
-            'teamleader'=>$request->teamleader,
-            'password'=>$user->password
+            'teamleader'=>$request->teamleader
+            
         ]);
 
         event(new Registered($user));
