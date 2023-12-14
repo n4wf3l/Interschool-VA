@@ -13,6 +13,7 @@ class teams extends Model
         'TeamID',
         'Teamnaam',
         'teamleaderID',
+        'points',
         'image',
     ];
 

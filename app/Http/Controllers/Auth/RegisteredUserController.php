@@ -22,6 +22,8 @@ class RegisteredUserController extends Controller
     public function create(): View
     {
         return view('auth.register');
+
+        
     }
 
     /**
@@ -31,6 +33,15 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        dd(session()->all());
+
+        $teamID = session('TeamID');
+
+    
+
+        dd($teamID);
+
+
         //valdiatie van de inputwaarden
         $request->validate([
             'name' => ['required'],
@@ -42,7 +53,37 @@ class RegisteredUserController extends Controller
             
         ]);
         
-        
+        $playersInTeam = players::where('teamID', $teamID)->get();
+
+        // Variabelen om bij te houden hoeveel teamleiders en reservespelers er zijn
+        $leaderCount = 0;
+        $reserveCount = 0;
+
+        // Loop over alle spelers in het team
+        foreach ($playersInTeam as $playerInTeam) {
+            // Controleer of het een teamleider is
+            if ($playerInTeam->teamleader) {
+                $leaderCount++;
+            }
+            // Controleer of het een reservespeler is
+            elseif ($playerInTeam->reserveplayer) {
+                $reserveCount++;
+            }
+            // Andere logica voor normale spelers indien nodig
+        }
+
+
+        // Controleer of er al een teamleider is
+        if ($leaderCount === 1 && $request->teamleader == 1) {
+            return redirect()->back()->with('error', 'Er kan slechts één teamleider zijn.');
+        }
+
+        // Controleer of er al twee reservespelers zijn
+        if ($reserveCount === 2 && $request->reserveplayer == 1) {
+            return redirect()->back()->with('error', 'Er kunnen slechts twee reservespelers zijn.');
+        }
+
+
         //nieuwe user aanmaken en inputwaarden aan properties van user assignen
         $user = new User([
             
@@ -61,7 +102,7 @@ class RegisteredUserController extends Controller
 
             //userid is foreign key voor player link met user
             'userID'=>$user->userID,
-            'teamID'=>1,
+            'teamID'=>$teamID,
             'reserveplayer'=>$request->reserveplayer,
             'teamleader'=>$request->teamleader
             
@@ -75,6 +116,8 @@ class RegisteredUserController extends Controller
 
 
         Auth::login($user);
+
+        $request->session()->forget('TeamID');
 
         return redirect('/login');
     }

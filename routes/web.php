@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PlayersController;
+use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,5 +45,11 @@ Route::get('/contacts', [ContactController::class, 'create'])->name('contacts.cr
 
 Route::post('/contacts', [ContactController::class, 'store'])->name('contacts.store');
 
-require __DIR__.'/auth.php';
+Route::get('/calendars', [TournamentController::class, 'index'])->name('calendars.index');
+
+Route::post('/generate-schedule', [TournamentController::class, 'createSchedule'])->name('generate-schedule');
+
+Route::post('/reset-tournament', [TournamentController::class, 'resetTournament'])->name('reset-tournament');
+
+require __DIR__ . '/auth.php';
 
