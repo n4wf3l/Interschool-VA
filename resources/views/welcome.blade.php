@@ -63,7 +63,7 @@
                     </li>
 
                     <li class="mx-4 my-0 md:my-0 bg-red">
-                        <a href="#" class="text x1 hover:text-cyan-500 duration-500"
+                        <a href="{{ url('/contacts') }}" class="text x1 hover:text-cyan-500 duration-500"
                             style="background-color: red;">CONTACT</a>
                     </li>
                 </ul>
@@ -154,25 +154,19 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
-        let menuInitialized = false;
+            let menuInitialized = fals                function toggleM                        let list = document.querySele            ');
+            let menuIcon = document.getElementByI            con');
 
-        function toggleMenu() {
-            let list = document.querySelector('ul');
-            let menuIcon = document.getElementById('menuIcon');
-
-            if (!menuInitialized) {
-                list.classList.add('hidden');
-                menuInitialized = true;
+            if (                ized) {
+                list.c                ('hidden');
+                        Ini             = true;
             }
 
-            if (list.classList.contains('hidden')) {
-                list.classList.remove('hidden');
-                menuIcon.name = 'close';
-                list.classList.add('top-[60px]');
-            } else {
-                list.classList.add('hidden');
-                menuIcon.name = 'menu';
-                list.classList.remove('top-[60px]');
+            if (l                t.contains('hidden')) {
+                         classList.remove('hidden'                       menuIcon.name = 'close';
+                    lis                add('top-[60px]');
+                                         list.class                dden');
+                menuIcon.name            ';              list.classList.remove('top-[60px]');
             }
         }
     </script>
