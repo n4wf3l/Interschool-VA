@@ -11,7 +11,9 @@ class players extends Model
     protected $primaryKey = 'playerID'; // Als de primaire sleutel een andere naam heeft dan 'id'
 
     protected $fillable = [
-       
+        'userID',
+        //'playerID',  
+        'teamID',
         'reserveplayer',
         'teamleader',
         'goals',

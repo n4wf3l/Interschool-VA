@@ -17,7 +17,7 @@ use Illuminate\View\View;
 class RegisteredUserController extends Controller
 {
     /**
-     * Display the registration view.
+     * toon de registratie pagina
      */
     public function create(): View
     {
@@ -25,13 +25,13 @@ class RegisteredUserController extends Controller
     }
 
     /**
-     * Handle an incoming registration request.
+     * registratie request wordt afgehandeld
      *
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
-        
+        //valdiatie van de inputwaarden
         $request->validate([
             'name' => ['required'],
             'surname' =>['required'],
@@ -39,11 +39,12 @@ class RegisteredUserController extends Controller
             'reserveplayer'=>['required'],
             'teamleader'=>['required'],
             'password' => ['required', 'confirmed'],
-            dd($request)
+            
         ]);
         
         
-        $user = User::create([
+        //nieuwe user aanmaken en inputwaarden aan properties van user assignen
+        $user = new User([
             
             'name' => $request->name,
             'surname'=>$request->surname,
@@ -51,16 +52,23 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        $player = players::create([
+        //user in de db saven
+        $user->save();
 
-            'name'=>$user->name,
-            'surname'=>$user->surname,
-            'email'=>$user->email,
+        
+        //nieuwe player aanmaken
+        $player = new players([
 
+            //userid is foreign key voor player link met user
+            'userID'=>$user->userID,
+            'teamID'=>1,
             'reserveplayer'=>$request->reserveplayer,
-            'teamleader'=>$request->teamleader,
-            'password'=>$user->password
+            'teamleader'=>$request->teamleader
+            
         ]);
+
+        //player in db saven
+        $player->save();
 
         event(new Registered($user));
         event(new Registered($player));
@@ -68,6 +76,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('../resources\views\auth\login.blade.php');
+        return redirect('/login');
     }
 }
