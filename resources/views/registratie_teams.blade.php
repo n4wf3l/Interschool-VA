@@ -44,7 +44,7 @@
         </style>
     </head>
     <body class="antialiased">
-    <form action="{{ route('register') }}" method="post">
+    <form action="{{ route('register') }}" method="get">
     @csrf
 
     <h1>Kies je team</h1>
@@ -66,7 +66,10 @@
                     @endforeach
                 </div>
                 @if(count($players) < 7)
-                    <input type="radio" name="selectedTeam" value="{{ $teamID }}">
+                    <input type="radio" name="TeamID" value="{{ $teamID }}">
+                    <!-- @php
+                        session(['TeamID' => $teamID]);
+                    @endphp -->
                 @endif
                 @if(count($players) === 7)
                     <p class = "red" >Vol</p>
@@ -74,10 +77,24 @@
             </div>
         @endforeach
 
-        <button type="submit">verzenden</button>
+        <button type="submit" onclick="setTeamID()">verzenden</button>
     </div>
 </form>
+<script>
+    function setTeamID() {
+        // Verwijder alle oude sessiegegevens
+        sessionStorage.clear();
 
+        // Voeg de nieuwe TeamID toe aan de sessie
+        var selectedTeamID = document.querySelector('input[name="TeamID"]:checked').value;
+        console.log('Geselecteerde TeamID:', selectedTeamID);
+        sessionStorage.setItem('TeamID', selectedTeamID);
+
+        // Log de TeamID die in de sessie is opgeslagen
+        var storedTeamID = sessionStorage.getItem('TeamID');
+        console.log('TeamID in sessie:', storedTeamID);
+    }
+</script>
 
 
     </body>
