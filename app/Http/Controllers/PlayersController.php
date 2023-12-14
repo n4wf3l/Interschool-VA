@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\players;
+use App\Models\teams;
 use App\Http\Requests\StoreplayersRequest;
 use App\Http\Requests\UpdateplayersRequest;
 
@@ -13,7 +14,16 @@ class PlayersController extends Controller
      */
     public function index()
     {
-        //
+        $teams = Teams::all();
+
+    $playersByTeam = [];
+
+    foreach ($teams as $team) {
+        $players = Players::where('teamID', $team->TeamID)->get();
+        $playersByTeam[$team->TeamID] = $players;
+    }
+
+    return view('registratie_teams', compact('playersByTeam'));
     }
 
     /**

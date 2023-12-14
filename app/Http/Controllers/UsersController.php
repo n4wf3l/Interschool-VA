@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Appp\models\players;
+use App\models\players;
 use App\Models\User;
 use App\Http\Requests\StoreusersRequest;
 use App\Http\Requests\UpdateusersRequest;
@@ -13,6 +13,8 @@ class UsersController extends Controller
     /**
      * user in de db opslaan
      */
+
+     
     public function store(StoreusersRequest $request)
     {
         //validatie van de data
