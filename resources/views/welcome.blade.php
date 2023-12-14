@@ -103,7 +103,7 @@
             <div class="flex">
 
                         <div class="soccer">
-                            <img src="{{ asset('football-image.jpg') }}" alt="">
+                            <img src="{{ asset('backgroundfoto.jpg') }}" alt="">
                         </div>
 
                     <div class="text-content">
