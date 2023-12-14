@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('Teamnaam');
             $table->unsignedBigInteger('teamleaderID');
             $table->foreign('teamleaderID')->references('userID')->on('users');
+            $table->integer('points')->default(0);
             $table->string('image')->nullable();
             $table->timestamps();
         });
