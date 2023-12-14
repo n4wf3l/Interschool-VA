@@ -109,7 +109,9 @@
 
                     <div class="button">
                         <div class="mb-4">
+                            <form action="{{ route('registerteams') }}">
                             <button type="submit" class="bg-green-500 text-white py-3 px-4 rounded-lg">Inschrijving</button>
+                        </form>
                         </div>
 
                     </div>
