@@ -100,7 +100,31 @@
 
     <main class="bg-white flex-1">
         <img src="{{asset('backgroundimage.png')}}" alt="" srcset="" class="w-full">
-        SCHRIJF JE IN!
+            <div class="flex">
+
+                        <div class="soccer">
+                            <img src="{{ asset('backgroundfoto.jpg') }}" alt="">
+                        </div>
+
+                    <div class="text-content">
+                        <h2 class=" text-5xl text-center  mb-8 text-gray-800 leading-tight">
+                            {{ __('SCHRIJF JE IN ') }}
+                        </h2>
+                            <p> {{ __("Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum efficitur sapien, id laoreet risus fringilla nec.
+                            Sed euismod felis eu libero varius, id semper dui fermentum. Ut ac lorem at ligula maximus rhoncus eget ac urna.") }}</p>
+
+                        <div class="button">
+                            <div class="mb-4">
+                                <form action="{{ route('registerteams') }}">
+                                <button type="submit" class="bg-green-500 text-white py-3 px-4 rounded-lg">Inschrijving</button>
+                            </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+
     </main>
 
     <footer>
