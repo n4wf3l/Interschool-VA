@@ -17,7 +17,7 @@ use Illuminate\View\View;
 class RegisteredUserController extends Controller
 {
     /**
-     * Display the registration view.
+     * toon de registratie pagina
      */
     public function create(): View
     {
@@ -25,13 +25,13 @@ class RegisteredUserController extends Controller
     }
 
     /**
-     * Handle an incoming registration request.
+     * registratie request wordt afgehandeld
      *
      * @throws \Illuminate\Validation\ValidationException
      */
     public function store(Request $request): RedirectResponse
     {
-        
+        //valdiatie van de inputwaarden
         $request->validate([
             'name' => ['required'],
             'surname' =>['required'],
@@ -43,7 +43,7 @@ class RegisteredUserController extends Controller
         ]);
         
         
-        
+        //nieuwe user aanmaken en inputwaarden aan properties van user assignen
         $user = new User([
             
             'name' => $request->name,
@@ -52,20 +52,23 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        //user in de db saven
         $user->save();
 
         
+        //nieuwe player aanmaken
+        $player = new players([
 
-        $player = players::create([
-
-            'name'=>$user->name,
-            'surname'=>$user->surname,
-            'email'=>$user->email,
-            'teamID'=> 1,
+            //userid is foreign key voor player link met user
+            'userID'=>$user->userID,
+            'teamID'=>1,
             'reserveplayer'=>$request->reserveplayer,
             'teamleader'=>$request->teamleader
             
         ]);
+
+        //player in db saven
+        $player->save();
 
         event(new Registered($user));
         event(new Registered($player));
@@ -73,6 +76,6 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
-        return redirect('../resources\views\auth\login.blade.php');
+        return redirect('/login');
     }
 }
