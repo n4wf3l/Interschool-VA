@@ -21,6 +21,9 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
+        $selectedTeamID = request()->input('TeamID');
+        session(['TeamID' => $selectedTeamID]);
+
         return view('auth.register');
 
         
@@ -33,14 +36,8 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        dd(session()->all());
 
         $teamID = session('TeamID');
-
-    
-
-        dd($teamID);
-
 
         //valdiatie van de inputwaarden
         $request->validate([

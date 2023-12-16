@@ -44,7 +44,7 @@
         </style>
     </head>
     <body class="antialiased">
-    <form action="{{ route('register') }}" method="get">
+    <form action="{{ route('register', ['TeamID' => 'selectedTeamID']) }}" method="get">
     @csrf
 
     <h1>Kies je team</h1>
@@ -67,9 +67,6 @@
                 </div>
                 @if(count($players) < 7)
                     <input type="radio" name="TeamID" value="{{ $teamID }}">
-                    <!-- @php
-                        session(['TeamID' => $teamID]);
-                    @endphp -->
                 @endif
                 @if(count($players) === 7)
                     <p class = "red" >Vol</p>

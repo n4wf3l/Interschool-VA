@@ -29,7 +29,6 @@ Route::get('/registerteams', function () {
 
 Route::get('/registerteams', [PlayersController::class, 'index'])->name('registerteams');
 
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

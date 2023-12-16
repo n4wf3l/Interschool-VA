@@ -148,11 +148,18 @@
                     <x-primary-button class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
                         {{ __('Register') }}
                     </x-primary-button>
+
                 </div>
             </form>
 
         </div>
     </div>
+
+
+        <p class="text-gray-700 dark:text-white mt-4">
+          Geregistreerd team: {{ session('TeamID') }}
+        </p>
+
 </main>
 
     
