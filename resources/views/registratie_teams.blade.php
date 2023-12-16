@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap" rel="stylesheet">
    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('registratie_teams.blade.css') }}">
+    <link rel="stylesheet" href="{{ asset('css blades/registratie_teams.blade.css') }}">
   </head>
 
   <body class="flex flex-col h-screen">
@@ -189,23 +189,9 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="{{ asset('welcome.blade.js') }}"></script>
+    <script src="{{ asset('js blades/registratie_teams.blade.js') }}"></script>
   </body>
 </html>
-<script>
-    function setTeamID() {
-        // Verwijder alle oude sessiegegevens
-        sessionStorage.clear();
 
-        // Voeg de nieuwe TeamID toe aan de sessie
-        var selectedTeamID = document.querySelector('input[name="TeamID"]:checked').value;
-        console.log('Geselecteerde TeamID:', selectedTeamID);
-        sessionStorage.setItem('TeamID', selectedTeamID);
-
-        // Log de TeamID die in de sessie is opgeslagen
-        var storedTeamID = sessionStorage.getItem('TeamID');
-        console.log('TeamID in sessie:', storedTeamID);
-    }
-</script>
     </body>
 </html>

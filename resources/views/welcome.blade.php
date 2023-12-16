@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap" rel="stylesheet">
    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('welcome.blade.css') }}">
+    <link rel="stylesheet" href="{{ asset('css blades/welcome.blade.css') }}">
   </head>
 
   <body class="flex flex-col h-screen">
@@ -151,6 +151,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="{{ asset('welcome.blade.js') }}"></script>
+    <script src="{{ asset('js blades/welcome.blade.js') }}"></script>
   </body>
 </html>
