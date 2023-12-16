@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap" rel="stylesheet">
    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('welcome.blade.css') }}">
+    <link rel="stylesheet" href="{{ asset('css blades/login.blade.css') }}">
   </head>
 
   <body class="flex flex-col h-screen">
@@ -20,6 +20,11 @@
         <div class="flex items-center justify-between">
          <!--Erasmus logo -->
           <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+                    <!--Hamburger menu for responsive  -->
+                    <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
+            <ion-icon name="menu" id="menuIcon"></ion-icon>
+          </span>
+
           <!--Navigation list -->
           <ul class="md:flex md:items-center md:static absolute bg-red w-full left-0 md:py-0 py-4 md:pl-0 pl-7 top-[60px] hidden" style="background-color: red;">
             <li class="mx-4 my-0 md:my-0 bg-red">
@@ -38,10 +43,6 @@
               <a href="{{ url('/contacts') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CONTACT</a>
             </li>
           </ul>
-          <!--Hamburger menu for responsive  -->
-          <span class="text-3xl cursor-pointer mx-2 md:hidden block" onclick="toggleMenu()">
-            <ion-icon name="menu" id="menuIcon"></ion-icon>
-          </span>
            <!--Login list icon-->
           <div x-data="{ open: false }" class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110"> @if (Route::has('login')) @auth <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a> @else <div class="relative">
               <a href="#" @click="open = !open">
@@ -56,7 +57,7 @@
 
 <main class="bg-white flex-1">
     <!-- Container -->
-    <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-5">
+    <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-20">
         <!-- Flex Img and Data -->
         <div class="mx-auto md:mx-0 items-center ">
             <!-- Img Blue -->
@@ -75,37 +76,29 @@
                 <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">LOG IN</h2>
             </div>
 
-            <form method="POST" action="{{ route('login') }}">
-        @csrf
+            <form method="POST" action="{{ route('login') }}" class="max-w-sm mx-auto">
+            @csrf
+  <div class="mb-5">
+    <label for="email" :value="__('Email')" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+    <input id="email" type="email" name="email" :value="old('email')" required autofocus autocomplete="username"class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com">
+    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+  </div>
+  <div class="mb-5">
+    <label for="password" :value="__('Password')" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Wachtwoord</label>
+    <input id="password" type="password"name="password" required autocomplete="current-password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    
+    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+  </div>
+  <div class="flex items-start mb-5">
+    <div class="flex items-center h-5">
+      <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+    </div>
 
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+    <label for="remember_me" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">
+                {{ __('Remember me') }}</label>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Password')" />
-
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="current-password" />
-
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
-
-        <!-- Remember Me -->
-        <div class="block mt-4">
-            <label for="remember_me" class="inline-flex items-center">
-                <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
-                <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4 mb-4">
+  </div>
+  <div class="flex items-center justify-end mt-4 mb-5">
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 pr-6" href="{{ route('password.request') }}">
                     {{ __('Forgot your password?') }}
@@ -116,7 +109,9 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
-    </form>
+</form>
+
+
         </div>
     </div>
     <div class="flex flex-col justify-center items-center pt-10">
@@ -172,6 +167,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="{{ asset('welcome.blade.js') }}"></script>
+    <script src="{{ asset('js blades/login.blade.js') }}"></script>
   </body>
 </html>

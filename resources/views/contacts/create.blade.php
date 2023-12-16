@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap" rel="stylesheet">
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('create.blade.css') }}">
+    <link rel="stylesheet" href="{{ asset('css blades/create.blade.css') }}">
   </head>
   <body class="flex flex-col h-screen">
   <header>
@@ -18,6 +18,11 @@
         <div class="flex items-center justify-between">
          <!--Erasmus logo -->
           <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+                    <!--Hamburger menu for responsive  -->
+                    <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
+            <ion-icon name="menu" id="menuIcon"></ion-icon>
+          </span>
+
           <!--Navigation list -->
           <ul class="md:flex md:items-center md:static absolute bg-red w-full left-0 md:py-0 py-4 md:pl-0 pl-7 top-[60px] hidden" style="background-color: red;">
             <li class="mx-4 my-0 md:my-0 bg-red">
@@ -36,10 +41,6 @@
               <a href="{{ url('/contacts') }}" class="text x1 text-teal-500" style="background-color: red;">CONTACT</a>
             </li>
           </ul>
-          <!--Hamburger menu for responsive  -->
-          <span class="text-3xl cursor-pointer mx-2 md:hidden block" onclick="toggleMenu()">
-            <ion-icon name="menu" id="menuIcon"></ion-icon>
-          </span>
            <!--Login list icon-->
           <div x-data="{ open: false }" class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110"> @if (Route::has('login')) @auth <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a> @else <div class="relative">
               <a href="#" @click="open = !open">
@@ -51,6 +52,8 @@
             </div> @endauth @endif </div>
       </nav>
     </header>
+
+ 
     <main class="bg-white flex-1">
       <img src="{{asset('backgroundimage.png')}}" alt="" srcset="" class="w-full">
       <!-- Container -->
