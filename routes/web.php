@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PlayersController;
+use App\Http\Controllers\TeamsController;
 use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
@@ -28,6 +29,14 @@ Route::get('/registerteams', function () {
 // web.php
 
 Route::get('/registerteams', [PlayersController::class, 'index'])->name('registerteams');
+
+Route::get('/myteam', function () {
+    return view('myteam');
+})->name('myteam');
+
+Route::get('/myteam', [TeamsController::class, 'index'])->name('myteam');
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
