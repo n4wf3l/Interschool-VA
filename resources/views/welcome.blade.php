@@ -97,7 +97,7 @@
           <!-- Paragraphe -->
           <p class="text-2xl text-base mb-6 duration-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum efficitur sapien, id laoreet risus fringilla nec. Sed euismod felis eu libero varius, id semper dui fermentum. Ut ac lorem at ligula maximus rhoncus eget ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit."</p>
           <!-- Bouton -->
-          <button type="submit" onclick="window.location.href='{{ route('registerteams') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> INSCHRIJVING </button>
+          <button type="submit" onclick="window.location.href='{{ route('register') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> INSCHRIJVING </button>
         </div>
     </main>
     <main class="bg-white flex-1 pb-20">

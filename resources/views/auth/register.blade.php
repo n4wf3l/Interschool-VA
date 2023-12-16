@@ -167,7 +167,7 @@
                     </a>
 
                     <x-primary-button class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
-                        {{ __('Register') }}
+                        {{ __('Registerteams') }}
                     </x-primary-button>
 
                 </div>
