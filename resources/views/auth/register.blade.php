@@ -155,10 +155,16 @@
         </div>
     </div>
 
-
-        <p class="text-gray-700 dark:text-white mt-4">
-          Geregistreerd team: {{ session('TeamID') }}
-        </p>
+        @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @if(session('showAlert'))
+            <script>
+                alert("{{ session('error') }}");
+            </script>
+        @endif
+    @endif
 
 </main>
 
