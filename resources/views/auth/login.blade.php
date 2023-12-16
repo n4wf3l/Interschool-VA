@@ -37,7 +37,7 @@
               <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
-              <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">RANKING</a>
+              <a href="{{ url('/rankings') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">RANKING</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
               <a href="{{ url('/contacts') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CONTACT</a>
@@ -116,7 +116,7 @@
     </div>
     <div class="flex flex-col justify-center items-center pt-10">
     <img src="{{ asset('bal.gif') }}" alt="" class="w-40 h-70">
-    <i class="hover:text-red-500 transition duration-500">Voetbal is niet alleen een sport, het is een levensstijl, een viering van discipline en toewijding.</i>
+    <i class="hover:text-red-500 transition duration-500">"De gezamenlijke teams in de intercampuscompetitie tonen de kracht van samenwerking, waar spelers van verschillende scholen één worden op zoek naar succes."</i>
 </div>
 </main>
     
