@@ -60,7 +60,8 @@ Route::post('/generate-schedule', [TournamentController::class, 'createSchedule'
 Route::post('/reset-tournament', [TournamentController::class, 'resetTournament'])->name('reset-tournament');
 
 
-Route::get('/rankings',[RankingController::class, 'showRankings'])->name('rankings.ranking'); //show rankings on ranking page
+Route::get('/rankings',[RankingController::class, 'showTeamRankings'])->name('rankings.ranking'); //show Team rankings on ranking page
+//Route::get('/rankings',[RankingController::class, 'showGoalScorersRanking'])->name('rankings.ranking'); //show goalscorer rankings on ranking page
 
 require __DIR__ . '/auth.php';
 

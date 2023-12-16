@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
+
 <h1>Team Ranking</h1>
 
 <table>
@@ -29,5 +30,7 @@
         
     </tbody>
 </table>
+
+
 </body>
 </html>
