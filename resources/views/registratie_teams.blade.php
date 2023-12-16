@@ -15,11 +15,16 @@
   </head>
 
   <body class="flex flex-col h-screen">
-    <header>
+  <header>
       <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50" style="background-color: red;">
         <div class="flex items-center justify-between">
          <!--Erasmus logo -->
           <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+                    <!--Hamburger menu for responsive  -->
+                    <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
+            <ion-icon name="menu" id="menuIcon"></ion-icon>
+          </span>
+
           <!--Navigation list -->
           <ul class="md:flex md:items-center md:static absolute bg-red w-full left-0 md:py-0 py-4 md:pl-0 pl-7 top-[60px] hidden" style="background-color: red;">
             <li class="mx-4 my-0 md:my-0 bg-red">
@@ -38,10 +43,6 @@
               <a href="{{ url('/contacts') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CONTACT</a>
             </li>
           </ul>
-          <!--Hamburger menu for responsive  -->
-          <span class="text-3xl cursor-pointer mx-2 md:hidden block" onclick="toggleMenu()">
-            <ion-icon name="menu" id="menuIcon"></ion-icon>
-          </span>
            <!--Login list icon-->
           <div x-data="{ open: false }" class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110"> @if (Route::has('login')) @auth <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a> @else <div class="relative">
               <a href="#" @click="open = !open">
@@ -53,7 +54,6 @@
             </div> @endauth @endif </div>
       </nav>
     </header>
-
 
     <main class="bg-white flex-1 pt-20">
     <ol class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">

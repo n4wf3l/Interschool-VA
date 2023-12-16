@@ -11,15 +11,20 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap" rel="stylesheet">
    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('welcome.blade.css') }}">
+    <link rel="stylesheet" href="{{ asset('css blades/forgot.password.css') }}">
   </head>
 
   <body class="flex flex-col h-screen">
-    <header>
+  <header>
       <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50" style="background-color: red;">
         <div class="flex items-center justify-between">
          <!--Erasmus logo -->
           <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+                    <!--Hamburger menu for responsive  -->
+                    <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
+            <ion-icon name="menu" id="menuIcon"></ion-icon>
+          </span>
+
           <!--Navigation list -->
           <ul class="md:flex md:items-center md:static absolute bg-red w-full left-0 md:py-0 py-4 md:pl-0 pl-7 top-[60px] hidden" style="background-color: red;">
             <li class="mx-4 my-0 md:my-0 bg-red">
@@ -38,10 +43,6 @@
               <a href="{{ url('/contacts') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CONTACT</a>
             </li>
           </ul>
-          <!--Hamburger menu for responsive  -->
-          <span class="text-3xl cursor-pointer mx-2 md:hidden block" onclick="toggleMenu()">
-            <ion-icon name="menu" id="menuIcon"></ion-icon>
-          </span>
            <!--Login list icon-->
           <div x-data="{ open: false }" class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110"> @if (Route::has('login')) @auth <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a> @else <div class="relative">
               <a href="#" @click="open = !open">
@@ -54,11 +55,27 @@
       </nav>
     </header>
 
-<main class="bg-white flex-1">
-    <!-- Container -->
-    <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-5">
+    <main class="bg-white flex-1">
+      <img src="{{asset('backgroundimage.png')}}" alt="" srcset="" class="w-full">
+      <!-- Container -->
+      <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-start md:justify-evenly">
         <!-- Flex Img and Data -->
-        <div class="mx-auto md:mx-0 items-center ">
+        <div class="md:w-2/5 mx-auto md:mx-0">
+          <!-- Img Blue -->
+          <img src="{{ asset('multiimg.png') }}" alt="Votre Image" class="w-30 h-70">
+        </div>
+        <div class="md:w-2/5 md:ml-8 mx-auto md:mx-0 flex flex-col md:items-start">
+          <div class="flex flex-row">
+            <!-- Design 2 Vertical -->
+            <div class="relative flex items-end pb-12">
+              <!-- Red line -->
+              <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
+              <!-- Blue line, positioned to overlap the red line -->
+              <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem; /* 3px */"></div>
+            </div>
+            <!-- Titre -->
+            <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">WACHTWOORD VERGETEN ?</h2>
+          </div>
             <!-- Img Blue -->
             <div class="mb-4 text-sm text-gray-600">
         {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
@@ -134,6 +151,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="{{ asset('welcome.blade.js') }}"></script>
+    <script src="{{ asset('js blades/forgot.password.js') }}"></script>
   </body>
 </html>
