@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\RankingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\TeamsController;
@@ -58,6 +58,9 @@ Route::get('/calendars', [TournamentController::class, 'index'])->name('calendar
 Route::post('/generate-schedule', [TournamentController::class, 'createSchedule'])->name('generate-schedule');
 
 Route::post('/reset-tournament', [TournamentController::class, 'resetTournament'])->name('reset-tournament');
+
+
+Route::get('/rankings',[RankingController::class, 'showRankings'])->name('rankings.ranking'); //show rankings on ranking page
 
 require __DIR__ . '/auth.php';
 
