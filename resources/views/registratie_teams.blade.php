@@ -100,7 +100,7 @@
             </div>
 
 
-            <form action="{{ route('register') }}" method="get">
+            <form action="{{ route('register', ['TeamID' => 'selectedTeamID']) }}" method="get">
     @csrf
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 text-center">
         @foreach($playersByTeam as $teamID => $players)
@@ -121,9 +121,6 @@
                 </div>
                 @if(count($players) < 7)
                     <input type="radio" name="TeamID" value="{{ $teamID }}">
-                    <!-- @php
-                        session(['TeamID' => $teamID]);
-                    @endphp -->
                 @endif
                 @if(count($players) === 7)
                     <p class="text-red-500">Vol</p>

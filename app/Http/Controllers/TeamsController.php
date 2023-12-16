@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\teams;
+use App\Models\players;
 use App\Http\Requests\StoreteamsRequest;
 use App\Http\Requests\UpdateteamsRequest;
+use Illuminate\Support\Facades\Auth;
+
 
 class TeamsController extends Controller
 {
@@ -13,7 +16,27 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        //
+        $user = Auth::user();
+
+        // Retrieve the player associated with the logged-in user
+        $player = Players::where('userID', $user->userID)->first();
+
+        // Check if the player exists
+        if (!$player) {
+            return redirect()->route('myteam')->with('error', 'Player not found for the logged-in user.');
+        }
+
+        // Retrieve player's team and their goals attribute
+        $teamID = $player->teamID;
+        $playerWithGoals = Players::where('teamID', $teamID)->get();
+
+
+        // Check if the player with goals exists
+        if (!$playerWithGoals) {
+            return redirect()->route('myteam')->with('error', 'Player with goals not found for the team.');
+        }
+
+        return view('myteam', compact('playerWithGoals'));
     }
 
     /**

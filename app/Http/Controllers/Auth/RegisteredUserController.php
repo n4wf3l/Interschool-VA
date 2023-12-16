@@ -21,6 +21,9 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
+        $selectedTeamID = request()->input('TeamID');
+        session(['TeamID' => $selectedTeamID]);
+
         return view('auth.register');
 
         
@@ -33,14 +36,8 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        dd(session()->all());
 
         $teamID = session('TeamID');
-
-    
-
-        dd($teamID);
-
 
         //valdiatie van de inputwaarden
         $request->validate([
@@ -53,35 +50,54 @@ class RegisteredUserController extends Controller
             
         ]);
         
-        $playersInTeam = players::where('teamID', $teamID)->get();
+        $playersInTeam = Players::where('teamID', $teamID)->get();
 
-        // Variabelen om bij te houden hoeveel teamleiders en reservespelers er zijn
-        $leaderCount = 0;
-        $reserveCount = 0;
+// Variabelen om bij te houden hoeveel teamleiders en reservespelers er zijn
+$leaderCount = 0;
+$reserveCount = 0;
+$playercount = 0;
 
-        // Loop over alle spelers in het team
-        foreach ($playersInTeam as $playerInTeam) {
-            // Controleer of het een teamleider is
-            if ($playerInTeam->teamleader) {
-                $leaderCount++;
-            }
-            // Controleer of het een reservespeler is
-            elseif ($playerInTeam->reserveplayer) {
-                $reserveCount++;
-            }
-            // Andere logica voor normale spelers indien nodig
-        }
+// Loop over alle spelers in het team
+foreach ($playersInTeam as $playerInTeam) {
+
+    // Controleer of het een teamleider is
+    if ($playerInTeam->teamleader) {
+        $leaderCount++;
+    }
+    // Controleer of het een reservespeler is
+    elseif ($playerInTeam->reserveplayer) {
+        $reserveCount++;
+    }
+    else
+    {
+        $playercount++;
+    }
+    // Andere logica voor normale spelers indien nodig
+}
 
 
-        // Controleer of er al een teamleider is
-        if ($leaderCount === 1 && $request->teamleader == 1) {
-            return redirect()->back()->with('error', 'Er kan slechts één teamleider zijn.');
-        }
+if ($leaderCount === 1 && $request->teamleader == 1) {
+    return redirect()->back()->with('error', 'Er kan slechts één teamleider zijn.')->with('showAlert', true);
+}
 
-        // Controleer of er al twee reservespelers zijn
-        if ($reserveCount === 2 && $request->reserveplayer == 1) {
-            return redirect()->back()->with('error', 'Er kunnen slechts twee reservespelers zijn.');
-        }
+// Controleer of er al twee reservespelers zijn
+if ($reserveCount === 2 && $request->reserveplayer == 1) {
+    return redirect()->back()->with('error', 'Er kunnen slechts twee reservespelers zijn.')->with('showAlert', true);
+}
+
+// if ($playercount === 4 && $request->reserveplayer == 0 && $request->teamleader == 0) {
+//     return redirect()->back()->with('error', 'Je moet voor een reservespeler of teamleader kiezen')->with('showAlert', true);
+// }
+
+// Controleer wanneer er nog juist een teamleader moet zijn
+if ($playercount === 4 && $reserveCount === 2 && $request->teamleader == 0) {
+    return redirect()->back()->with('error', 'Je moet een teamleader zijn binnen dit team.')->with('showAlert', true);
+}
+
+// Controleer wanneer er nog juist een of 2 reservespelers moeten zijn
+if ($leaderCount === 1 && $playercount === 4) {
+    return redirect()->back()->with('error', 'Je moet een reservespeler zijn binnen dit team.')->with('showAlert', true);
+}
 
 
         //nieuwe user aanmaken en inputwaarden aan properties van user assignen
