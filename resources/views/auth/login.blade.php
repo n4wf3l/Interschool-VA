@@ -56,7 +56,7 @@
 
 <main class="bg-white flex-1">
     <!-- Container -->
-    <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-5">
+    <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-20">
         <!-- Flex Img and Data -->
         <div class="mx-auto md:mx-0 items-center ">
             <!-- Img Blue -->

@@ -1,0 +1,30 @@
+/* ! tailwindcss v3.2.4 | MIT License | https://tailwindcss.com */
+
+header {
+    background: red;
+    color: white;
+}
+
+main {
+    background: white;
+}
+
+footer {
+    background: red;
+    color: white;
+}
+
+body {
+    font-family: "Saira Condensed", sans-serif;
+    color: black;
+}
+
+hr {
+    height: 0;
+    color: inherit;
+    border-top-width: 1px;
+}
+abbr:where([title]) {
+    -webkit-text-decoration: underline dotted;
+    text-decoration: underline dotted;
+}
