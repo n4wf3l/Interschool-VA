@@ -69,12 +69,12 @@
     <li class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
         <span class="hover:text-teal-500 duration-500 flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
             <span class="me-2">2</span>
-            Vul <span class="hidden sm:inline-flex sm:ms-2">formulier</span>
+            Kies <span class="hidden sm:inline-flex sm:ms-2">Team</span>
         </span>
     </li>
     <li class="flex items-center hover:text-teal-500 duration-500">
     <span class="me-2">3</span>
-            Kies <span class="hidden sm:inline-flex sm:ms-2">team</span>
+            Vul <span class="hidden sm:inline-flex sm:ms-2">Formulier</span>
     </li>
 </ol>
       <!-- Container -->
@@ -99,7 +99,7 @@
           <!-- Paragraphe -->
           <p class="text-2xl text-base mb-6 duration-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum efficitur sapien, id laoreet risus fringilla nec. Sed euismod felis eu libero varius, id semper dui fermentum. Ut ac lorem at ligula maximus rhoncus eget ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit."</p>
           <!-- Bouton -->
-          <button type="submit" onclick="window.location.href='{{ route('register') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> INSCHRIJVING </button>
+          <button type="submit" onclick="window.location.href='{{ route('registerteams') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> INSCHRIJVING </button>
         </div>
     </main>
     <main class="bg-white flex-1 pb-20">
