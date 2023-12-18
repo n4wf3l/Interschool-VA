@@ -38,7 +38,8 @@
               style="background-color: red;">HOME</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
-            <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">ABOUT</a>
+            <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">ABOUT</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500"
@@ -134,8 +135,8 @@
           <!-- Blue line, positioned to overlap the red line -->
           <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
         </div>
-
       </div>
+
     </div>
   </main>
 
