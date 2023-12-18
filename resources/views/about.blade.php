@@ -59,8 +59,6 @@
                 <h2 class="text-5xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">Regels</h2>
             </div>
 
-
-
             <p>Lorem ipsum dolor sit amet, consectetur  adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum efficitur sapien, id laoreet risus
                 fringilla nec. Sed euismod felis eu libero varius, id semper dui fermentum. Ut ac lorem at ligula maximus rhoncus eget ac urna. Lorem ipsum dolor sit amet, consectetur  adipiscing elit.
                 Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum
@@ -70,7 +68,7 @@
                 Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum </p>
         </main>
 
-        <main class="flex flex-col md:flex-col items-center">
+        <main>
 
             <!-- Titre -->
             <div class="flex flex-row items-center">
@@ -88,7 +86,7 @@
             </div>
 
                     <!-- Image -->
-                    <img src="{{asset('MicrosoftTeams-image.png')}}" alt="" class="w-30 h-30 md:ml-8 mb-4 md:mb-0">
+                    <img src="{{asset('MicrosoftTeams-image.png')}}" alt="" class="w-30 h-70 md:w-2/5 mx-auto md:mx-0">
 
                     <!-- Location and Address -->
                     <div class=" flex flex-col ">
