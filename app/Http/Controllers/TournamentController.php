@@ -6,6 +6,10 @@ use Carbon\Carbon;
 use App\Models\games;
 use Illuminate\Http\Request;
 use App\Models\teams;
+use App\Models\players;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
+
 
 class TournamentController extends Controller
 {
@@ -46,7 +50,7 @@ class TournamentController extends Controller
             }
         }
 
-        return redirect()->route('calendars.index');
+        return redirect()->route('admins.index');
     }
 
 
@@ -111,9 +115,27 @@ class TournamentController extends Controller
 
     public function resetTournament()
     {
+        $adminUsers = User::where('admin', 1)->get(['userID', 'name', 'surname', 'email', 'admin', 'password']);
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
         games::truncate();
+        players::truncate();
+        teams::truncate();
+        User::truncate();
 
+        foreach ($adminUsers as $adminUser) {
+            $newUser = new User();
+            $newUser->userID = $adminUser->userID;
+            $newUser->name = $adminUser->name;
+            $newUser->surname = $adminUser->surname;
+            $newUser->email = $adminUser->email;
+            $newUser->admin = $adminUser->admin;
+            $newUser->password = $adminUser->password;
+            $newUser->save();
+        }
+
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
 
         return redirect()->back()->with('status', 'Tournament reset successfully.');
     }

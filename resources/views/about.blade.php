@@ -94,7 +94,7 @@
                     <div class=" flex flex-col ">
                         <div class="flex items-center">
                             <img src="{{asset('positionicon.png')}}" class="h-7">
-                            <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
+                            <p class="ml-2 text-sm">Nijerheidskaai, Anderlecht 1070</p>
                         </div>
                     </div>
 

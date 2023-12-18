@@ -17,12 +17,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        
+
 
         //Usersseeder
         for ($i = 1; $i <= 200; $i++) {
             User::create([
-                'name'=>'name' . $i,
+                'name' => 'name' . $i,
                 'surname' => 'User' . $i,
                 'email' => 'user' . $i . '@example.com',
                 'admin' => false,
@@ -79,27 +79,28 @@ class DatabaseSeeder extends Seeder
         }
 
 
+        /*
+                //gamesseeder
+                $teamsCount = 10; // Aantal teams
 
-        //gamesseeder
-        $teamsCount = 10; // Aantal teams
-
-        // Loop over elk team
-        for ($team1ID = 1; $team1ID <= $teamsCount; $team1ID++) {
-            // Loop over alle andere teams
-            for ($team2ID = $team1ID+1; $team2ID <= $teamsCount; $team2ID++) {
-                // Zorg ervoor dat teams niet tegen zichzelf spelen
-                if ($team1ID != $team2ID) {
-                    // Maak een game aan
-                    Games::create([
-                        'team1ID' => $team1ID,
-                        'team2ID' => $team2ID,
-                        'date' => now(),
-                        'scoreTeam1' => rand(0, 5), // Willekeurige score, pas aan indien nodig
-                        'scoreTeam2' => rand(0, 5),
-                    ]);
+                // Loop over elk team
+                for ($team1ID = 1; $team1ID <= $teamsCount; $team1ID++) {
+                    // Loop over alle andere teams
+                    for ($team2ID = $team1ID+1; $team2ID <= $teamsCount; $team2ID++) {
+                        // Zorg ervoor dat teams niet tegen zichzelf spelen
+                        if ($team1ID != $team2ID) {
+                            // Maak een game aan
+                            Games::create([
+                                'team1ID' => $team1ID,
+                                'team2ID' => $team2ID,
+                                'date' => now(),
+                                'scoreTeam1' => rand(0, 5), // Willekeurige score, pas aan indien nodig
+                                'scoreTeam2' => rand(0, 5),
+                            ]);
+                        }
+                     }
                 }
-             }
-        }
+                */
 
     }
 }

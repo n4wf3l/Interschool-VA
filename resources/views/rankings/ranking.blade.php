@@ -34,10 +34,10 @@
               <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">ABOUT</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
-              <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
+              <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
-              <a href="#" class="text x1 text-teal-500" style="background-color: red;">RANKING</a>
+              <a href="{{ url('/rankings') }}" class="text x1 text-teal-500" style="background-color: red;">RANKING</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
               <a href="{{ url('/contacts') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CONTACT</a>
@@ -66,9 +66,9 @@
                 </div>
                 <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">RANKING</h2>
             </div>
-            <p class="pl-20 text-3xl text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
+            <p class="pl-20 text-2xl text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
                 ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at.</p>
-                <p class="pl-20 mt-10 text-3xl pb-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
+                <p class="pl-20 mt-10 text-2xl pb-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
                 ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at.</p>
             </div>
 
@@ -156,12 +156,10 @@
                 <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">ZIE OOK</h2>
             </div>
             <div class="flex space-x-4 mt-6 pl-20 pb-10">
-            <button type="submit" onclick="window.location.href='{{ ('/') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> KALENDER</button>
+            <button type="submit" onclick="window.location.href='{{ url('calendars') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> KALENDER</button>
             <button type="submit" onclick="window.location.href='{{ route('register') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> INSCHRIJVING </button>
             </div>
-            </div>
 
-</div>
 </div>
 </main>
 

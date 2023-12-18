@@ -16,6 +16,8 @@ use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
+    
+    /** JUISTE VERSIE */
     /**
      * toon de registratie pagina
      */
