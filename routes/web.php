@@ -64,7 +64,9 @@ Route::post('/reset-tournament', [TournamentController::class, 'resetTournament'
 
 
 Route::get('/rankings',[RankingController::class, 'showRankings'])->name('rankings.ranking'); //show rankings on ranking page
-
+Route::get('/about', function () {
+    return view('about');
+});
 
 require __DIR__ . '/auth.php';
 
