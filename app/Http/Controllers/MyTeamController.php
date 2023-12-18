@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\teams;
 use App\Models\players;
+use App\Models\games;
 use App\Http\Requests\StoreteamsRequest;
 use App\Http\Requests\UpdateteamsRequest;
 use Illuminate\Support\Facades\Auth;
 
 
-class TeamsController extends Controller
+class MyTeamController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,25 +19,29 @@ class TeamsController extends Controller
     {
         $user = Auth::user();
 
-        // Retrieve the player associated with the logged-in user
-        $player = Players::where('userID', $user->userID)->first();
+    // Retrieve the player associated with the logged-in user
+    $player = Players::where('userID', $user->userID)->first();
 
-        // Check if the player exists
-        if (!$player) {
-            return redirect()->route('myteam')->with('error', 'Player not found for the logged-in user.');
-        }
+    // Check if the player exists
+    if (!$player) {
+        return redirect()->route('myteam')->with('error', 'Player not found for the logged-in user.');
+    }
 
-        // Retrieve player's team and their goals attribute
-        $teamID = $player->teamID;
-        $playerWithGoals = Players::where('teamID', $teamID)->get();
+    // Retrieve player's team and their goals attribute
+    $teamID = $player->teamID;
+    $playerWithGoals = Players::where('teamID', $teamID)->get();
 
+    // Retrieve games for the team
+    $teamGames = Games::where('team1ID', $teamID)
+        ->orWhere('team2ID', $teamID)
+        ->get();
 
-        // Check if the player with goals exists
-        if (!$playerWithGoals) {
-            return redirect()->route('myteam')->with('error', 'Player with goals not found for the team.');
-        }
+    // Check if the player with goals exists
+    if (!$playerWithGoals) {
+        return redirect()->route('myteam')->with('error', 'Player with goals not found for the team.');
+    }
 
-        return view('myteam', compact('playerWithGoals'));
+    return view('myteam', compact('playerWithGoals', 'teamGames'));
     }
 
     /**
