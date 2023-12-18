@@ -77,8 +77,8 @@
                 <!--Login list icon-->
                 <div x-data="{ open: false }"
                     class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
-                    @if (Route::has('login')) @auth <a href="{{ url('/dashboard') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
+                    @if (Route::has('login')) @auth <a href="{{ url('/myteam') }}"
+                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">my team</a>
                     @else <div class="relative">
                         <a href="#" @click="open = !open">
                             <img class="h-7 inline" src="{{ asset('loginicon.png') }}" alt="Login Icon">
