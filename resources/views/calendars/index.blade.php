@@ -34,7 +34,7 @@
               <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">ABOUT</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
-              <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
+              <a href="{{ url('/calendars') }}" class="text x1 text-teal-500" style="background-color: red;">CALENDAR</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
               <a href="{{ url('/rankings') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">RANKING</a>
@@ -84,25 +84,26 @@
 </div>
 </main>
 
-<main class="bg-teal-500 items-center justify-center pt-5 pl-80 pr-80 w-full bg-cover" style="background-image: url('futsalcover.jpg');">
-<h1 class="text-center mb-4 text-black">Overzicht kalender</h1>
-    <div class="mx-auto bg-gray-100 rounded-lg p-4">
-        <table class="w-full border border-gray-300 text-black p-2"> <!-- Ajustez la classe de marge ici -->
+<main class="pt-5 w-full bg-cover" style="background-image: url('futsalcover.jpg');">
+<h1 class="flex items-center justify-center text-center mb-4 text-white text-5xl">Overzicht kalender</h1>
+
+    <div class="mx-auto w-full md:w-2/3 lg:w-1/2 xl:w-1/3 bg-teal-300 rounded-lg p-4 flex items-center justify-center">
+        <table class="w-full md:w-full lg:w-full xl:w-full border border-solid border-gray-300 text-black p-2"> <!-- Ajustez la classe de marge ici -->
             <thead>
                 <tr>
-                    <th class="text-center bg-red-500 mb-4 text-white">Datum</th>
-                    <th class="text-center bg-teal-500 mb-4 text-white">Home Team</th>
-                    <th class="text-center bg-teal-500 mb-4 text-white">Away Team</th>
-                    <th class="text-center bg-red-500 mb-4 text-white">Score (Home - Away)</th>
+                    <th class="text-center bg-red-500 mb-4 text-white border border-solid">Datum en tijdstip</th>
+                    <th class="text-center bg-teal-500 mb-4 text-white border border-solid">HT</th>
+                    <th class="text-center bg-teal-500 mb-4 text-white border border-solid">AT</th>
+                    <th class="text-center bg-red-500 mb-4 text-white border border-solid">HT | Score | AT</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($games as $game)
                 <tr>
-                    <td class="text-center bg-gray-500 text-black">{{ $game->date }}</td>
-                    <td class="text-center bg-gray-500 text-black">{{ $game->team1->Teamnaam }}</td>
-                    <td class="text-center bg-gray-500 text-black">{{ $game->team2->Teamnaam }}</td>
-                    <td class="text-center bg-gray-500 text-black">{{ $game->scoreTeam1 }} - {{ $game->scoreTeam2 }}</td>
+                    <td class="text-center bg-gray-300 text-black border border-solid">{{ $game->date }}</td>
+                    <td class="text-center bg-gray-300 text-black border border-solid">{{ $game->team1->Teamnaam }}</td>
+                    <td class="text-center bg-gray-300 text-black border border-solid">{{ $game->team2->Teamnaam }}</td>
+                    <td class="text-center bg-gray-300 text-black border border-solid">{{ $game->team1->Teamnaam }} | {{ $game->scoreTeam1 }} - {{ $game->scoreTeam2 }} | {{ $game->team2->Teamnaam }}</td>
                 </tr>
                 @endforeach
             </tbody>
@@ -132,6 +133,29 @@
 </div>
 </main>
     
+<main class="bg-white flex-1 pt-5">
+
+<div class="mx-auto pl-10"> 
+            <div class="flex flex-row items-center">
+                <!-- Design 2 Vertical -->
+                <div class="relative flex items-end pb-20">
+                    <!-- Red line -->
+                    <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
+                    <!-- Blue line, positioned to overlap the red line -->
+                    <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
+                </div>
+
+                <!-- Titre -->
+                <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">ZIE OOK</h2>
+            </div>
+            <div class="flex space-x-4 mt-6 pl-20 pb-10">
+            <button type="submit" onclick="window.location.href='{{ url('rankings') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> RANKING</button>
+            <button type="submit" onclick="window.location.href='{{ url('rankings') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> TOPSCORERS </button>
+            </div>
+
+</div>
+</main>
+
     <footer>
       <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
         <!-- Eerste kolom (data) -->

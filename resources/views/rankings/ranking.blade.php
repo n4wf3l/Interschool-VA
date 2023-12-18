@@ -156,12 +156,10 @@
                 <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">ZIE OOK</h2>
             </div>
             <div class="flex space-x-4 mt-6 pl-20 pb-10">
-            <button type="submit" onclick="window.location.href='{{ ('/') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> KALENDER</button>
+            <button type="submit" onclick="window.location.href='{{ url('calendars') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> KALENDER</button>
             <button type="submit" onclick="window.location.href='{{ route('register') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> INSCHRIJVING </button>
             </div>
-            </div>
 
-</div>
 </div>
 </main>
 
