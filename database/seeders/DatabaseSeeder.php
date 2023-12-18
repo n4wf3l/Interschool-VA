@@ -30,6 +30,14 @@ class DatabaseSeeder extends Seeder
             ]);
         }
 
+        User::create([
+            'name' => 'admin',
+            'surname' => 'admin',
+            'email' => 'info.va.ehb@gmail.com',
+            'admin' => true,
+            'password' => bcrypt('password'),
+        ]);
+
 
         //teamsseeder
         $teamleaderid = 1;
