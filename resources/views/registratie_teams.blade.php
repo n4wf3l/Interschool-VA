@@ -62,7 +62,7 @@
           @if(auth()->check() && (auth()->user()->admin === 1))
           <p class="hidden md:inline">|</p>
           <li class="mx-4 my-0 md:my-0 bg-red">
-            <a href="{{ url('/adminpage') }}" class="text x1 hover:text-teal-500 duration-500"
+            <a href="{{ url('/admins') }}" class="text x1 hover:text-teal-500 duration-500"
               style="background-color: red;">MyADMIN</a>
           </li>
           @endif
