@@ -26,8 +26,9 @@ class TournamentController extends Controller
         $all_teams = teams::all();
 
         // Ensure we have an even number of teams
-        if ($all_teams->count() % 2 != 0) {
-            return redirect()->back()->withErrors(['error' => 'An even number of teams is required.']);
+        if ($all_teams->count() % 2 != 0 || $all_teams->count() != 10) {
+            return redirect()->back()->with('status', '10 teams are required to generate a new tournament.');
+
         }
 
         $schedule = $this->generateRoundRobinSchedule($all_teams);
@@ -50,7 +51,7 @@ class TournamentController extends Controller
             }
         }
 
-        return redirect()->route('admins.index');
+        return redirect()->route('admins.index')->with('status', 'the tournament has been created successfully.');
     }
 
 
