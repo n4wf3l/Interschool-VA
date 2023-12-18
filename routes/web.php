@@ -64,13 +64,25 @@ Route::post('/reset-tournament', [TournamentController::class, 'resetTournament'
 
 
 Route::get('/rankings', [RankingController::class, 'showRankings'])->name('rankings.ranking'); //show rankings on ranking page
+
 Route::get('/about', function () {
     return view('about');
 });
 
-Route::middleware(['admin'])->group(function () {
+
+Route::middleware('admin')->group(function () {
+
     Route::get('/admins', [AdminController::class, 'index'])->name('admins.index');
+
 });
+
+
+Route::middleware('teamleader')->group(function () {
+
+});
+
+
+
 
 require __DIR__ . '/auth.php';
 
