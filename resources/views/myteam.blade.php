@@ -24,6 +24,20 @@
                                 @endif
                             </div>
                     @endforeach
+
+                </div>
+                <div class="p-6 text-gray-900">
+                <h1>Games of Your Team</h1>
+
+                    @foreach($teamGames as $game)
+                        <div>
+                            <p>{{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }} {{ $game->team1->Teamnaam }} VS {{ $game->team2->Teamnaam }}  {{ $game->scoreTeam1 }} {{ $game->scoreTeam2 }} </p>
+
+                            <!-- Add other game details as needed -->
+                        </div>
+
+                        
+                    @endforeach
                 </div>
             </div>
         </div>

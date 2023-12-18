@@ -1,8 +1,9 @@
 <?php
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RankingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PlayersController;
-use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\MyTeamController;
 use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
@@ -34,7 +35,7 @@ Route::get('/myteam', function () {
     return view('myteam');
 })->name('myteam');
 
-Route::get('/myteam', [TeamsController::class, 'index'])->name('myteam');
+Route::get('/myteam', [MyTeamController::class, 'index'])->name('myteam');
 
 
 
@@ -60,8 +61,15 @@ Route::post('/generate-schedule', [TournamentController::class, 'createSchedule'
 Route::post('/reset-tournament', [TournamentController::class, 'resetTournament'])->name('reset-tournament');
 
 
-Route::get('/rankings',[RankingController::class, 'showRankings'])->name('rankings.ranking'); //show rankings on ranking page
+Route::get('/rankings', [RankingController::class, 'showRankings'])->name('rankings.ranking'); //show rankings on ranking page
 
+Route::get('/admins', [AdminController::class, 'index'])->name('admins.index');
+
+Route::group(['middleware' => 'admin'], function(){
+
+//ALLE ADMIN ROUTES HIER!
+
+});
 
 require __DIR__ . '/auth.php';
 
