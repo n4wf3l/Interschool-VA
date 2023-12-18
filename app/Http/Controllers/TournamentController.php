@@ -115,7 +115,7 @@ class TournamentController extends Controller
 
     public function resetTournament()
     {
-        $adminUsers = User::where('admin', true)->get(['userID', 'name', 'surname', 'email', 'admin', 'password']);
+        $adminUsers = User::where('admin', 1)->get(['userID', 'name', 'surname', 'email', 'admin', 'password']);
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
