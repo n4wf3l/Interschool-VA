@@ -50,23 +50,49 @@
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/contacts') }}" class="text x1 text-teal-500" style="background-color: red;">CONTACT</a>
           </li>
+          @if(auth()->check() && (auth()->user()->admin === 0))
+          <p class="hidden md:inline">|</p>
+          <li class="mx-4 my-0 md:my-0 bg-red">
+            <a href="{{ url('/myteam') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">MyTEAM</a>
+          </li>
+          @endif
+          @if(auth()->check() && (auth()->user()->admin === 1))
+          <p class="hidden md:inline">|</p>
+          <li class="mx-4 my-0 md:my-0 bg-red">
+            <a href="{{ url('/admins') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">MyADMIN</a>
+          </li>
+          @endif
         </ul>
         <!--Login list icon-->
         <div x-data="{ open: false }"
           class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
-          @if (Route::has('login')) @auth <a href="{{ url('/myteam') }}"
-            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">my team</a>
-          @else <div class="relative">
+          <div class="relative">
             <a href="#" @click="open = !open">
-              <img class="h-7 inline" src="{{ asset('loginicon.png') }}" alt="Login Icon">
+              <img class="h-7 inline @auth bg-green-700 rounded-full @endauth" src="{{ asset('loginicon.png') }}"
+                alt="Login Icon">
             </a>
             <div x-show="open" @click.away="open = false"
-              class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py=0">
-              <a href="{{ route('login') }}" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500">Login</a>
-              @if (Route::has('register')) <a href="{{ route('register') }}"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a> @endif
+              class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
+              @auth
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <p class="text-white bg-teal-500 text-center text-xs">{{ Auth::user()->name }}</p>
+                <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
+                  onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
+              </form>
+              @else
+              <a href="{{ route('login') }}"
+                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Login</a>
+              @if (Route::has('register'))
+              <a href="{{ route('register') }}"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a>
+              @endif
+              @endauth
             </div>
-          </div> @endauth @endif </div>
+          </div>
+        </div>
     </nav>
   </header>
 
@@ -205,7 +231,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="{{ asset('create.blade.js') }}"></script>
+  <script src="{{ asset('js blades/contact.blade.js') }}"></script>
 </body>
 
 </html>

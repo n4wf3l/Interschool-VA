@@ -15,27 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
-    <style>
-        header {
-            background: red;
-            color: white
-        }
-
-        main {
-            background: white;
-        }
-
-        footer {
-            background: red;
-            color: white
-        }
-
-        body {
-            font-family: 'Saira Condensed', sans-serif;
-            color: black;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css blades/welcome.blade.css') }}">
 </head>
 
 <body class="flex flex-col h-screen">
@@ -73,74 +53,116 @@
                         <a href="{{ url('/contacts') }}" class="text x1 hover:text-teal-500 duration-500"
                             style="background-color: red;">CONTACT</a>
                     </li>
+                    @if(auth()->check() && (auth()->user()->admin === 0))
+                    <p class="hidden md:inline">|</p>
+                    <li class="mx-4 my-0 md:my-0 bg-red">
+                        <a href="{{ url('/myteam') }}" class="text x1 hover:text-teal-500 duration-500"
+                            style="background-color: red;">MyTEAM</a>
+                    </li>
+                    @endif
+                    @if(auth()->check() && (auth()->user()->admin === 1))
+                    <p class="hidden md:inline">|</p>
+                    <li class="mx-4 my-0 md:my-0 bg-red">
+                        <a href="{{ url('/admins') }}" class="text x1 hover:text-teal-500 duration-500"
+                            style="background-color: red;">MyADMIN</a>
+                    </li>
+                    @endif
+
                 </ul>
                 <!--Login list icon-->
                 <div x-data="{ open: false }"
                     class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
-                    @if (Route::has('login')) @auth <a href="{{ url('/myteam') }}"
-                        class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">my team</a>
-                    @else <div class="relative">
+                    <div class="relative">
                         <a href="#" @click="open = !open">
-                            <img class="h-7 inline" src="{{ asset('loginicon.png') }}" alt="Login Icon">
+                            <img class="h-7 inline @auth bg-green-700 rounded-full @endauth"
+                                src="{{ asset('loginicon.png') }}" alt="Login Icon">
                         </a>
                         <div x-show="open" @click.away="open = false"
-                            class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py=0">
-                            <a href="{{ route('login') }}" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500">Login</a> 
-                            @if (Route::has('register')) 
-                            <a href="{{ route('register') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a> @endif
+                            class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
+                            @auth
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <p class="text-white bg-teal-500 text-center text-xs">{{ Auth::user()->name }}</p>
+                                <a href="#"
+                                    class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
+                                    onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
+                            </form>
+                            @else
+                            <a href="{{ route('login') }}"
+                                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Login</a>
+                            @if (Route::has('register'))
+                            <a href="{{ route('register') }}"
+                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a>
+                            @endif
+                            @endauth
                         </div>
-                    </div> @endauth @endif </div>
+                    </div>
+                </div>
         </nav>
     </header>
 
 
     <main class="bg-white flex-1">
-      <img src="{{asset('backgroundimage.png')}}" alt="" srcset="" class="w-full">
-      
-      <ol class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
-    <li class="flex md:w-full items-center text-red-500 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-        <span class="hover:text-teal-500 duration-500 flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-            <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
-            </svg>
-            Home <span class="hidden sm:inline-flex sm:ms-2">inschrijving</span>
-        </span>
-    </li>
-    <li class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-        <span class="hover:text-teal-500 duration-500 flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-            <span class="me-2">2</span>
-            Kies <span class="hidden sm:inline-flex sm:ms-2">team</span>
-        </span>
-    </li>
-    <li class="flex items-center hover:text-teal-500 duration-500">
-    <span class="me-2">3</span>
-            Vul <span class="hidden sm:inline-flex sm:ms-2">formulier</span>
-    </li>
-</ol>
-      <!-- Container -->
-      <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly p-10">
-        <!-- Flex Img and Data -->
-        <div class="md:w-2/5 mx-auto md:mx-0">
-          <!-- Img Blue -->
-          <img src="{{ asset('balimg.jpg') }}" alt="Votre Image" class="w-30 h-70">
-        </div>
-        <div class="md:w-2/5 md:ml-8 mx-auto md:mx-0 flex flex-col md:items-start">
-          <div class="flex flex-row">
-            <!-- Design 2 Vertical -->
-            <div class="relative flex items-end pb-12">
-              <!-- Red line -->
-              <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-              <!-- Blue line, positioned to overlap the red line -->
-              <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem; /* 3px */"></div>
+        <img src="{{asset('backgroundimage.png')}}" alt="" srcset="" class="w-full">
+
+        <ol
+            class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
+            <li
+                class="flex md:w-full items-center text-red-500 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
+                <span
+                    class="hover:text-teal-500 duration-500 flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                    </svg>
+                    Home <span class="hidden sm:inline-flex sm:ms-2">inschrijving</span>
+                </span>
+            </li>
+            <li
+                class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
+                <span
+                    class="hover:text-teal-500 duration-500 flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+                    <span class="me-2">2</span>
+                    Kies <span class="hidden sm:inline-flex sm:ms-2">team</span>
+                </span>
+            </li>
+            <li class="flex items-center hover:text-teal-500 duration-500">
+                <span class="me-2">3</span>
+                Vul <span class="hidden sm:inline-flex sm:ms-2">formulier</span>
+            </li>
+        </ol>
+        <!-- Container -->
+        <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly p-10">
+            <!-- Flex Img and Data -->
+            <div class="md:w-2/5 mx-auto md:mx-0">
+                <!-- Img Blue -->
+                <img src="{{ asset('balimg.jpg') }}" alt="Votre Image" class="w-30 h-70">
             </div>
-            <!-- Titre -->
-            <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">SCHRIJF JE IN!</h2>
-          </div>
-          <!-- Paragraphe -->
-          <p class="text-2xl text-base mb-6 duration-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum efficitur sapien, id laoreet risus fringilla nec. Sed euismod felis eu libero varius, id semper dui fermentum. Ut ac lorem at ligula maximus rhoncus eget ac urna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit."</p>
-          <!-- Bouton -->
-          <button type="submit" onclick="window.location.href='{{ route('registerteams') }}'" class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500"> INSCHRIJVING </button>
-        </div>
+            <div class="md:w-2/5 md:ml-8 mx-auto md:mx-0 flex flex-col md:items-start">
+                <div class="flex flex-row">
+                    <!-- Design 2 Vertical -->
+                    <div class="relative flex items-end pb-12">
+                        <!-- Red line -->
+                        <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
+                        <!-- Blue line, positioned to overlap the red line -->
+                        <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem; /* 3px */">
+                        </div>
+                    </div>
+                    <!-- Titre -->
+                    <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">SCHRIJF JE IN!</h2>
+                </div>
+                <!-- Paragraphe -->
+                <p class="text-2xl text-base mb-6 duration-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum efficitur
+                    sapien, id laoreet risus fringilla nec. Sed euismod felis eu libero varius, id semper dui fermentum.
+                    Ut ac lorem at ligula maximus rhoncus eget ac urna. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit."</p>
+                <!-- Bouton -->
+                <button type="submit" onclick="window.location.href='{{ route('registerteams') }}'"
+                    class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
+                    INSCHRIJVING </button>
+            </div>
     </main>
     <main class="bg-white flex-1 pb-20">
         <!-- white spacing : sectie 2 - next feature? -->
@@ -196,22 +218,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script>
-        let menuInitialized = f                       function toggleM                            let list = document.querySele            ');
-                  t menuIcon = document.ge                           con');
-
-                                    ized) {
-            li('hidden');
-                                            = true;
-        }
-        if (l                t.c                den')) {
-        t.remove(menuIcon.na                ;
-                    li                     add('top-[60px]');
-        list.class                dden');
-        menuIcon.name            ';              list.classList.remove('top - [60px]');
-            }
-        }
-    </script>
+    <script src="{{ asset('js blades/welcome.blade.js') }}"></script>
 </body>
 
 </html>
