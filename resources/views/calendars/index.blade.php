@@ -64,7 +64,7 @@
                     <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
                     <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
                 </div>
-                <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">RANKING</h2>
+                <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">SEIZOENSKALENDER</h2>
             </div>
             <p class="pl-20 text-2xl text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
                 ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at.</p>
@@ -84,29 +84,31 @@
 </div>
 </main>
 
-<main class="bg-red-500 items-center justify-center pt-5">
-<div class="mx-auto  bg-gray-100 rounded-lg p-4">
-            <table class="w-full border border-gray-300 text-black">
+<main class="bg-teal-500 items-center justify-center pt-5 pl-80 pr-80 w-full bg-cover" style="background-image: url('futsalcover.jpg');">
+<h1 class="text-center mb-4 text-black">Overzicht kalender</h1>
+    <div class="mx-auto bg-gray-100 rounded-lg p-4">
+        <table class="w-full border border-gray-300 text-black p-2"> <!-- Ajustez la classe de marge ici -->
             <thead>
                 <tr>
-                    <th class="text-center mb-4 text-black">Datum</th>
-                    <th class="text-center mb-4 text-black">Home Team</th>
-                    <th class="text-center mb-4 text-black">Away Team</th>
-                    <th class="text-center mb-4 text-black">Score (Home - Away)</th>
+                    <th class="text-center bg-red-500 mb-4 text-white">Datum</th>
+                    <th class="text-center bg-teal-500 mb-4 text-white">Home Team</th>
+                    <th class="text-center bg-teal-500 mb-4 text-white">Away Team</th>
+                    <th class="text-center bg-red-500 mb-4 text-white">Score (Home - Away)</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($games as $game)
                 <tr>
-                    <td class="text-center bg-red-500 text-white">{{ $game->date }}</td> <!-- Format date as needed -->
-                    <td class="text-center bg-teal-500 text-white">{{ $game->team1->Teamnaam }}</td> <!-- Assuming 'name' is a field in the Team model -->
-                    <td class="text-center bg-teal-500 text-white">{{ $game->team2->Teamnaam }}</td>
-                    <td class="text-center bg-red-500 text-white">{{ $game->scoreTeam1 }} - {{ $game->scoreTeam2 }}</td>
+                    <td class="text-center bg-gray-500 text-black">{{ $game->date }}</td>
+                    <td class="text-center bg-gray-500 text-black">{{ $game->team1->Teamnaam }}</td>
+                    <td class="text-center bg-gray-500 text-black">{{ $game->team2->Teamnaam }}</td>
+                    <td class="text-center bg-gray-500 text-black">{{ $game->scoreTeam1 }} - {{ $game->scoreTeam2 }}</td>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
+    <!--
     <form action="{{ route('generate-schedule') }}" method="POST">
         @csrf
         <button type="submit" class="btn btn-primary">Generate Schedule</button>
@@ -125,7 +127,8 @@
             onclick="return confirm('Are you sure you want to reset the tournament? This action cannot be undone.');">
             Reset Tournament
         </button>
-    </form>
+    </form> -->
+
 </div>
 </main>
     
