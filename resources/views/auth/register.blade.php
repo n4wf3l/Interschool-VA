@@ -163,13 +163,8 @@
                         {{ __('Al ingeschreven?') }}
                     </a>
 
-<<<<<<< HEAD
-                    <x-primary-button class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500" type="submit">
-                        {{ __('Register') }}
-=======
                     <x-primary-button class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500" href="{{url('verify-email')}}">
                         VERZENDEN
->>>>>>> 7b12c039248d2357492751da30c2884404531bac
                     </x-primary-button>
 
                 </div>

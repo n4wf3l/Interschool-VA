@@ -85,10 +85,9 @@
                         </a>
                         <div x-show="open" @click.away="open = false"
                             class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py=0">
-                            <a href="{{ route('login') }}"
-                                class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500">Login</a> @if
-                            (Route::has('register')) <a href="{{ route('register') }}"
-                                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a> @endif
+                            <a href="{{ route('login') }}" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500">Login</a> 
+                            @if (Route::has('register')) 
+                            <a href="{{ route('register') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a> @endif
                         </div>
                     </div> @endauth @endif </div>
         </nav>
