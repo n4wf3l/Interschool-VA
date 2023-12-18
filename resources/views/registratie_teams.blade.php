@@ -104,7 +104,7 @@
                     <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
                 </div>
                 <!-- Titre -->
-                <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">KIES EEN TEAM</h2>
+                <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">KIES EEN TEAM!!!</h2>
             </div>
 
 
