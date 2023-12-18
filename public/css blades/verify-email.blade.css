@@ -1,0 +1,18 @@
+header {
+    background: red;
+    color: white;
+}
+
+main {
+    background: white;
+}
+
+footer {
+    background: red;
+    color: white;
+}
+
+body {
+    font-family: "Saira Condensed", sans-serif;
+    color: black;
+}

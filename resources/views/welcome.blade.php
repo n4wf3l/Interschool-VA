@@ -28,13 +28,13 @@
           <!--Navigation list -->
           <ul class="md:flex md:items-center md:static absolute bg-red w-full left-0 md:py-0 py-4 md:pl-0 pl-7 top-[60px] hidden" style="background-color: red;">
             <li class="mx-4 my-0 md:my-0 bg-red">
-              <a href="#" class="text x1 text-teal-500" style="background-color: red;">HOME</a>
+              <a href="{{ url('/') }}" class="text x1 text-teal-500" style="background-color: red;">HOME</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
               <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">ABOUT</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
-              <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
+              <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
               <a href="{{ url('/rankings') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">RANKING</a>
@@ -57,6 +57,7 @@
 
     <main class="bg-white flex-1">
       <img src="{{asset('backgroundimage.png')}}" alt="" srcset="" class="w-full">
+      
       <ol class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
     <li class="flex md:w-full items-center text-red-500 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
         <span class="hover:text-teal-500 duration-500 flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
@@ -69,12 +70,12 @@
     <li class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
         <span class="hover:text-teal-500 duration-500 flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
             <span class="me-2">2</span>
-            Kies <span class="hidden sm:inline-flex sm:ms-2">Team</span>
+            Kies <span class="hidden sm:inline-flex sm:ms-2">team</span>
         </span>
     </li>
     <li class="flex items-center hover:text-teal-500 duration-500">
     <span class="me-2">3</span>
-            Vul <span class="hidden sm:inline-flex sm:ms-2">Formulier</span>
+            Vul <span class="hidden sm:inline-flex sm:ms-2">formulier</span>
     </li>
 </ol>
       <!-- Container -->

@@ -33,7 +33,7 @@
               <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">ABOUT</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
-              <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
+              <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
               <a href="{{ url('/rankings') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">RANKING</a>
@@ -55,33 +55,27 @@
     </header>
 
 <main class="bg-white flex-1 pt-20">
-    <ol class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
+<ol class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
     <li class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
         <span class="hover:text-teal-500 duration-500 flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-            <span class="me-2">            <button type="button" onclick="window.location.href='{{ url('/') }}'" class="text-white bg-teal-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-1 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            <span class="me-2"><button type="button" onclick="window.location.href='{{ route('registerteams') }}'" class="text-white bg-teal-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-1 text-center inline-flex items-center me-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
     <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5H1m0 0l4-4M1 5l4 4"/>
     </svg>
 </button></span>
-            Home <span class="hidden sm:inline-flex sm:ms-2">inschrijving</span>
+            Kies <span class="hidden sm:inline-flex sm:ms-2">team</span>
         </span>
     </li>
 
-    <li class="flex md:w-full items-center text-red-500 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
-    <span class="me-2">2</span>    
-    <span class="hover:text-teal-500 duration-500 flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
-         
-            Kies <span class="hidden sm:inline-flex sm:ms-2">Team</span>
-        </span>
-    </li>
-
-    <li class="flex items-center hover:text-teal-500 duration-500">
-    
-    <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+    <li class="text-red-500 flex md:w-full items-center text-gray-500 dark:text-blue-500 sm:after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700 hover:text-teal-500 duration-500">
+        <span class="flex items-center after:content-['/'] sm:after:hidden after:mx-2 after:text-gray-200 dark:after:text-gray-500">
+        <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z"/>
             </svg>
-            Vul <span class="hidden sm:inline-flex sm:ms-2">Formulier</span>
+            Vul <span class="hidden sm:inline-flex sm:ms-2">formulier</span>
+        </span>
     </li>
+
 </ol>
     <!-- Container -->
     <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly p-10">
@@ -169,8 +163,13 @@
                         {{ __('Al ingeschreven?') }}
                     </a>
 
+<<<<<<< HEAD
                     <x-primary-button class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500" type="submit">
                         {{ __('Register') }}
+=======
+                    <x-primary-button class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500" href="{{url('verify-email')}}">
+                        VERZENDEN
+>>>>>>> 7b12c039248d2357492751da30c2884404531bac
                     </x-primary-button>
 
                 </div>
