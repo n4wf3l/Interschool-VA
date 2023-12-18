@@ -24,4 +24,11 @@ class Kernel extends ConsoleKernel
 
         require base_path('routes/console.php');
     }
+
+    protected $routeMiddleWare = [
+
+        // define middleware so we can apply it to routes
+        'admin' => \App\Http\Middleware\AdminMiddleware::class
+
+    ];
 }
