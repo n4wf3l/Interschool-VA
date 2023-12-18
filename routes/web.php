@@ -7,6 +7,8 @@ use App\Http\Controllers\MyTeamController;
 use App\Http\Controllers\TournamentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use \App\Http\Middleware\AdminMiddleware;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -65,10 +67,8 @@ Route::get('/rankings', [RankingController::class, 'showRankings'])->name('ranki
 
 Route::get('/admins', [AdminController::class, 'index'])->name('admins.index');
 
-Route::group(['middleware' => 'admin'], function(){
-
-//ALLE ADMIN ROUTES HIER!
-
+Route::middleware('admin')->group(function () {
+    Route::get('/admins', [AdminController::class, 'index'])->name('admins.index');
 });
 
 require __DIR__ . '/auth.php';
