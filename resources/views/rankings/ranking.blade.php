@@ -34,10 +34,10 @@
               <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">ABOUT</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
-              <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
+              <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CALENDAR</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
-              <a href="#" class="text x1 text-teal-500" style="background-color: red;">RANKING</a>
+              <a href="{{ url('/rankings') }}" class="text x1 text-teal-500" style="background-color: red;">RANKING</a>
             </li>
             <li class="mx-4 my-0 md:my-0 bg-red">
               <a href="{{ url('/contacts') }}" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">CONTACT</a>
