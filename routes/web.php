@@ -63,5 +63,11 @@ Route::post('/reset-tournament', [TournamentController::class, 'resetTournament'
 Route::get('/rankings',[RankingController::class, 'showRankings'])->name('rankings.ranking'); //show rankings on ranking page
 
 
+Route::group(['middleware' => 'admin'], function(){
+
+//ALLE ADMIN ROUTES HIER!
+
+});
+
 require __DIR__ . '/auth.php';
 
