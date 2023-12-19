@@ -153,11 +153,16 @@
                     <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">SCHRIJF JE IN!</h2>
                 </div>
                 <!-- Paragraphe -->
-                <p class="text-2xl text-base mb-6 duration-500">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum efficitur
-                    sapien, id laoreet risus fringilla nec. Sed euismod felis eu libero varius, id semper dui fermentum.
-                    Ut ac lorem at ligula maximus rhoncus eget ac urna. Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit."</p>
+                <!-- Updated Paragraphe -->
+               <!-- Updated Paragraphe in Second Person -->
+<p class="text-2xl text-base mb-6 duration-500">
+    Welkom bij de Interschool Football App, waar jij en je medestudenten passie en competitie delen op het voetbalveld!
+    Het platform is toegewijd aan het bevorderen van een levendige voetbalgemeenschap tussen de verschillende campussen van Erasmus Hogeschool Brussel.
+    Of je nu een doorgewinterde speler of een rijzende ster bent, met onze registratiefunctie kun jij een team kiezen om deel te nemen aan een toernooi.
+    Voer jouw spelersdetails in, zoals namen, posities en indrukwekkende spelersstatistieken, om het talent binnen jouw team te laten zien.
+    Vier samen met ons de geest van sportiviteit en teamwork terwijl jij begint aan een spannende reis van interschool football excellence!</p>
+
+
                 <!-- Bouton -->
                 <button type="submit" onclick="window.location.href='{{ route('registerteams') }}'"
                     class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
@@ -173,16 +178,22 @@
             <!-- Eerste kolom (data) -->
             <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
                 <div class="flex items-center">
-                    <img src="{{asset('positionicon.png')}}" class="h-6">
+                    <a href="{{ url('about') }}#onze-campussen">
+                        <img src="{{asset('positionicon.png')}}" class="h-6">
+                    </a>
                     <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
                 </div>
                 <div class="flex items-center mt-2">
+                    <a href="tel:+32499842525">
                     <img src="{{asset('icontel.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">+32 499 84 25 25</p>
+                    <p class="ml-2 text-sm">
+                        <a href="tel:+32499842525">+32 499 84 25 25</p>
                 </div>
                 <div class="flex items-center mt-2">
+                    <a href="mailto:info.va.ehb@gmail.com">
                     <img src="{{asset('messagelogo.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">info.va.ehb@gmail.com</p>
+                    <p class="ml-2 text-sm">
+                      <a href="mailto:info.va.ehb@gmail.com"></a>  info.va.ehb@gmail.com</p>
                 </div>
             </div>
 
@@ -195,9 +206,9 @@
             <!-- Derde kolom (social media)-->
             <div class="w-full md:w-1/2 flex flex-col items-center">
                 <div class="flex space-x-2">
-                    <a href="#" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
-                    <a href="#" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-                    <a href="#" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
+                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
+                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-sm mx-2 pl-4 pr-6">

@@ -16,6 +16,12 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css blades/welcome.blade.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+            integrity = "sha512-xxcJrt0DJGmWdNvhLvGFKV5qZjF5gOvveaBB8VLVJtfBuzxZZ5l70oVxXmYmmujpZyGx2t49geTmO2NlQmRj5g=="
+            crossorigin = "" ></script>
 </head>
 
 <body class="flex flex-col h-screen">
@@ -200,7 +206,7 @@
             dui fermentum at.</p>
     </main>
 
-    <main class="mx-auto mt-20">
+    <main id="onze-campussen" class="mx-auto mt-20">
         <!-- Titre -->
         <div class="flex items-center mb-4 ml-10">
             <!-- Design 2 Vertical -->
@@ -254,6 +260,7 @@
                 </div>
             </div>
         </div>
+        <div id="map" style="height: 400px;"></div>
     </main>
 
     <footer>
@@ -261,16 +268,22 @@
             <!-- Eerste kolom (data) -->
             <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
                 <div class="flex items-center">
-                    <img src="{{asset('positionicon.png')}}" class="h-6">
+                    <a href="{{ url('about') }}#onze-campussen">
+                        <img src="{{asset('positionicon.png')}}" class="h-6">
+                    </a>
                     <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
                 </div>
                 <div class="flex items-center mt-2">
+                    <a href="tel:+32499842525">
                     <img src="{{asset('icontel.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">+32 499 84 25 25</p>
+                    <p class="ml-2 text-sm">
+                        <a href="tel:+32499842525">+32 499 84 25 25</p>
                 </div>
                 <div class="flex items-center mt-2">
+                    <a href="mailto:info.va.ehb@gmail.com">
                     <img src="{{asset('messagelogo.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">info.va.ehb@gmail.com</p>
+                    <p class="ml-2 text-sm">
+                      <a href="mailto:info.va.ehb@gmail.com"></a>  info.va.ehb@gmail.com</p>
                 </div>
             </div>
 
@@ -283,9 +296,9 @@
             <!-- Derde kolom (social media)-->
             <div class="w-full md:w-1/2 flex flex-col items-center">
                 <div class="flex space-x-2">
-                    <a href="#" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
-                    <a href="#" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-                    <a href="#" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
+                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
+                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-sm mx-2 pl-4 pr-6">
@@ -296,6 +309,40 @@
                 </div>
             </div>
         </div>
+
+
+        <script>
+            const map = L.map('map').setView([50.85045, 4.34878], 12);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+            L.marker([50.841778, 4.322869]).addTo(map)
+                .bindPopup('Campus Kaai');
+
+            L.marker([50.847519, 4.343530]).addTo(map)
+                .bindPopup('Campus Bloemenhof');
+
+            L.marker([50.884310, 4.306160]).addTo(map)
+                .bindPopup('Campus Jette');
+
+            L.marker([50.8519583, 4.3423934]).addTo(map)
+                .bindPopup('Campus Kanal');
+
+            L.marker([50.839395, 4.3557524]).addTo(map)
+                .bindPopup('Campus KCB');
+
+            L.marker([50.8529853, 4.3302741]).addTo(map)
+                .bindPopup('Campus RITCS - Bottelarij');
+
+            L.marker([50.8503145, 4.3458185]).addTo(map)
+                .bindPopup('Campus RITCS - Dansaert');
+
+            L.marker([50.8154515, 4.2948993]).addTo(map)
+                .bindPopup('Campus COOVI');
+
+
+        </script>
+
     </footer>
 
     <!-- Scripts -->
