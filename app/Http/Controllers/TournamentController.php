@@ -58,6 +58,7 @@ class TournamentController extends Controller
 
     private function generateRoundRobinSchedule($all_teams)
     {
+        $all_teams = $all_teams->shuffle();
         $totalRounds = $all_teams->count() - 1;
         $matchesPerRound = $all_teams->count() / 2;
         $schedule = [];
