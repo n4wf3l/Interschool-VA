@@ -20,6 +20,7 @@ The administrator is the one who initiates the championship by pressing the butt
 - You can now open your browser and enjoy the platform!
 
 ## Configurations and Structure
+(UPDATE COMING SOON)
 The XAMPP software is essential to activate the Apache and MySQL modules. It is through the 'Admin' button in MySQL that your PhpMyAdmin will open, allowing you to view your seed migrations.
 
 The project is easy for modifications, both in the frontend and the backend. We have structured our code, occasionally adding comments to facilitate modification for external developers: Controllers, Models, Seeders, Routes, Blades (Tailwind), and JS & CSS files. Do you want to work on the project locally? Perform the installation and launch the application via the terminal by typing: "php artisan serve."
@@ -84,4 +85,20 @@ First and foremost, I (Nawfel Ajari - Project Owner) would like to express my gr
 On the technical front, special thanks to Kristian Vasiaj, who fully dedicated himself to the backend, ensuring the realization of all the logical components. I would also like to extend my appreciation to Jack Thyssens for his work on building the database, while also being fully engaged in the backend development. Ismael Bouzrouti was also highly involved in this project: few commits, significant results, that's how his work ethic can be described—implementation of a Maps API, resolution of numerous bugs, and additional assistance in the backend trio. Soufian Jaâtar also played a key role in the frontend, providing valuable support on important details. All of this was developed in record time, within two weeks, divided into two sprints with one to two on-campus sessions.
 
 Special thanks also go to our project supervisors, Professors Robin Bervoets, Tom Aertssens and Ruben Dejonckheere, for their valuable feedback. Their guidance has strengthened our commitment to delivering high-quality work, not only on the technical front but also in the imaginative design of the project, foresight into potential future issues, thorough analysis, and adherence to the disciplines of web development sprints. We appreciate the support of our academic mentors. Additionally, we extend our gratitude to Johan Peeters for his insightful guidance throughout the project. While our project did not explicitly focus on security aspects, we thank Johan for his valuable expertise and contributions to our overall understanding of web development.
+
+# Project Status
+The project is currently under development and will continue until Sunday, December 24, 2023 (deadline). It will be assessed in January 2024 by the mentioned professors.
+
+# Contact
+You can always contact one of our developers or report issues via our LinkedIn social media. Here they are below:
+
+- [Nawfel Ajari](https://www.linkedin.com/in/nawfel-ajari-8a26471a4/) - Project Owner/Frontend Developer/UX/UI Designer
+- [Kristian Vasiaj](https://www.linkedin.com/in/kristian-vasiaj-705b46223/) - Quality Assurance/Fullstack Developer
+- [Ismael Bouzrouti](https://www.linkedin.com/in/ismaelbouzrouti/) - Scrum Master/Backend Developer
+- [Jack Thyssens](https://www.linkedin.com/in/jack-thyssens/) - DBA (Database Administrator)/Backend Developer
+- [Soufian Jaâtar](https://www.linkedin.com/in/soufian-jaatar-05ba34259/) - Frontend Developer
+
+# Examples / Screenshots
+(UPDATE COMING SOON)
+
 
