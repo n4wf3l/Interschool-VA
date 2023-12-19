@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap"
     rel="stylesheet">
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ asset('welcome.blade.css') }}">
+  <link rel="stylesheet" href="{{ asset('css blades/reset-password.blade.css') }}">
 </head>
 
 <body class="flex flex-col h-screen">
@@ -34,11 +34,11 @@
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
-              style="background-color: red;">ABOUT</a>
+              style="background-color: red;">OVER ONS</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500"
-              style="background-color: red;">CALENDAR</a>
+              style="background-color: red;">KALENDER</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/rankings') }}" class="text x1 hover:text-teal-500 duration-500"
@@ -70,19 +70,26 @@
         <!--Login list icon-->
         <div x-data="{ open: false }"
           class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
-          @if (Route::has('login')) @auth <a href="{{ url('/dashboard') }}"
-            class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Dashboard</a>
-          @else <div class="relative">
+          @if (Route::has('login'))
+          @auth
+          <div class="relative rounded-full bg-green-700">
             <a href="#" @click="open = !open">
               <img class="h-7 inline" src="{{ asset('loginicon.png') }}" alt="Login Icon">
             </a>
             <div x-show="open" @click.away="open = false"
-              class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py=0">
-              <a href="{{ route('login') }}" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500">Login</a>
-              @if (Route::has('register')) <a href="{{ route('register') }}"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a> @endif
+              class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img onclick="window.location.href='{{ url('profile') }}'" class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
+                                src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
+                <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
+                  onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
+              </form>
             </div>
-          </div> @endauth @endif </div>
+          </div>
+          @endauth
+          @endif
+        </div>
     </nav>
   </header>
 
@@ -186,7 +193,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="{{ asset('welcome.blade.js') }}"></script>
+  <script src="{{ asset('js blades/reset-password.blade.js') }}"></script>
 </body>
 
 </html>

@@ -39,11 +39,11 @@
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
-              style="background-color: red;">ABOUT</a>
+              style="background-color: red;">OVER ONS</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500"
-              style="background-color: red;">CALENDAR</a>
+              style="background-color: red;">KALENDER</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/rankings') }}" class="text x1 hover:text-teal-500 duration-500"
@@ -81,7 +81,8 @@
               class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <p class="text-white bg-teal-500 text-center text-sm">{{ Auth::user()->name }}</p>
+                                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img onclick="window.location.href='{{ url('profile') }}'" class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
+                                src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
                 <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
                   onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
               </form>
@@ -90,16 +91,6 @@
           @endauth
           @endif
         </div>
-
-        <!-- Code Jack
-          <div x-data="{ open: false }" class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110"> @if (Route::has('login')) @auth <a href="{{ url('/myteam') }}"  class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">my team</a> @else <div class="relative">
-              <a href="#" @click="open = !open">
-                <img class="h-7 inline" src="{{ asset('loginicon.png') }}" alt="Login Icon">
-              </a>
-              <div x-show="open" @click.away="open = false" class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py=0">
-                <a href="{{ route('login') }}" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500">Login</a> @if (Route::has('register')) <a href="{{ route('register') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a> @endif
-              </div>
-            </div> @endauth @endif </div> -->
     </nav>
   </header>
 

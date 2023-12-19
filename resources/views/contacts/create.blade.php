@@ -38,11 +38,11 @@
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
-              style="background-color: red;">ABOUT</a>
+              style="background-color: red;">OVER ONS</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500"
-              style="background-color: red;">CALENDAR</a>
+              style="background-color: red;">KALENDER</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/rankings') }}" class="text x1 hover:text-teal-500 duration-500"
@@ -79,16 +79,17 @@
               @auth
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <p class="text-white bg-teal-500 text-center text-xs">{{ Auth::user()->name }}</p>
+                                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img onclick="window.location.href='{{ url('profile') }}'" class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
+                                src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
                 <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
                   onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
               </form>
               @else
               <a href="{{ route('login') }}"
-                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Login</a>
+                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Log in</a>
               @if (Route::has('register'))
               <a href="{{ route('register') }}"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a>
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Inschrijven</a>
               @endif
               @endauth
             </div>
