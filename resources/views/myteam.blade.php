@@ -107,21 +107,65 @@
     <!-- Container -->
     <div class="bg-gray-100 p-8 md:p-0  md:items-center md:justify-evenly mt-20">
 
-      <h1>Players in Your Team</h1>
+<h1>Your Team: {{ $playerWithGoals->first()->Team->Teamnaam }}</h1>
 
-      @foreach($playerWithGoals as $player)
-      <div>
-        <p>{{ $player->user->name }} {{ $player->user->surname }}</p>
-        <p>Goals: {{ $player->goals }}</p>
-        @if($player->teamleader == 1)
-        <p> teamleader </p>
-        @endif
-        @if($player->reserveplayer == 1)
-        <p> reserve </p>
-        @endif
-      </div>
-      @endforeach
-    </div>
+@if($isTeamLeader)
+        <!-- Display an edit button -->
+        <button onclick="showEditForm()">Edit Team Name</button>
+
+        <!-- Edit Team Name Form -->
+        <div id="editForm" style="display: none;">
+            <form method="POST" action="{{ route('updateTeamName') }}">
+                @csrf
+                <label for="newTeamName">New Team Name:</label>
+                <input type="text" id="newTeamName" name="newTeamName" required>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+
+        <!-- JavaScript to toggle the visibility of the edit form -->
+        <script>
+            function showEditForm() {
+                document.getElementById('editForm').style.display = 'block';
+            }
+        </script>
+    @endif
+
+          </div>
+          <div class="bg-gray-100 p-8 md:p-0  md:items-center md:justify-evenly mt-20">
+
+          <form method="POST" action="{{ route('updatePlayerGoals') }}">
+    @csrf
+
+    @foreach($playerWithGoals as $player)
+        <div>
+            <p>
+                {{ $player->user->name }} {{ $player->user->surname }} 
+                @if($player->teamleader == 1)
+                    teamleader
+                @endif
+                @if($player->reserveplayer == 1)
+                    reserve
+                @endif
+                Goals: 
+                <!-- Display the goals using input fields -->
+                @if($isTeamLeader)
+                    <input type="number" name="player_goals[{{ $player->playerID }}]" value="{{ $player->goals }}" min="0">
+                @else
+                    {{ $player->goals }}
+                @endif
+            </p>
+        </div>
+    @endforeach
+
+    <!-- Display the "Confirm" button for the team leader -->
+    @if($isTeamLeader)
+        <button type="submit">Confirm</button>
+    @endif
+</form>
+
+</div>
+
     <div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
 
       <h1>Games of Your Team</h1>

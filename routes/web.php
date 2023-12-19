@@ -38,6 +38,10 @@ Route::get('/myteam', function () {
 })->name('myteam');
 
 Route::get('/myteam', [MyTeamController::class, 'index'])->name('myteam');
+Route::post('/myteam', [MyTeamController::class, 'updateTeamName'])->name('updateTeamName');
+
+Route::post('/myteam/update', [MyTeamController::class, 'updatePlayerGoals'])->name('updatePlayerGoals');
+
 
 
 
