@@ -202,7 +202,7 @@
             dui fermentum at.</p>
     </main>
 
-    <main class="mx-auto mt-20">
+    <main id="onze-campussen" class="mx-auto mt-20">
         <!-- Titre -->
         <div class="flex items-center mb-4 ml-10">
             <!-- Design 2 Vertical -->
@@ -263,16 +263,22 @@
             <!-- Eerste kolom (data) -->
             <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
                 <div class="flex items-center">
-                    <img src="{{asset('positionicon.png')}}" class="h-6">
+                    <a href="{{ url('about') }}#onze-campussen">
+                        <img src="{{asset('positionicon.png')}}" class="h-6">
+                    </a>
                     <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
                 </div>
                 <div class="flex items-center mt-2">
+                    <a href="tel:+32499842525">
                     <img src="{{asset('icontel.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">+32 499 84 25 25</p>
+                    <p class="ml-2 text-sm">
+                        <a href="tel:+32499842525">+32 499 84 25 25</p>
                 </div>
                 <div class="flex items-center mt-2">
+                    <a href="mailto:info.va.ehb@gmail.com">
                     <img src="{{asset('messagelogo.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">info.va.ehb@gmail.com</p>
+                    <p class="ml-2 text-sm">
+                      <a href="mailto:info.va.ehb@gmail.com"></a>  info.va.ehb@gmail.com</p>
                 </div>
             </div>
 
@@ -285,9 +291,9 @@
             <!-- Derde kolom (social media)-->
             <div class="w-full md:w-1/2 flex flex-col items-center">
                 <div class="flex space-x-2">
-                    <a href="#" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
-                    <a href="#" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-                    <a href="#" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
+                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
+                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-sm mx-2 pl-4 pr-6">
@@ -298,8 +304,6 @@
                 </div>
             </div>
         </div>
-        <div id="map" style="height: 400px;"></div>
-
     </footer>
 
     <!-- Scripts -->
