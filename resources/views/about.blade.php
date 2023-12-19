@@ -16,6 +16,8 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css blades/welcome.blade.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" integrity="sha512-xxcJrt0DJGmWdNvhLvGFKV5qZjF5gOvveaBB8VLVJtfBuzxZZ5l70oVxXmYmmujpZyGx2t49geTmO2NlQmRj5g==" crossorigin=""></script>
 </head>
 
 <body class="flex flex-col h-screen">
@@ -296,6 +298,8 @@
                 </div>
             </div>
         </div>
+        <div id="map" style="height: 400px;"></div>
+
     </footer>
 
     <!-- Scripts -->
