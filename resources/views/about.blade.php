@@ -16,8 +16,12 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css blades/welcome.blade.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js" integrity="sha512-xxcJrt0DJGmWdNvhLvGFKV5qZjF5gOvveaBB8VLVJtfBuzxZZ5l70oVxXmYmmujpZyGx2t49geTmO2NlQmRj5g==" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+            integrity = "sha512-xxcJrt0DJGmWdNvhLvGFKV5qZjF5gOvveaBB8VLVJtfBuzxZZ5l70oVxXmYmmujpZyGx2t49geTmO2NlQmRj5g=="
+            crossorigin = "" ></script>
 </head>
 
 <body class="flex flex-col h-screen">
@@ -256,6 +260,7 @@
                 </div>
             </div>
         </div>
+        <div id="map" style="height: 400px;"></div>
     </main>
 
     <footer>
@@ -298,7 +303,16 @@
                 </div>
             </div>
         </div>
-        <div id="map" style="height: 400px;"></div>
+
+
+        <script>
+            const map = L.map('map').setView([50.85045, 4.34878], 12);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+            L.marker([50.841778, 4.322869]).addTo(map);
+
+        </script>
 
     </footer>
 
