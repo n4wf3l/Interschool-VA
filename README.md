@@ -6,6 +6,8 @@ The captain has a personalized page to modify the team name and enter the final 
 
 The administrator is the one who initiates the championship by pressing the button to generate the schedule. At the end of each season, the administrator can reset the database for a fresh start to a new championship season.
 
+In the future, the student services STUVO and Enigma (student association of Campus Kaai in Anderlecht) are open to collaboration if this project is to be organized.
+
 ## Installation
  - Clone the project on your IDE
  - Open your terminal
