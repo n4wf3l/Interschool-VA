@@ -310,7 +310,30 @@
 
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-            L.marker([50.841778, 4.322869]).addTo(map);
+            L.marker([50.841778, 4.322869]).addTo(map)
+                .bindPopup('Campus Kaai');
+
+            L.marker([50.847519, 4.343530]).addTo(map)
+                .bindPopup('Campus Bloemenhof');
+
+            L.marker([50.884310, 4.306160]).addTo(map)
+                .bindPopup('Campus Jette');
+
+            L.marker([50.8519583, 4.3423934]).addTo(map)
+                .bindPopup('Campus Kanal');
+
+            L.marker([50.839395, 4.3557524]).addTo(map)
+                .bindPopup('Campus KCB');
+
+            L.marker([50.8529853, 4.3302741]).addTo(map)
+                .bindPopup('Campus RITCS - Bottelarij');
+
+            L.marker([50.8503145, 4.3458185]).addTo(map)
+                .bindPopup('Campus RITCS - Dansaert');
+
+            L.marker([50.8154515, 4.2948993]).addTo(map)
+                .bindPopup('Campus COOVI');
+
 
         </script>
 
