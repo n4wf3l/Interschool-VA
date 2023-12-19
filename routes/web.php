@@ -73,8 +73,10 @@ Route::get('/about', function () {
 Route::middleware('admin')->group(function () {
 
     Route::get('/admins', [AdminController::class, 'index'])->name('admins.index');
+    Route::post('/send-message', [AdminController::class, 'sendMessageToAllUsers'])->name('send-message');
 
 });
+
 
 
 Route::middleware('teamleader')->group(function () {

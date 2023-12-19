@@ -48,6 +48,19 @@
         </button>
     </form>
 
+    <h2>Ingeschreven teams</h2>
+    <form action="{{ route('send-message') }}" method="POST">
+        @csrf
+
+        <label for="notif">Message</label>
+        <textarea id="notif" name="notif"></textarea>
+
+        <button type="submit" class="btn btn-danger">
+            Sturen
+        </button>
+    </form>
+
+
 </body>
 
 </html>
