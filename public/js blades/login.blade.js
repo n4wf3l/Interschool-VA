@@ -22,3 +22,13 @@ document
     .addEventListener("click", function (event) {
         event.preventDefault();
     });
+
+  var huidigJaar = new Date().getFullYear();
+  var volgendJaar = huidigJaar + 1;
+
+
+  if (new Date().getMonth() >= 6) {
+    volgendJaar += 1;
+  }
+
+  document.getElementById('jaartal').innerText = huidigJaar + '-' + volgendJaar;
