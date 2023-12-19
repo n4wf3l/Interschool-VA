@@ -38,7 +38,8 @@
               style="background-color: red;">HOME</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
-            <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">ABOUT</a>
+            <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">ABOUT</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500"
@@ -61,7 +62,7 @@
           @if(auth()->check() && (auth()->user()->admin === 1))
           <p class="hidden md:inline">|</p>
           <li class="mx-4 my-0 md:my-0 bg-red">
-            <a href="{{ url('/adminpage') }}" class="text x1 hover:text-teal-500 duration-500"
+            <a href="{{ url('/admins') }}" class="text x1 hover:text-teal-500 duration-500"
               style="background-color: red;">MyADMIN</a>
           </li>
           @endif
