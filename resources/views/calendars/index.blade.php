@@ -110,15 +110,12 @@
           </div>
           <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">SEIZOENSKALENDER</h2>
         </div>
-        <p class="pl-20 text-2xl text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel
-          ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
-          ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea
-          dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis
-          tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id
-          aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo
-          dui fermentum at.</p>
-        <p class="pl-20 mt-10 text-2xl pb-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel
+        <p class="pl-20 text-2xl text-center "> Je kunt je verheugen op het aankomende voetbalseizoen van het Interschool Football App!
+            Het seizoen <span id="jaartal"></span> zal een uitgebreide kalender presenteren met geplande wedstrijden tussen studententeams van alle campussen van het Erasmus Hogeschool Brussel (EHB).
+            De teams zijn exclusief samengesteld uit enthousiaste EHB-studenten, wat zorgt voor spannende en competitieve matches.
+            Blijf op de hoogte van het wedstrijdschema en mis geen enkel moment van deze interschool voetbalcompetitie!</p>
+
+            <p class="pl-20 mt-10 text-2xl pb-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel
           ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
           ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea
           dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor sit

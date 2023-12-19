@@ -156,7 +156,7 @@
                 <!-- Paragraphe -->
                 <!-- Updated Paragraphe -->
                <!-- Updated Paragraphe in Second Person -->
-<p class="text-2xl text-base mb-6 duration-500">
+<p class="text-4xl text-base mb-6 duration-500">
     Welkom bij de Interschool Football App, waar jij en je medestudenten passie en competitie delen op het voetbalveld!
     Het platform is toegewijd aan het bevorderen van een levendige voetbalgemeenschap tussen de verschillende campussen van Erasmus Hogeschool Brussel.
     Of je nu een doorgewinterde speler of een rijzende ster bent, met onze registratiefunctie kun jij een team kiezen om deel te nemen aan een toernooi.

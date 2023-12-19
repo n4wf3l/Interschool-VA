@@ -110,14 +110,10 @@
           </div>
           <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">RANKING</h2>
         </div>
-        <p class="pl-20 text-2xl text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel
-          ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
-          ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea
-          dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis
-          tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id
-          aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo
-          dui fermentum at.</p>
+        <p class="pl-20 text-2xl text-center ">Ontdek de actuele ranglijst van de Interschool Football App! Met behulp van geavanceerde algoritmes worden teams beoordeeld op basis van hun prestaties in verschillende wedstrijden.
+            De ranking geeft een duidelijk overzicht van hoe scholen zich verhouden tot elkaar in het huidige seizoen <span id="jaartal"></span>. Volg de opwindende competitie en zie welke school het hoogst op de ranglijst staat.
+            Blijf op de hoogte van de laatste ontwikkelingen en ontdek wie de koploper is in interschool football excellence!</p>
+
         <p class="pl-20 mt-10 text-2xl pb-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel
           ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
           ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea

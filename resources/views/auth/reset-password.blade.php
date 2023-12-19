@@ -63,21 +63,24 @@
           </li>
           @endif
         </ul>
-        <!--Hamburger menu for responsive  -->
-        <span class="text-3xl cursor-pointer mx-2 md:hidden block" onclick="toggleMenu()">
-          <ion-icon name="menu" id="menuIcon"></ion-icon>
-        </span>
+
         <!--Login list icon-->
         <div x-data="{ open: false }"
           class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
+<<<<<<< HEAD
           @if (Route::has('login'))
           @auth
           <div class="relative rounded-full bg-green-700">
+=======
+          <div class="relative">
+>>>>>>> 5c38eb0486478518f6b43153e6243010a928181c
             <a href="#" @click="open = !open">
-              <img class="h-7 inline" src="{{ asset('loginicon.png') }}" alt="Login Icon">
+              <img class="h-7 inline @auth bg-green-700 rounded-full @endauth" src="{{ asset('loginicon.png') }}"
+                alt="Login Icon">
             </a>
             <div x-show="open" @click.away="open = false"
               class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
+<<<<<<< HEAD
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
                                 <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img onclick="window.location.href='{{ url('profile') }}'" class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
@@ -89,13 +92,32 @@
           </div>
           @endauth
           @endif
+=======
+              @auth
+              <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <p class="text-white bg-teal-500 text-center text-xs">{{ Auth::user()->name }}</p>
+                <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
+                  onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
+              </form>
+              @else
+              <a href="{{ route('login') }}"
+                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Login</a>
+              @if (Route::has('register'))
+              <a href="{{ route('register') }}"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a>
+              @endif
+              @endauth
+            </div>
+          </div>
+>>>>>>> 5c38eb0486478518f6b43153e6243010a928181c
         </div>
     </nav>
   </header>
 
-  <main class="bg-white flex-1">
+  <main class="bg-white flex-1 pt-20">
     <!-- Container -->
-    <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-5">
+    <div class="bg-gray-100 w-full h-80 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-5">
       <!-- Flex Img and Data -->
       <div class="mx-auto md:mx-0 items-center ">
         <!-- Img Blue -->
@@ -132,9 +154,9 @@
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
           </div>
 
-          <div class="flex items-center justify-end mt-4">
+          <div class="flex items-center justify-end mt-4 mr-3">
             <x-primary-button>
-              {{ __('Reset Password') }}
+              {{ __('Wachtwoord veranderen') }}
             </x-primary-button>
           </div>
         </form>
@@ -184,6 +206,7 @@
         </div>
       </div>
     </div>
+
   </footer>
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
