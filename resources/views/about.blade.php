@@ -16,8 +16,12 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('css blades/welcome.blade.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js" integrity="sha512-xxcJrt0DJGmWdNvhLvGFKV5qZjF5gOvveaBB8VLVJtfBuzxZZ5l70oVxXmYmmujpZyGx2t49geTmO2NlQmRj5g==" crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="">
+            integrity = "sha512-xxcJrt0DJGmWdNvhLvGFKV5qZjF5gOvveaBB8VLVJtfBuzxZZ5l70oVxXmYmmujpZyGx2t49geTmO2NlQmRj5g=="
+            crossorigin = "" ></script>
 </head>
 
 <body class="flex flex-col h-screen">
@@ -256,6 +260,7 @@
                 </div>
             </div>
         </div>
+        <div id="map" style="height: 400px;"></div>
     </main>
 
     <footer>
@@ -304,6 +309,40 @@
                 </div>
             </div>
         </div>
+
+
+        <script>
+            const map = L.map('map').setView([50.85045, 4.34878], 12);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+            L.marker([50.841778, 4.322869]).addTo(map)
+                .bindPopup('Campus Kaai');
+
+            L.marker([50.847519, 4.343530]).addTo(map)
+                .bindPopup('Campus Bloemenhof');
+
+            L.marker([50.884310, 4.306160]).addTo(map)
+                .bindPopup('Campus Jette');
+
+            L.marker([50.8519583, 4.3423934]).addTo(map)
+                .bindPopup('Campus Kanal');
+
+            L.marker([50.839395, 4.3557524]).addTo(map)
+                .bindPopup('Campus KCB');
+
+            L.marker([50.8529853, 4.3302741]).addTo(map)
+                .bindPopup('Campus RITCS - Bottelarij');
+
+            L.marker([50.8503145, 4.3458185]).addTo(map)
+                .bindPopup('Campus RITCS - Dansaert');
+
+            L.marker([50.8154515, 4.2948993]).addTo(map)
+                .bindPopup('Campus COOVI');
+
+
+        </script>
+
     </footer>
 
     <!-- Scripts -->
