@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -19,6 +18,11 @@ return new class extends Migration
             $table->integer('scoreTeam1')->nullable();
             $table->integer('scoreTeam2')->nullable();
             $table->timestamps();
+
+            $table->integer('tijdelijkScoreTeam1')->nullable()->default(null);
+            $table->integer('tijdelijkScoreTeam2')->nullable()->default(null);
+
+            $table->boolean('bevestigd')->nullable()->default(null);
 
             $table->foreign('team1ID')->references('TeamID')->on('teams');
             $table->foreign('team2ID')->references('TeamID')->on('teams');

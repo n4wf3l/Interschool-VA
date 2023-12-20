@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder
                 // Loop over elk team
                 for ($team1ID = 1; $team1ID <= $teamsCount; $team1ID++) {
                     // Loop over alle andere teams
-                    for ($team2ID = $team1ID+1; $team2ID <= $teamsCount; $team2ID++) {
+                    for ($team2ID = $team1ID + 1; $team2ID <= $teamsCount; $team2ID++) {
                         // Zorg ervoor dat teams niet tegen zichzelf spelen
                         if ($team1ID != $team2ID) {
                             // Maak een game aan
@@ -106,9 +106,10 @@ class DatabaseSeeder extends Seeder
                                 'scoreTeam2' => rand(0, 5),
                             ]);
                         }
-                     }
-                }
-                */
+                    }
+                    
+                    */
+
 
     }
 }

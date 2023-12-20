@@ -48,7 +48,7 @@
         </button>
     </form>
 
-    <h2>Ingeschreven teams</h2>
+    <h2>Bericht alle aanvoerders</h2>
     <form action="{{ route('send-message') }}" method="POST">
         @csrf
 
@@ -63,6 +63,16 @@
     @if(session('success'))
     <div>{{ session('success') }}</div>
     @endif
+
+    <h2>Onopgeloste resultaten</h2>
+    <ul>
+        @foreach($games as $game)
+        <li>
+            <strong>Game:</strong> Team 1: {{ $game->team1_name }} (Leader: {{ $game->team1_leader_name }}) vs Team 2:
+            {{ $game->team2_name }} (Leader: {{ $game->team2_leader_name }})
+        </li>
+        @endforeach
+    </ul>
 
 
 </body>
