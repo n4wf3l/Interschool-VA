@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Browser Logo & Title -->
-  <title>Interschool Voetbal App</title>
+  <title>EhB Voetbal App</title>
   <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
@@ -113,12 +113,12 @@
           </div>
           <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">RANKING</h2>
         </div>
-        <p class="pl-20 text-2xl text-center ">Ontdek de actuele ranglijst van de Interschool Football App! Met behulp
+        <p class="pl-20 text-2xl text-center ">Ontdek de actuele ranglijst van de EhB Voetball App! Met behulp
           van geavanceerde algoritmes worden teams beoordeeld op basis van hun prestaties in verschillende wedstrijden.
           De ranking geeft een duidelijk overzicht van hoe scholen zich verhouden tot elkaar in het huidige seizoen
           <span id="jaartal"></span>. Volg de opwindende competitie en zie welke school het hoogst op de ranglijst
           staat.
-          Blijf op de hoogte van de laatste ontwikkelingen en ontdek wie de koploper is in interschool football
+          Blijf op de hoogte van de laatste ontwikkelingen en ontdek wie de koploper is in EhB voetbal
           excellence!</p>
 
         <p class="pl-20 mt-10 text-2xl pb-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel
@@ -271,8 +271,9 @@
         </div>
         <div class="text-center mt-2">
           <p class="text-sm mx-2 pl-4 pr-6">
-            Volg de Interschool Football App-site op de sociale media van het ErasmusHogeschool Brussel!
-            Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het interschool voetbalseizoen.
+            Volg de EhB Voetball App op de sociale media!
+            Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het EhB
+            voetbalseizoen.
           </p>
           </p>
         </div>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Browser Logo & Title -->
-    <title>Interschool Voetbal App</title>
+    <title>EhB Voetbal App</title>
     <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -118,7 +118,7 @@
 </div>
 </div>
 </main>
-    
+
     <footer>
       <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
         <!-- Eerste kolom (data) -->
@@ -155,7 +155,9 @@
             </a>
           </div>
           <div class="text-center mt-2">
-            <p class="text-sm mx-2 pl-4 pr-6"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum efficitur sapien, id laoreet risus fringilla nec. </p>
+            <p class="text-sm mx-2 pl-4 pr-6">  Volg de EhB Voetball App op de sociale media!
+                Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het EhB
+                voetbalseizoen. </p>
           </div>
         </div>
       </div>
