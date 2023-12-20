@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Browser Logo & Title -->
-    <title>Interschool Voetbal App</title>
+    <title>EhB Voetbal App</title>
     <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
 
     <!-- Fonts -->

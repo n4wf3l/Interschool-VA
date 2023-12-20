@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Browser Logo & Title -->
-  <title>Interschool Voetbal App</title>
+  <title>EhB Voetbal App</title>
   <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
@@ -114,9 +114,9 @@
           <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">SEIZOENSKALENDER</h2>
         </div>
         <p class="pl-20 text-2xl text-center "> Je kunt je verheugen op het aankomende voetbalseizoen van het
-          Interschool Football App!
+          EhB Voetbal App!
           Het seizoen <span id="jaartal"></span> zal een uitgebreide kalender presenteren met geplande wedstrijden
-          tussen studententeams van alle campussen van het Erasmus Hogeschool Brussel (EHB).
+          tussen studententeams van alle campussen van het Erasmushogeschool Brussel (EHB).
           De teams zijn exclusief samengesteld uit enthousiaste EHB-studenten, wat zorgt voor spannende en competitieve
           matches.
           Blijf op de hoogte van het wedstrijdschema en mis geen enkel moment van deze interschool voetbalcompetitie!
@@ -266,8 +266,9 @@
         </div>
         <div class="text-center mt-2">
           <p class="text-sm mx-2 pl-4 pr-6">
-            Volg de Interschool Football App-site op de sociale media van het ErasmusHogeschool Brussel!
-            Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het interschool voetbalseizoen.
+            Volg de EhB Voetball App op de sociale media!
+                        Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het EhB
+                        voetbalseizoen.
           </p>
           </p>
         </div>

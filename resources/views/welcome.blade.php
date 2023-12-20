@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Browser Logo & Title -->
-    <title>Interschool Voetbal App</title>
+    <title>EhB Voetbal App</title>
     <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
 
     <!-- Fonts -->
@@ -160,7 +160,7 @@
                 <!-- Updated Paragraphe -->
                 <!-- Updated Paragraphe in Second Person -->
                 <p class="text-4xl text-base mb-6 duration-500">
-                    Welkom bij de Interschool Football App, waar jij en je medestudenten passie en competitie delen op
+                    Welkom bij de EhB Voetbal App, waar jij en je medestudenten passie en competitie delen op
                     het voetbalveld!
                     Het platform is toegewijd aan het bevorderen van een levendige voetbalgemeenschap tussen de
                     verschillende campussen van Erasmus Hogeschool Brussel.
@@ -169,7 +169,7 @@
                     Voer jouw spelersdetails in, zoals namen, posities en indrukwekkende spelersstatistieken, om het
                     talent binnen jouw team te laten zien.
                     Vier samen met ons de geest van sportiviteit en teamwork terwijl jij begint aan een spannende reis
-                    van interschool football excellence!</p>
+                    van EhB Voetbal  excellence!</p>
 
 
                 <!-- Bouton -->
@@ -226,8 +226,8 @@
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-sm mx-2 pl-4 pr-6">
-                        Volg de Interschool Football App-site op de sociale media van het ErasmusHogeschool Brussel!
-                        Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het interschool
+                        Volg de EhB Voetball App op de sociale media!
+                        Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het EhB
                         voetbalseizoen.
                     </p>
                 </div>
