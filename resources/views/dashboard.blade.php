@@ -152,24 +152,6 @@
           </p>
         </div>
       </div>
-      <!-- Derde kolom (social media)-->
-      <div class="w-full md:w-1/2 flex flex-col items-center">
-        <div class="flex space-x-2">
-          <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
-              src="{{asset('iconfacebook.png')}}" class="h-6"></a>
-          <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
-              src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-          <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}"
-              class="h-6"></a>
-        </div>
-        <div class="text-center mt-2">
-          <p class="text-sm mx-2 pl-4 pr-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit.
-            Integer vestibulum efficitur sapien, id laoreet risus fringilla nec.
-          </p>
-        </div>
-      </div>
     </div>
   </footer>
   <!-- Scripts -->
