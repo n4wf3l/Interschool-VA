@@ -90,16 +90,6 @@
           @endauth
           @endif
         </div>
-
-        <!-- Code Jack
-          <div x-data="{ open: false }" class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110"> @if (Route::has('login')) @auth <a href="{{ url('/myteam') }}"  class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">my team</a> @else <div class="relative">
-              <a href="#" @click="open = !open">
-                <img class="h-7 inline" src="{{ asset('loginicon.png') }}" alt="Login Icon">
-              </a>
-              <div x-show="open" @click.away="open = false" class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py=0">
-                <a href="{{ route('login') }}" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500">Login</a> @if (Route::has('register')) <a href="{{ route('register') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a> @endif
-              </div>
-            </div> @endauth @endif </div> -->
     </nav>
   </header>
 
@@ -132,11 +122,9 @@
     @endif
 
           </div>
-          <div class="bg-gray-100 p-8 md:p-0  md:items-center md:justify-evenly mt-20">
 
-          <form method="POST" action="{{ route('updatePlayerGoals') }}">
-    @csrf
-
+          <!-- spelers + goals -->
+          <div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
     @foreach($playerWithGoals as $player)
         <div>
             <p>
@@ -147,60 +135,80 @@
                 @if($player->reserveplayer == 1)
                     reserve
                 @endif
-                Goals: 
-                <!-- Display the goals using input fields -->
-                @if($isTeamLeader)
-                    <input type="number" name="player_goals[{{ $player->playerID }}]" value="{{ $player->goals }}" min="0">
-                @else
-                    {{ $player->goals }}
-                @endif
+                Goals: {{ $player->goals }}
             </p>
         </div>
     @endforeach
-
-    <!-- Display the "Confirm" button for the team leader -->
-    @if($isTeamLeader)
-        <button type="submit">Confirm</button>
-    @endif
-</form>
-
 </div>
 
-<div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
-    <h1>Games of Your Team</h1>
+    <!-- Games van het team + score indienen-->
+    <div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
+        <h1>Games of Your Team</h1>
 
-    @foreach($teamGames as $game)
-    <div>
-        <p>{{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }} {{ $game->team1->Teamnaam }} VS {{
-            $game->team2->Teamnaam }} score: {{$game->scoreTeam1}} - {{$game->scoreTeam2}}
-        </p>
+        @foreach($teamGames as $game)
+            <div>
+                <p>{{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }} {{ $game->team1->Teamnaam }} VS {{
+                    $game->team2->Teamnaam }} score: {{$game->scoreTeam1}} - {{$game->scoreTeam2}}
+                </p>
 
-        <!-- Input fields for team leaders to save temporary scores -->
-        @if($isTeamLeader && $game->scoreTeam1 === null && $game->scoreTeam2 === null)
-    @php
-        $disableInput = request()->cookie('scoreEntered');
-    @endphp
+                <!-- Input fields for team leaders to save temporary scores -->
+                @if($isTeamLeader && $game->scoreTeam1 === null && $game->scoreTeam2 === null)
+                    @php
+                        $disableInput = request()->cookie('scoreEntered');
+                    @endphp
 
-    <form method="POST" action="{{ route('saveTemporaryScores', ['gameId' => $game->gameID]) }}">
-        @csrf
-        <label for="tijdelijkScoreTeam1">Temporary Score Team 1:</label>
-        <input type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" required {{ $disableInput ? 'disabled' : '' }}>
-        <label for="tijdelijkScoreTeam2">Temporary Score Team 2:</label>
-        <input type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" required {{ $disableInput ? 'disabled' : '' }}>
-        <button type="submit" {{ $disableInput ? 'disabled' : '' }}>Save Temporary Scores</button>
-    </form>
-@endif
+                    <form method="POST" action="{{ route('saveTemporaryScores', ['gameId' => $game->gameID]) }}">
+                        @csrf
+                        <label for="tijdelijkScoreTeam1">Temporary Score Team 1:</label>
+                        <input type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" required {{ $disableInput ? 'disabled' : '' }}>
+                        <label for="tijdelijkScoreTeam2">Temporary Score Team 2:</label>
+                        <input type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" required {{ $disableInput ? 'disabled' : '' }}>
 
-        <!-- Display other game details as needed -->
+
+                        <br><br>
+
+                              @foreach($playerWithGoals as $player)
+                                <div>
+                                    <p>
+                                        {{ $player->user->name }} {{ $player->user->surname }} 
+                                        @if($player->teamleader == 1)
+                                            teamleader
+                                        @endif
+                                        @if($player->reserveplayer == 1)
+                                            reserve
+                                        @endif
+                                        Goals: 
+                                        <!-- Display the goals using input fields -->
+                                        @if($isTeamLeader)
+                                            <input type="number" name="player_goals[{{ $player->playerID }}]" value="0" min="0">
+                                        @else
+                                            {{ $player->goals }}
+                                        @endif
+                                    </p>
+                                </div>
+                            @endforeach
+
+                        <br>
+                        <button type="submit" {{ $disableInput ? 'disabled' : '' }}>Save Temporary Scores</button>
+                        <br><br>
+                        
+
+
+
+                    </form>
+                @endif
+
+                <!-- Display other game details as needed -->
+            </div>
+        @endforeach
     </div>
-    @endforeach
-</div>
 
-@if(session('showAlert'))
-    <script>
-        alert("{{ session('Alert!') }}");
-    </script>
-@endif
+    @if(session('showAlert'))
+        <script>
+            alert("{{ session('Alert!') }}");
+        </script>
+    @endif
+</div>
 
   </main>
 
