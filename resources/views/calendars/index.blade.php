@@ -122,14 +122,11 @@
           Blijf op de hoogte van het wedstrijdschema en mis geen enkel moment van deze interschool voetbalcompetitie!
         </p>
 
-        <p class="pl-20 mt-10 text-2xl pb-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel
-          ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
-          ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea
-          dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis
-          tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id
-          aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo
-          dui fermentum at.</p>
+        <p class="pl-20 mt-10 text-2xl pb-50">Ontdek de hoogtepunten van het seizoen en blijf op de hoogte van alle wedstrijddata en -tijden.
+            Wij vinden het van uiterst belang dat jij deze nauwlettend volgt om geen enkel moment van het interschool voetbalseizoen te missen.
+            Als liefhebber van voetbal op topniveau wil je geen enkele uitslag, geen enkele wedstrijd overslaan.
+            Bekijk de resultaten van de seizoensduels en markeer de kalender met de meeslepende ontmoetingen tussen EhB-studenten.
+            Mis deze professioneel opgezette competitie niet en beleef het voetbal op het hoogste niveau!</p>
       </div>
 
       <div class="flex flex-row items-center pr-20">
@@ -266,9 +263,8 @@
         </div>
         <div class="text-center mt-2">
           <p class="text-sm mx-2 pl-4 pr-6">
-            Volg de EhB Voetball App op de sociale media!
-                        Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het EhB
-                        voetbalseizoen.
+            Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws,
+                        updates en spannende momenten van het EhB-voetbalseizoen.
           </p>
           </p>
         </div>

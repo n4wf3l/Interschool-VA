@@ -300,9 +300,8 @@
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-sm mx-2 pl-4 pr-6">
-                        Volg de Interschool Football App-site op de sociale media van het ErasmusHogeschool Brussel!
-                        Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het interschool
-                        voetbalseizoen.
+                        Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws,
+                        updates en spannende momenten van het EhB-voetbalseizoen.
                     </p>
                     </p>
                 </div>

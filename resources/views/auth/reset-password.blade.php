@@ -67,20 +67,15 @@
         <!--Login list icon-->
         <div x-data="{ open: false }"
           class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
-<<<<<<< HEAD
           @if (Route::has('login'))
           @auth
           <div class="relative rounded-full bg-green-700">
-=======
-          <div class="relative">
->>>>>>> 5c38eb0486478518f6b43153e6243010a928181c
             <a href="#" @click="open = !open">
               <img class="h-7 inline @auth bg-green-700 rounded-full @endauth" src="{{ asset('loginicon.png') }}"
                 alt="Login Icon">
             </a>
             <div x-show="open" @click.away="open = false"
               class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
-<<<<<<< HEAD
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
                                 <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img onclick="window.location.href='{{ url('profile') }}'" class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
@@ -92,25 +87,6 @@
           </div>
           @endauth
           @endif
-=======
-              @auth
-              <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <p class="text-white bg-teal-500 text-center text-xs">{{ Auth::user()->name }}</p>
-                <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
-                  onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
-              </form>
-              @else
-              <a href="{{ route('login') }}"
-                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Login</a>
-              @if (Route::has('register'))
-              <a href="{{ route('register') }}"
-                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Register</a>
-              @endif
-              @endauth
-            </div>
-          </div>
->>>>>>> 5c38eb0486478518f6b43153e6243010a928181c
         </div>
     </nav>
   </header>
@@ -200,9 +176,8 @@
           </a>
         </div>
         <div class="text-center mt-2">
-          <p class="text-sm mx-2 pl-4 pr-6"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vehicula
-            libero at quam tristique, ut volutpat metus hendrerit. Integer vestibulum efficitur sapien, id laoreet risus
-            fringilla nec. </p>
+          <p class="text-sm mx-2 pl-4 pr-6">  Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws,
+            updates en spannende momenten van het EhB-voetbalseizoen. </p>
         </div>
       </div>
     </div>

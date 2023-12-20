@@ -113,22 +113,16 @@
           </div>
           <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">RANKING</h2>
         </div>
-        <p class="pl-20 text-2xl text-center ">Ontdek de actuele ranglijst van de EhB Voetball App! Met behulp
-          van geavanceerde algoritmes worden teams beoordeeld op basis van hun prestaties in verschillende wedstrijden.
-          De ranking geeft een duidelijk overzicht van hoe scholen zich verhouden tot elkaar in het huidige seizoen
-          <span id="jaartal"></span>. Volg de opwindende competitie en zie welke school het hoogst op de ranglijst
-          staat.
-          Blijf op de hoogte van de laatste ontwikkelingen en ontdek wie de koploper is in EhB voetbal
-          excellence!</p>
+        <p class="pl-20 text-2xl text-center">Ontdek nu de actuele ranglijst van de EhB Voetbal App! Met ons geavanceerde Puntensysteem worden studententeams van alle campussen van Erasmushogeschool Brussel beoordeeld op basis van hun prestaties in verschillende wedstrijden.
+            Dit zorgt voor een nauwkeurige weergave van de prestaties van elk team gedurende het seizoen <span id="jaartal"></span>.
+            Mis niets van de actie en blijf op de hoogte van welk team de koploper is in EhB voetbal excellence!</p>
 
-        <p class="pl-20 mt-10 text-2xl pb-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et diam vel
-          ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
-          ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea
-          dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor sit
-          amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus quis
-          tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id
-          aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo
-          dui fermentum at.</p>
+            <p class="pl-20 mt-10 text-2xl pb-50">Als echte sportliefhebber wil je altijd op de hoogte zijn van de laatste ontwikkelingen.
+                Daarom wordt onze Standings-functie automatisch bijgewerkt, waardoor je in realtime de huidige ranglijst van studententeams kunt bekijken op basis van de gedurende het seizoen behaalde punten.
+                Of je nu thuis bent, onderweg of op het veld, je hebt altijd een actueel overzicht van de competitie binnen handbereik.
+                Bovendien houden we niet alleen rekening met teamprestaties, maar handhaven we ook een dynamische ranglijst van Top Scorers en Key Passers, waar individuele prestaties worden benadrukt en buitengewone bijdragen aan het team worden erkend.
+                Welkom bij de pinnacle van interschoolvoetbal excellence!</p>
+
       </div>
 
       <div class="flex flex-row items-center pr-20">
@@ -271,9 +265,8 @@
         </div>
         <div class="text-center mt-2">
           <p class="text-sm mx-2 pl-4 pr-6">
-            Volg de EhB Voetball App op de sociale media!
-            Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het EhB
-            voetbalseizoen.
+            Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws,
+            updates en spannende momenten van het EhB-voetbalseizoen.
           </p>
           </p>
         </div>
