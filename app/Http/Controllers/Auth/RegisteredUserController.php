@@ -50,7 +50,7 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'lowercase', 'email', Rule::unique('users', 'email')],
             'reserveplayer' => ['required'],
             'teamleader' => ['required'],
-            'password' => ['required', 'confirmed'],
+            'password' => ['required', 'confirmed', 'min: 8'],
 
 
         ], [
@@ -66,6 +66,7 @@ class RegisteredUserController extends Controller
             'teamleader.required' => 'Selecteer of je een teamleider bent',
             'password.required' => 'Je moet een wachtwoord ingeven',
             'password.confirmed' => 'Wachtwoord bevestiging komt niet overeen',
+            'password.min' => 'Wachtwoord moet minstens 8 karakters zijn'
 
         ]);
 
