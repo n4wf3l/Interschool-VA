@@ -201,23 +201,21 @@ public function saveTemporaryScores(SaveTemporaryScoresRequest $request, $gameId
                     $game->save();
 
                     // Stel de cookie in zodat het invoerveld wordt uitgeschakeld
-                    return redirect()->back()->with('Alert!', 'Scores zijn door beide teamleaders bevestigd')->with('showAlert', true);
-                    //->cookie('scoreEntered', true, 28.000);
+                    return redirect()->back()->with('Alert!', 'Scores zijn door beide teamleaders bevestigd')->with('showAlert', true)->cookie('scoreEntered', true, 28.000);
                 } else {
                     // Scores zijn niet gelijk
 
                     $game->bevestigd = 0;
                     $game->save();
 
-                    return redirect()->back()->with('Alert!', 'Scores zijn verschillend, de admin neemt contact op met u')->with('showAlert', true);
-                    //->cookie('scoreEntered', true, 28.000);
+                    return redirect()->back()->with('Alert!', 'Scores zijn verschillend, de admin neemt contact op met u')->with('showAlert', true)->cookie('scoreEntered', true, 28.000);
         }
         } else {
             // If there are no temporary scores, save the entered scores
             $game->tijdelijkScoreTeam1 = $request->input('tijdelijkScoreTeam1');
             $game->tijdelijkScoreTeam2 = $request->input('tijdelijkScoreTeam2');
             $game->save();
-            $message = 'Temporary scores saved successfully.';
+            return redirect()->back()->with('Alert!', 'tijdelijke score is doorgevoerd')->with('showAlert', true)->cookie('scoreEntered', true, 28.000);
         }
     }
 

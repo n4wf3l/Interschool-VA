@@ -180,7 +180,7 @@
                                         Goals: 
                                         <!-- Display the goals using input fields -->
                                         @if($isTeamLeader)
-                                            <input type="number" name="player_goals[{{ $player->playerID }}]" value="0" min="0">
+                                            <input type="number" name="player_goals[{{ $player->playerID }}]" value="0" min="0" {{ $disableInput ? 'disabled' : '' }}>
                                         @else
                                             {{ $player->goals }}
                                         @endif
