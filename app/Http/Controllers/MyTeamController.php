@@ -8,6 +8,8 @@ use App\Models\games;
 use App\Http\Requests\StoreteamsRequest;
 use App\Http\Requests\UpdateteamsRequest;
 use App\Http\Requests\updatePlayerGoalsRequest;
+use App\Http\Requests\SaveTemporaryScoresRequest;
+
 
 use App\Http\Requests\StoreTeamNameRequest;
 use Illuminate\Support\Facades\Auth;
@@ -106,6 +108,57 @@ public function updateTeamName(StoreTeamNameRequest $request)
 
     return redirect()->route('myteam')->with('status', 'Player goals updated successfully.');
 }
+
+
+
+public function saveTemporaryScores(SaveTemporaryScoresRequest $request, $gameId)
+{
+    // Validatie van invoergegevens
+
+    $request->validate([
+        'tijdelijkScoreTeam1' => 'required|integer',
+        'tijdelijkScoreTeam2' => 'required|integer',
+    ]);
+
+    $game = Games::find($gameId);
+
+    // Controleer of er al tijdelijke scores zijn opgeslagen
+    if ($game->tijdelijkScoreTeam1 !== null && $game->tijdelijkScoreTeam2 !== null) {
+        // Controleer of de ingevoerde scores gelijk zijn aan de opgeslagen tijdelijke scores
+        if ($game->tijdelijkScoreTeam1 == $request->input('tijdelijkScoreTeam1') &&
+            $game->tijdelijkScoreTeam2 == $request->input('tijdelijkScoreTeam2')) {
+            // Scores zijn gelijk
+            // Update de gamescores met de tijdelijke scores
+
+            $game->scoreTeam1 = $request->input('tijdelijkScoreTeam1');
+            $game->scoreTeam2 = $request->input('tijdelijkScoreTeam2');
+            $game->bevestigd = 1;
+            $game->save();
+
+            return redirect()->back()->with('Alert!', 'Scores zijn door beide teamleaders bevestigd')->with('showAlert', true);
+
+        } else {
+            // Scores zijn niet gelijk
+
+            $game->bevestigd = 0;
+            $game->save();
+
+            return redirect()->back()->with('Alert!', 'Scores zijn verschillend, de admin neemt contact op met u')->with('showAlert', true);
+        }
+    }
+    else{
+
+    // Als er nog geen tijdelijke scores zijn opgeslagen, sla de ingevoerde scores op
+    $game->tijdelijkScoreTeam1 = $request->input('tijdelijkScoreTeam1');
+    $game->tijdelijkScoreTeam2 = $request->input('tijdelijkScoreTeam2');
+    
+    $game->save();
+
+    // Redirect of andere logica na het opslaan van de tijdelijke scores
+    return redirect()->back()->with('status', 'Temporary scores saved successfully.');
+    }
+}
+
 
 
 

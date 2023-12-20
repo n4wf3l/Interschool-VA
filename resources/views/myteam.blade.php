@@ -166,22 +166,38 @@
 
 </div>
 
-    <div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
+<div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
+    <h1>Games of Your Team</h1>
 
-      <h1>Games of Your Team</h1>
-
-      @foreach($teamGames as $game)
-      <div>
+    @foreach($teamGames as $game)
+    <div>
         <p>{{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }} {{ $game->team1->Teamnaam }} VS {{
-          $game->team2->Teamnaam }} {{ $game->scoreTeam1 }} {{ $game->scoreTeam2 }} </p>
+            $game->team2->Teamnaam }} score: {{$game->scoreTeam1}} - {{$game->scoreTeam2}}
+        </p>
 
-        <!-- Add other game details as needed -->
-      </div>
+        <!-- Input fields for team leaders to save temporary scores -->
+        @if($isTeamLeader && $game->scoreTeam1 === null && $game->scoreTeam2 === null)
+        <form method="POST" action="{{ route('saveTemporaryScores', ['gameId' => $game->gameID]) }}">
+            @csrf
+            <label for="tijdelijkScoreTeam1">Temporary Score Team 1:</label>
+            <input type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" required>
+            <label for="tijdelijkScoreTeam2">Temporary Score Team 2:</label>
+            <input type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" required>
+            <button type="submit">Save Temporary Scores</button>
+        </form>
+        @endif
 
-
-      @endforeach
+        <!-- Display other game details as needed -->
     </div>
-    </div>
+    @endforeach
+</div>
+
+@if(session('showAlert'))
+    <script>
+        alert("{{ session('Alert!') }}");
+    </script>
+@endif
+
   </main>
 
   <footer>

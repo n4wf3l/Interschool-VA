@@ -16,9 +16,14 @@ return new class extends Migration
             $table->unsignedBigInteger('team1ID');
             $table->unsignedBigInteger('team2ID');
             $table->dateTime('date');
-            $table->integer('scoreTeam1')->nullable();
-            $table->integer('scoreTeam2')->nullable();
+            $table->integer('scoreTeam1')->nullable()->default(null);
+            $table->integer('scoreTeam2')->nullable()->default(null);
             $table->timestamps();
+
+            $table->integer('tijdelijkScoreTeam1')->nullable()->default(null);
+            $table->integer('tijdelijkScoreTeam2')->nullable()->default(null);
+
+            $table->boolean('bevestigd')->nullable()->default(null);
 
             $table->foreign('team1ID')->references('TeamID')->on('teams');
             $table->foreign('team2ID')->references('TeamID')->on('teams');
