@@ -11,8 +11,10 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
+
+
 
 class RegisteredUserController extends Controller
 {
@@ -45,10 +47,25 @@ class RegisteredUserController extends Controller
         $request->validate([
             'name' => ['required'],
             'surname' => ['required'],
-            'email' => ['required', 'lowercase', 'email'],
+            'email' => ['required', 'lowercase', 'email', Rule::unique('users', 'email')],
             'reserveplayer' => ['required'],
             'teamleader' => ['required'],
             'password' => ['required', 'confirmed'],
+
+
+        ], [
+
+            //error messages wanneer een waarde niet is gevalideerd
+            'name.required' => 'Je moet een naam ingeven',
+            'surname.required' => 'Je moet een achternaam ingeven',
+            'email.required' => 'Je moet een e-mailadres ingeven',
+            'email.lowercase' => 'Het e-mailadres moet in kleine letters zijn',
+            'email.email' => 'Ongeldig e-mailadres formaat',
+            'email.unique' => 'Dit e-mailadres is al in gebruik',
+            'reserveplayer.required' => 'Selecteer of je een reservespeler bent',
+            'teamleader.required' => 'Selecteer of je een teamleider bent',
+            'password.required' => 'Je moet een wachtwoord ingeven',
+            'password.confirmed' => 'Wachtwoord bevestiging komt niet overeen',
 
         ]);
 
