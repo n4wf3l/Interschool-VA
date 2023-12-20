@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Browser Logo & Title -->
-    <title>Interschool Voetbal App</title>
+    <title>Over Ons - EhB Voetbal App</title>
     <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
 
     <!-- Fonts -->
@@ -15,7 +15,7 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="{{ asset('css blades/welcome.blade.css') }}">
+    <link rel="stylesheet" href="{{ asset('css blades/about.blade.css') }}">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -127,33 +127,28 @@
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
             </div>
             <!-- Titre -->
-            <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">ABOUT</h2>
+            <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">OVER ONS</h2>
         </div>
 
-        <p class="pl-20 pr-20 text-2xl text-center pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
-            diam vel
-            ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
-            ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea
-            dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor
-            sit
-            amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus
-            quis
-            tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id
-            aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac
-            commodo
-            dui fermentum at.</p>
-        <p class="pl-20 pr-20 text-2xl text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
-            diam vel
-            ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
-            ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea
-            dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor
-            sit
-            amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus
-            quis
-            tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id
-            aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac
-            commodo
-            dui fermentum at.</p>
+        <p class="pl-80 pr-80 text-1xl text-center pb-5">
+            EhB Voetbal App (EhB VA) werd bedacht door Nawfel Ajari en ontwikkeld in 2023 in samenwerking met
+            Kristian Vasiaj, Jack Thyssens, Ismael Bouzrouti en Soufian Jaâtar voor een schoolproject onder toezicht van
+            de informaticadocenten Robin Bervoets, Tom Aertssens en Ruben Dejonckheere. Met de steun van STUVO en Enigma
+            werd het gelanceerd in 2024 met als doel het bevorderen van een vermakelijk en sportief aspect van de
+            Erasmushogeschool Brussel en haar acht campussen.</p>
+        <p class="pl-80 pr-80 text-1xl text-center ">EhB Voetbal App haalt zijn inspiratie uit de
+            Erasmushogeschool Brussel (EhB), die haar naam ontleent aan de humanistische filosoof Desiderius Erasmus. In
+            lijn met de EhB kiezen wij voor een humanistisch perspectief in onze benadering. Het recht op vrijheid en
+            menselijke waardigheid, het geloof in menselijk potentieel, open en rationele dialoog, en het nemen van
+            zelfverantwoordelijkheid staan centraal in onze missie. Deze verantwoordelijkheid voor de wereld, de
+            maatschappij en onszelf vertaalt zich in duurzaamheid in de breedste zin van het woord. Als je de vraag
+            krijgt welke sport het populairst is in België, zal je waarschijnlijk antwoorden... wielrennen! Dat klopt
+            helemaal, en we kunnen zelfs tennis aan dat lijstje toevoegen. Wij geven echter de voorkeur aan teamsporten,
+            omdat dit een mentale impact heeft op samenleven en de samenwerking tussen studenten bevordert. Dit is iets
+            fundamenteels en zeer representatief voor onze school. Bij EhB Voetbal App geloven we in de kracht
+            van sport om niet alleen individuele vaardigheden te ontwikkelen, maar ook om een hechte gemeenschap te
+            creëren waarin samenwerking en vriendschap centraal staan. Doe mee en ontdek hoe wij sport en teamgeest
+            vieren!</p>
 
         <div class="relative flex flex-row-reverse items-center ml-10">
             <!-- Design 2 Vertical à droite -->
@@ -166,8 +161,7 @@
 
     </main>
 
-    <main>
-
+    <main class="flex flex-col items-center pt-20">
         <div class="flex flex-row items-center ml-10">
             <!-- Design 2 Vertical -->
 
@@ -182,32 +176,23 @@
             <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">REGELS</h2>
         </div>
 
-        <p class="pl-20 pr-20 text-2xl text-center pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            et
-            diam vel
-            ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
-            ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea
-            dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor
-            sit
-            amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus
-            quis
-            tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id
-            aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac
-            commodo
-            dui fermentum at.</p>
-        <p class="pl-20 pr-20 text-2xl text-center ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et
-            diam
-            vel
-            ligula malesuada pellentesque. Curabitur auctor, risus quis tempor tincidunt, tortor mi convallis nulla,
-            ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id aliquet euismod. In hac habitasse platea
-            dictumst. Nulla facilisi. Integer auctor consequat libero, ac commodo dui fermentum at. Lorem ipsum dolor
-            sit
-            amet, consectetur adipiscing elit. Sed et diam vel ligula malesuada pellentesque. Curabitur auctor, risus
-            quis
-            tempor tincidunt, tortor mi convallis nulla, ut vestibulum purus massa ac orci. Vestibulum dignissim nunc id
-            aliquet euismod. In hac habitasse platea dictumst. Nulla facilisi. Integer auctor consequat libero, ac
-            commodo
-            dui fermentum at.</p>
+        <div class="flex flex-col items-center">
+            <p class="pl-80 pr-80 text-1xl text-center pb-5">Wij heten alle studenten van de Erasmushogeschool Brussel
+                van harte welkom bij het EhB Voetbal App, een opwindend evenement dat ontworpen is om sportiviteit,
+                teamgeest en plezier te bevorderen. Voor een succesvol verloop van het toernooi vragen we alle
+                deelnemers om de regels en richtlijnen zorgvuldig door te nemen en zich hieraan te houden.</p>
+            <!-- ... Voeg hier de andere paragrafen toe -->
+        </div>
+
+        <div class="flex flex-col items-center">
+            <p class="pl-80 pr-80 text-1xl text-center pb-5">Met deze puntentelling komt de cruciale vraag naar voren:
+                welk team zal zichzelf tot kampioen van de EhB-competitie kronen aan het einde van dit seizoen? Elk team
+                heeft de kans om zijn talent en vastberadenheid te tonen en op te klimmen naar de hoogste positie in de
+                ranking. De spanning stijgt en de competitie is fel. Wie zal de felbegeerde titel mee naar huis nemen?
+                Het antwoord ligt in de handen van de gepassioneerde en getalenteerde teams die deelnemen aan het
+                Interschool Voetbaltoernooi. Laat het spel beginnen en moge het beste team zegevieren!</p>
+        </div>
+
     </main>
 
     <main id="onze-campussen" class="mx-auto mt-20">
@@ -261,6 +246,10 @@
                 <div class="flex items-center mb-2">
                     <img src="{{ asset('positionicon.png') }}" class="h-7">
                     <p class="ml-2 text-sm">Emile Grysonlaan 1, 1070 Anderlecht (Campus COOVI)</p>
+                </div>
+                <div class="flex items-center mb-2 pb-5 pt-5 text-red-500">Locatie :
+                    <img src="{{ asset('positionicon.png') }}" class="h-7">
+                    <p class="text-sm text-black">Pleinlaan 2, 1040 Etterbeek (VUB)</p>
                 </div>
             </div>
         </div>
@@ -326,7 +315,7 @@
 
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-            L.marker([50.841778, 4.322869]).addTo(map)
+            L.marker([50.841778, 4.322869], { icon: L.divIcon({ className: 'red-marker', html: '<div></div>' }) }).addTo(map)
                 .bindPopup('Campus Kaai');
 
             L.marker([50.847519, 4.343530]).addTo(map)
@@ -349,6 +338,12 @@
 
             L.marker([50.8154515, 4.2948993]).addTo(map)
                 .bindPopup('Campus COOVI');
+
+            L.marker([50.8154515, 4.2948993]).addTo(map)
+                .bindPopup('Campus COOVI');
+
+            L.marker([50.8455, 4.3557]).addTo(map)
+                .bindPopup('VUB (Wedstrijdlocatie)');
         </script>
 
     </footer>
