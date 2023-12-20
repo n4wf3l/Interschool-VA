@@ -131,14 +131,14 @@
     @foreach($playerWithGoals as $player)
         <div>
             <p>
-                {{ $player->user->name }} {{ $player->user->surname }} 
+                {{ $player->user->name }} {{ $player->user->surname }}
                 @if($player->teamleader == 1)
                     teamleader
                 @endif
                 @if($player->reserveplayer == 1)
                     reserve
                 @endif
-                Goals: 
+                Goals:
                 <!-- Display the goals using input fields -->
                 @if($isTeamLeader)
                     <input type="number" name="player_goals[{{ $player->playerID }}]" value="{{ $player->goals }}" min="0">
@@ -214,9 +214,8 @@
             </div>
             <div class="text-center mt-2">
                 <p class="text-sm mx-2 pl-4 pr-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit.
-                    Integer vestibulum efficitur sapien, id laoreet risus fringilla nec.
+                    Volg de Interschool Football App-site op de sociale media van het  ErasmusHogeschool Brussel!
+                        Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het interschool voetbalseizoen.
                 </p>
             </div>
         </div>
