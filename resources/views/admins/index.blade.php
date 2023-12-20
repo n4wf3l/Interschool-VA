@@ -47,8 +47,7 @@
             Reset Tournament
         </button>
     </form>
-
-    <h2>Bericht alle aanvoerders</h2>
+    <h2>Bericht alle aanvoerders </h2>
     <form action="{{ route('send-message') }}" method="POST">
         @csrf
 
@@ -64,15 +63,27 @@
     <div>{{ session('success') }}</div>
     @endif
 
+
     <h2>Onopgeloste resultaten</h2>
     <ul>
         @foreach($games as $game)
         <li>
-            <strong>Game:</strong> Team 1: {{ $game->team1_name }} (Leader: {{ $game->team1_leader_name }}) vs Team 2:
+            <strong>Game:</strong> Team 1: {{ $game->team1_name }} (Leader: {{ $game->team1_leader_name }}) vs
+            Team 2:
             {{ $game->team2_name }} (Leader: {{ $game->team2_leader_name }})
+            <form action="{{ route('notify-team-leaders', ['game' => $game->gameID]) }}" method="POST">
+                @csrf
+                <button type="submit">Notify Team Leaders</button>
+            </form>
+
         </li>
         @endforeach
     </ul>
+
+    @if(session('sent'))
+    <div>{{ session('sent') }}</div>
+    @endif
+
 
 
 </body>

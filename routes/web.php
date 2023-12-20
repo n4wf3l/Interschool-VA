@@ -74,6 +74,7 @@ Route::middleware('admin')->group(function () {
 
     Route::get('/admins', [AdminController::class, 'index'])->name('admins.index');
     Route::post('/send-message', [AdminController::class, 'sendMessageToAllUsers'])->name('send-message');
+    Route::post('/notify-team-leaders/{game}', [AdminController::class, 'unsolvedScoreNotifier'])->name('notify-team-leaders');
 
 });
 
