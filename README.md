@@ -1,27 +1,51 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# EhB Interschool Voetbal App
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Introduction
 
-## About Laravel
+Since the Erasmushogeschool campuses in Brussels lack sports activities and a change of scenery, we have decided to design a responsive platform allowing students to register on the Interschool Voetbal App. This involves automating a football competition among students from multiple campuses. Students can register by choosing from ten teams, either joining their friends, meeting new students from other campuses, or both. They can play as a regular player, captain, or reserve player (each team consists of 7 players, including 2 reserves and 1 captain).
+
+The captain has a personalized page to modify the team name and enter the final score of each match. After each match, both captains must enter the final result by selecting the goal-scorers. In the case of a tie, the championship ranking is automatically updated, along with the top scorers' ranking. If the two captains do not agree on the score, the administrator receives a notification to address the issue.
+
+The administrator is the one who initiates the championship by pressing the button to generate the schedule. At the end of each season, the administrator can reset the database for a fresh start to a new championship season.
+
+In the future, the student services STUVO and Enigma (student association of Campus Kaai in Anderlecht) are open to collaboration if this project is to be organized.
+
+## Installation
+
+-   Clone the project on your IDE
+-   Open your terminal
+-   Typ these command :
+    -   npm composer
+    -   php artisan key:generate
+    -   cp .env.example .env
+    -   php artisan migrate
+    -   npm install
+    -   npm run dev
+    -   php artisan serve
+-   You can now open your browser and enjoy the platform!
+
+## Configurations and Structure
+
+(UPDATE COMING SOON)
+The XAMPP software is essential to activate the Apache and MySQL modules. It is through the 'Admin' button in MySQL that your PhpMyAdmin will open, allowing you to view your seed migrations.
+
+The project is easy for modifications, both in the frontend and the backend. We have structured our code, occasionally adding comments to facilitate modification for external developers: Controllers, Models, Seeders, Routes, Blades (Tailwind), and JS & CSS files. Do you want to work on the project locally? Perform the installation and launch the application via the terminal by typing: "php artisan serve."
+
+### About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+-   [Simple, fast routing engine](https://laravel.com/docs/routing).
+-   [Powerful dependency injection container](https://laravel.com/docs/container).
+-   Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+-   Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+-   Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+-   [Robust background job processing](https://laravel.com/docs/queues).
+-   [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### Learning Laravel
 
 Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
@@ -29,38 +53,84 @@ You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you
 
 If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## Programming languages, technologies and frameworks
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+The programming language used in this project is PHP. A portion of the project has been generated using Laravel 10 framework. For the frontend, we utilized Tailwind to simplify the design of our views. We also use CSS and JS, which are consolidated in the "public" folder under the names "js blades" and "css blades."
 
-### Premium Partners
+-   Programming languages : PHP
+-   Database management system : PhpMyAdmin (via XAMPP)
+-   Laravel 10
+-   Styling : HTML, CSS and JS
+-   Styling frameworks : Tailwind and Bootstrap
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+## Contributions
 
-## Contributing
+Instructions for those who wish to contribute to the project. This may include information on pull requests, coding conventions, etc. If you're interested in contributing to our project, follow these guidelines:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   Fork the Repository: Start by forking our project repository to your own GitHub account.
+-   Clone the Repository: Clone the forked repository to your local machine.
+-   Create a New Branch: Create a new branch for your contribution.
+-   Make Changes: Make your desired changes or additions to the code.
+-   Commit Changes: Commit your changes with a descriptive commit message.
+-   Push Changes: Push your changes to your forked repository.
+-   Submit a Pull Request (PR): Open a pull request from your branch to the main project repository. Provide a clear description of your changes.
+-   Code Review: Your contribution will undergo a code review. Make any necessary changes as requested.
+-   Merge: Once approved, your changes will be merged into the main branch.
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Thank you for contributing to our project!
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is distributed under the MIT License. See the LICENSE file for details.
+
+### License Terms
+
+Key Terms:
+
+-   Modification: You are free to modify and adapt the code.
+-   Redistribution: You may redistribute the code in both source and binary forms.
+-   Commercial Use: The code can be used for commercial purposes without restrictions.
+-   Attribution: Attribution to the original author(s) must be included in copies or substantial portions of the code.
+-   Derivative Works: You can create derivative works based on the code.
+-   Warranty: The code is provided "as is," without any warranty or guarantee.
+-   State Changes: Changes made to the code must be clearly stated.
+
+For the full text of the MIT License, please see the LICENSE file included in the project.
+
+We encourage contributions to this project. Check out the CONTRIBUTING.md for more information on how to get involved.
+
+**Note:** While this project was created in an academic context, adding a license aims to clearly define usage terms and protect the rights of contributors.
+
+# Contributors
+
+-   [Nawfel Ajari](https://github.com/n4wf3l) - Project Owner/Frontend Developer/UX/UI Designer
+-   [Kristian Vasiaj](https://github.com/kvsj123) - Quality Assurance/Fullstack Developer
+-   [Ismael Bouzrouti](https://github.com/ismaelbouzrouti) - Scrum Master/Backend Developer
+-   [Jack Thyssens](https://github.com/jackthyssens) - DBA (Database Administrator)/Backend Developer
+-   [Soufian Jaâtar](https://github.com/JAATAR) - Frontend Developer
+
+# Thanks
+
+First and foremost, I (Nawfel Ajari - Project Owner) would like to express my gratitude to the entire team of developers who participated in this project with fascinating motivation. The professionalism exhibited by each member of the team is noteworthy, enabling us to conduct a project overview and analysis under optimal conditions, brimming with ideas, inspirations, and, most importantly, resolutions to potential challenges.
+
+On the technical front, special thanks to Kristian Vasiaj, who fully dedicated himself to the backend, ensuring the realization of all the logical components. I would also like to extend my appreciation to Jack Thyssens for his work on building the database, while also being fully engaged in the backend development. Ismael Bouzrouti was also highly involved in this project: few commits, significant results, that's how his work ethic can be described—implementation of a Maps API, resolution of numerous bugs, and additional assistance in the backend trio. Soufian Jaâtar also played a key role in the frontend, providing valuable support on important details. All of this was developed in record time, within two weeks, divided into two sprints with one to two on-campus sessions.
+
+Special thanks also go to our project supervisors, Professors Robin Bervoets, Tom Aertssens and Ruben Dejonckheere, for their valuable feedback. Their guidance has strengthened our commitment to delivering high-quality work, not only on the technical front but also in the imaginative design of the project, foresight into potential future issues, thorough analysis, and adherence to the disciplines of web development sprints. We appreciate the support of our academic mentors. Additionally, we extend our gratitude to Johan Peeters for his insightful guidance throughout the project. While our project did not explicitly focus on security aspects, we thank Johan for his valuable expertise and contributions to our overall understanding of web development.
+
+# Project Status
+
+The project is currently under development and will continue until Sunday, December 24, 2023 (deadline). It will be assessed in January 2024 by the mentioned professors.
+
+# Contact
+
+You can always contact one of our developers or report issues via our LinkedIn social media. Here they are below:
+
+-   [Nawfel Ajari](https://www.linkedin.com/in/nawfel-ajari-8a26471a4/) - Project Owner/Frontend Developer/UX/UI Designer
+-   [Kristian Vasiaj](https://www.linkedin.com/in/kristian-vasiaj-705b46223/) - Quality Assurance/Fullstack Developer
+-   [Ismael Bouzrouti](https://www.linkedin.com/in/ismaelbouzrouti/) - Scrum Master/Backend Developer
+-   [Jack Thyssens](https://www.linkedin.com/in/jack-thyssens/) - DBA (Database Administrator)/Backend Developer
+-   [Soufian Jaâtar](https://www.linkedin.com/in/soufian-jaatar-05ba34259/) - Frontend Developer
+
+# Examples / Screenshots
+
+See Github Repository
