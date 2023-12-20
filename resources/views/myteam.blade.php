@@ -177,15 +177,19 @@
 
         <!-- Input fields for team leaders to save temporary scores -->
         @if($isTeamLeader && $game->scoreTeam1 === null && $game->scoreTeam2 === null)
-        <form method="POST" action="{{ route('saveTemporaryScores', ['gameId' => $game->gameID]) }}">
-            @csrf
-            <label for="tijdelijkScoreTeam1">Temporary Score Team 1:</label>
-            <input type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" required>
-            <label for="tijdelijkScoreTeam2">Temporary Score Team 2:</label>
-            <input type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" required>
-            <button type="submit">Save Temporary Scores</button>
-        </form>
-        @endif
+    @php
+        $disableInput = request()->cookie('scoreEntered');
+    @endphp
+
+    <form method="POST" action="{{ route('saveTemporaryScores', ['gameId' => $game->gameID]) }}">
+        @csrf
+        <label for="tijdelijkScoreTeam1">Temporary Score Team 1:</label>
+        <input type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" required {{ $disableInput ? 'disabled' : '' }}>
+        <label for="tijdelijkScoreTeam2">Temporary Score Team 2:</label>
+        <input type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" required {{ $disableInput ? 'disabled' : '' }}>
+        <button type="submit" {{ $disableInput ? 'disabled' : '' }}>Save Temporary Scores</button>
+    </form>
+@endif
 
         <!-- Display other game details as needed -->
     </div>

@@ -9,6 +9,8 @@ use App\Http\Requests\StoreteamsRequest;
 use App\Http\Requests\UpdateteamsRequest;
 use App\Http\Requests\updatePlayerGoalsRequest;
 use App\Http\Requests\SaveTemporaryScoresRequest;
+use Illuminate\Support\Facades\Cookie;
+
 
 
 use App\Http\Requests\StoreTeamNameRequest;
@@ -135,7 +137,8 @@ public function saveTemporaryScores(SaveTemporaryScoresRequest $request, $gameId
             $game->bevestigd = 1;
             $game->save();
 
-            return redirect()->back()->with('Alert!', 'Scores zijn door beide teamleaders bevestigd')->with('showAlert', true);
+            // Stel de cookie in zodat het invoerveld wordt uitgeschakeld
+            return redirect()->back()->with('Alert!', 'Scores zijn door beide teamleaders bevestigd')->with('showAlert', true); // Cookie geldig voor 1 dag (1440 minuten)
 
         } else {
             // Scores zijn niet gelijk
@@ -143,19 +146,17 @@ public function saveTemporaryScores(SaveTemporaryScoresRequest $request, $gameId
             $game->bevestigd = 0;
             $game->save();
 
-            return redirect()->back()->with('Alert!', 'Scores zijn verschillend, de admin neemt contact op met u')->with('showAlert', true);
+            return redirect()->back()->with('Alert!', 'Scores zijn verschillend, de admin neemt contact op met u')->with('showAlert', true)->cookie('scoreEntered', true, 28.000);
         }
-    }
-    else{
+    } else {
+        // Als er nog geen tijdelijke scores zijn opgeslagen, sla de ingevoerde scores op
+        $game->tijdelijkScoreTeam1 = $request->input('tijdelijkScoreTeam1');
+        $game->tijdelijkScoreTeam2 = $request->input('tijdelijkScoreTeam2');
 
-    // Als er nog geen tijdelijke scores zijn opgeslagen, sla de ingevoerde scores op
-    $game->tijdelijkScoreTeam1 = $request->input('tijdelijkScoreTeam1');
-    $game->tijdelijkScoreTeam2 = $request->input('tijdelijkScoreTeam2');
-    
-    $game->save();
+        $game->save();
 
-    // Redirect of andere logica na het opslaan van de tijdelijke scores
-    return redirect()->back()->with('status', 'Temporary scores saved successfully.');
+        // Redirect of andere logica na het opslaan van de tijdelijke scores
+        return redirect()->back()->with('status', 'Temporary scores saved successfully.')->cookie('scoreEntered', true, 28.000);
     }
 }
 
