@@ -93,7 +93,7 @@
                 class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Log
                 in</a>
               @if (Route::has('register'))
-              <a href="{{ route('register') }}"
+              <a href="{{ route('registerteams') }}"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Inschrijving</a>
               @endif
               @endauth
@@ -173,7 +173,7 @@
         </div>
         <div class="text-center mt-2">
           <p class="text-sm mx-2 pl-4 pr-6">
-            Volg de Interschool Football App-site op de sociale media van het  ErasmusHogeschool Brussel!
+            Volg de Interschool Football App-site op de sociale media van het ErasmusHogeschool Brussel!
             Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het interschool voetbalseizoen.
 
           </p>

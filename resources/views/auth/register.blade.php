@@ -69,25 +69,34 @@
         <!--Login list icon-->
         <div x-data="{ open: false }"
           class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
-          @if (Route::has('login'))
-          @auth
-          <div class="relative rounded-full bg-green-700">
+          <div class="relative">
             <a href="#" @click="open = !open">
-              <img class="h-7 inline" src="{{ asset('loginicon.png') }}" alt="Login Icon">
+              <img class="h-7 inline @auth bg-green-700 rounded-full @endauth" src="{{ asset('loginicon.png') }}"
+                alt="Login Icon">
             </a>
             <div x-show="open" @click.away="open = false"
               class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
+              @auth
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img onclick="window.location.href='{{ url('profile') }}'" class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
-                                src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
+                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img
+                    onclick="window.location.href='{{ url('profile') }}'"
+                    class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
+                    src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
                 <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
                   onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
               </form>
+              @else
+              <a href="{{ route('login') }}"
+                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Log
+                in</a>
+              @if (Route::has('register'))
+              <a href="{{ route('registerteams') }}"
+                class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Inschrijving</a>
+              @endif
+              @endauth
             </div>
           </div>
-          @endauth
-          @endif
         </div>
     </nav>
   </header>

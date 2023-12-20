@@ -77,7 +77,7 @@
                 class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Log
                 in</a>
               @if (Route::has('register'))
-              <a href="{{ route('register') }}"
+              <a href="{{ route('registerteams') }}"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Inschrijving</a>
               @endif
               @endauth

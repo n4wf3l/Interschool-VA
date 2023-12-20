@@ -82,17 +82,20 @@
                             @auth
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img onclick="window.location.href='{{ url('profile') }}'" class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
-                                src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
+                                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img
+                                        onclick="window.location.href='{{ url('profile') }}'"
+                                        class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
+                                        src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
                                 <a href="#"
                                     class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
                                     onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
                             </form>
                             @else
                             <a href="{{ route('login') }}"
-                                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Log in</a>
+                                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Log
+                                in</a>
                             @if (Route::has('register'))
-                            <a href="{{ route('register') }}"
+                            <a href="{{ route('registerteams') }}"
                                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Inschrijving</a>
                             @endif
                             @endauth
@@ -155,13 +158,18 @@
                 </div>
                 <!-- Paragraphe -->
                 <!-- Updated Paragraphe -->
-               <!-- Updated Paragraphe in Second Person -->
-<p class="text-4xl text-base mb-6 duration-500">
-    Welkom bij de Interschool Football App, waar jij en je medestudenten passie en competitie delen op het voetbalveld!
-    Het platform is toegewijd aan het bevorderen van een levendige voetbalgemeenschap tussen de verschillende campussen van Erasmus Hogeschool Brussel.
-    Of je nu een doorgewinterde speler of een rijzende ster bent, met onze registratiefunctie kun jij een team kiezen om deel te nemen aan een toernooi.
-    Voer jouw spelersdetails in, zoals namen, posities en indrukwekkende spelersstatistieken, om het talent binnen jouw team te laten zien.
-    Vier samen met ons de geest van sportiviteit en teamwork terwijl jij begint aan een spannende reis van interschool football excellence!</p>
+                <!-- Updated Paragraphe in Second Person -->
+                <p class="text-4xl text-base mb-6 duration-500">
+                    Welkom bij de Interschool Football App, waar jij en je medestudenten passie en competitie delen op
+                    het voetbalveld!
+                    Het platform is toegewijd aan het bevorderen van een levendige voetbalgemeenschap tussen de
+                    verschillende campussen van Erasmus Hogeschool Brussel.
+                    Of je nu een doorgewinterde speler of een rijzende ster bent, met onze registratiefunctie kun jij
+                    een team kiezen om deel te nemen aan een toernooi.
+                    Voer jouw spelersdetails in, zoals namen, posities en indrukwekkende spelersstatistieken, om het
+                    talent binnen jouw team te laten zien.
+                    Vier samen met ons de geest van sportiviteit en teamwork terwijl jij begint aan een spannende reis
+                    van interschool football excellence!</p>
 
 
                 <!-- Bouton -->
@@ -186,15 +194,17 @@
                 </div>
                 <div class="flex items-center mt-2">
                     <a href="tel:+32499842525">
-                    <img src="{{asset('icontel.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">
-                        <a href="tel:+32499842525">+32 499 84 25 25</p>
+                        <img src="{{asset('icontel.png')}}" class="h-6">
+                        <p class="ml-2 text-sm">
+                            <a href="tel:+32499842525">+32 499 84 25 25
+                        </p>
                 </div>
                 <div class="flex items-center mt-2">
                     <a href="mailto:info.va.ehb@gmail.com">
-                    <img src="{{asset('messagelogo.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">
-                      <a href="mailto:info.va.ehb@gmail.com"></a>  info.va.ehb@gmail.com</p>
+                        <img src="{{asset('messagelogo.png')}}" class="h-6">
+                        <p class="ml-2 text-sm">
+                            <a href="mailto:info.va.ehb@gmail.com"></a> info.va.ehb@gmail.com
+                        </p>
                 </div>
             </div>
 
@@ -207,14 +217,18 @@
             <!-- Derde kolom (social media)-->
             <div class="w-full md:w-1/2 flex flex-col items-center">
                 <div class="flex space-x-2">
-                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
-                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
+                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
+                            src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
+                            src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
+                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img
+                            src="{{asset('iconyoutube.png')}}" class="h-6"></a>
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-sm mx-2 pl-4 pr-6">
-                        Volg de Interschool Football App-site op de sociale media van het  ErasmusHogeschool Brussel!
-                        Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het interschool voetbalseizoen.
+                        Volg de Interschool Football App-site op de sociale media van het ErasmusHogeschool Brussel!
+                        Blijf op de hoogte van het laatste nieuws, updates en spannende momenten van het interschool
+                        voetbalseizoen.
                     </p>
                 </div>
             </div>

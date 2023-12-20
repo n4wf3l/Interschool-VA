@@ -22,6 +22,7 @@ use \App\Http\Middleware\AdminMiddleware;
 */
 
 Route::get('/', function () {
+
     if (auth()->check()) {
         return redirect()->route('dashboard');
     }
@@ -29,8 +30,14 @@ Route::get('/', function () {
 });
 
 Route::get('/registerteams', function () {
+    if (auth()->check()) {
+        return redirect()->route('dashboard');
+    } else {
+        return view('registratie_teams');
+    }
     return view('registratie_teams');
 })->name('registerteams');
+
 
 // web.php
 

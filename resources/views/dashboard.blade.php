@@ -101,6 +101,8 @@
     <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-20">
       PAGINA ZICHTBAAR ALLEEN VOOR INGESCHREVEN USERS
     </div>
+
+
   </main>
 
   <footer>

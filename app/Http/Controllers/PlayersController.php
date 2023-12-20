@@ -16,14 +16,14 @@ class PlayersController extends Controller
     {
         $teams = Teams::all();
 
-    $playersByTeam = [];
+        $playersByTeam = [];
 
-    foreach ($teams as $team) {
-        $players = Players::where('teamID', $team->TeamID)->get();
-        $playersByTeam[$team->TeamID] = $players;
-    }
+        foreach ($teams as $team) {
+            $players = Players::where('teamID', $team->TeamID)->get();
+            $playersByTeam[$team->TeamID] = $players;
+        }
 
-    return view('registratie_teams', compact('playersByTeam'));
+        return view('registratie_teams', compact('playersByTeam'));
     }
 
     /**
