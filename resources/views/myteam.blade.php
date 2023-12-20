@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Browser Logo & Title -->
-  <title>Interschool Voetbal App</title>
+  <title>MyTEAM — EhB Voetbal App</title>
   <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
@@ -97,7 +97,7 @@
     <!-- Container -->
     <div class="bg-gray-100 p-8 md:p-0  md:items-center md:justify-evenly mt-20">
 
-      <h1>Your Team: {{ $playerWithGoals->first()->Team->Teamnaam }}</h1>
+      <h1>YourCasss marche Team: {{ $playerWithGoals->first()->Team->Teamnaam }}</h1>
 
       @if($isTeamLeader)
       <!-- Display an edit button -->

@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Browser Logo & Title -->
-  <title>Interschool Voetbal App</title>
+  <title>Inschijvingsformulier — EhB Voetbal App</title>
   <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
@@ -137,7 +137,7 @@
             <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
           </div>
           <!-- Titre -->
-          <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">VUL DE FORMULIER!!!</h2>
+          <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">VUL DE FORMULIER</h2>
         </div>
 
         <form class="max-w-sm mx-auto pb-8" method="POST" action="{{ route('register') }}">
