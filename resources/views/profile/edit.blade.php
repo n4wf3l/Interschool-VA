@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap"
     rel="stylesheet">
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ asset('css blades/login.blade.css') }}">
+  <link rel="stylesheet" href="{{ asset('css blades/edit.blade.css') }}">
 </head>
 
 <body class="flex flex-col h-screen">
@@ -42,7 +42,8 @@
               style="background-color: red;">OVER ONS</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
-            <a href="{{ url('/calendars') }}" class="text x1 text-teal-500" style="background-color: red;">KALENDER</a>
+            <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">KALENDER</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/rankings') }}" class="text x1 hover:text-teal-500 duration-500"
@@ -80,14 +81,17 @@
               @auth
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img onclick="window.location.href='{{ url('profile') }}'" class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
-                                src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
+                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img
+                    onclick="window.location.href='{{ url('profile') }}'"
+                    class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
+                    src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
                 <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
                   onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
               </form>
               @else
               <a href="{{ route('login') }}"
-                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Log in</a>
+                class="block px-5 py-2 text-sm text-gray-700 @auth hover:bg-green-500 @else hover:bg-red-500 @endauth">Log
+                in</a>
               @if (Route::has('register'))
               <a href="{{ route('register') }}"
                 class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-400">Inschrijving</a>
@@ -99,77 +103,84 @@
     </nav>
   </header>
 
-  <main class="bg-white flex-1">
-  <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
-            </div>
+  <main class="bg-white flex-1 mt-20 ml-5 pb-10">
 
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
-            </div>
-        </div>
+    <div class="flex flex-row">
+      <!-- Design 2 Vertical -->
+      <div class="relative flex items-end pb-12">
+        <!-- Red line -->
+        <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
+        <!-- Blue line, positioned to overlap the red line -->
+        <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem; /* 3px */"></div>
+      </div>
+      <!-- Titre -->
+      <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">MIJN PROFIEL : {{ Auth::user()->name }}</h2>
     </div>
-</main>
+    <div class="">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6 bg-gray-300 rounded-lg pb-10 pt-10">
+        <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg max-w-xl mx-auto bg-teal-500">
+          @include('profile.partials.update-profile-information-form')
+        </div>
+
+        <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg max-w-xl mx-auto">
+          @include('profile.partials.update-password-form')
+        </div>
+      </div>
+    </div>
+  </main>
 
   <footer>
-    <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
-        <!-- Eerste kolom (data) -->
-        <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
-            <div class="flex items-center">
-                <a href="{{ url('about') }}#onze-campussen">
-                    <img src="{{asset('positionicon.png')}}" class="h-6">
-                </a>
-                <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
-            </div>
-            <div class="flex items-center mt-2">
-                <a href="tel:+32499842525">
-                <img src="{{asset('icontel.png')}}" class="h-6">
-                <p class="ml-2 text-sm">
-                    <a href="tel:+32499842525">+32 499 84 25 25</p>
-            </div>
-            <div class="flex items-center mt-2">
-                <a href="mailto:info.va.ehb@gmail.com">
-                <img src="{{asset('messagelogo.png')}}" class="h-6">
-                <p class="ml-2 text-sm">
-                  <a href="mailto:info.va.ehb@gmail.com"></a>  info.va.ehb@gmail.com</p>
-            </div>
+    <div class="p-4 text-white flex flex-col md:flex-row justify-center items-center">
+      <!-- Eerste kolom (data) -->
+      <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
+        <div class="flex items-center">
+          <a href="{{ url('about') }}#onze-campussen">
+            <img src="{{asset('positionicon.png')}}" class="h-6">
+          </a>
+          <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
         </div>
+        <div class="flex items-center mt-2">
+          <a href="tel:+32499842525">
+            <img src="{{asset('icontel.png')}}" class="h-6">
+            <p class="ml-2 text-sm">
+              <a href="tel:+32499842525">+32 499 84 25 25
+            </p>
+        </div>
+        <div class="flex items-center mt-2">
+          <a href="mailto:info.va.ehb@gmail.com">
+            <img src="{{asset('messagelogo.png')}}" class="h-6">
+            <p class="ml-2 text-sm">
+              <a href="mailto:info.va.ehb@gmail.com"></a> info.va.ehb@gmail.com
+            </p>
+        </div>
+      </div>
 
-        <!-- Tweede kolom (logo erasmus) -->
-        <div class="w-full md:w-1/2 flex flex-col items-center">
-            <img class="h-5" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-            <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
-        </div>
+      <!-- Tweede kolom (logo erasmus) -->
+      <div class="w-full md:w-1/2 flex flex-col items-center">
+        <img class="h-5" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+        <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
+      </div>
 
-        <!-- Derde kolom (social media)-->
-        <div class="w-full md:w-1/2 flex flex-col items-center">
-            <div class="flex space-x-2">
-                <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
-                <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-                <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
-            </div>
-            <div class="text-center mt-2">
-                <p class="text-sm mx-2 pl-4 pr-6">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit.
-                    Integer vestibulum efficitur sapien, id laoreet risus fringilla nec.
-                </p>
-            </div>
+      <!-- Derde kolom (social media)-->
+      <div class="w-full md:w-1/2 flex flex-col items-center">
+        <div class="flex space-x-2">
+          <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
+              src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+          <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
+              src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
+          <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}"
+              class="h-6"></a>
         </div>
+        <div class="text-center mt-2">
+          <p class="text-sm mx-2 pl-4 pr-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit.
+            Integer vestibulum efficitur sapien, id laoreet risus fringilla nec.
+          </p>
+        </div>
+      </div>
     </div>
-</footer>
+  </footer>
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
@@ -178,7 +189,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="{{ asset('js blades/login.blade.js') }}"></script>
+  <script src="{{ asset('js blades/edit.blade.js') }}"></script>
 </body>
 
 </html>
