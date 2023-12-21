@@ -34,8 +34,13 @@
           class="md:flex md:items-center md:static absolute bg-red w-full left-0 md:py-0 py-4 md:pl-0 pl-7 top-[60px] hidden"
           style="background-color: red;">
           <li class="mx-4 my-0 md:my-0 bg-red">
+            @auth
+            <a href="{{ url('/dashboard') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">DASHBOARD</a>
+            @else
             <a href="{{ url('/') }}" class="text x1 hover:text-teal-500 duration-500"
               style="background-color: red;">HOME</a>
+            @endauth
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
