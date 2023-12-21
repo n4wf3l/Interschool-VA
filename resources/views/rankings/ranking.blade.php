@@ -118,14 +118,16 @@
           </div>
           <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">RANKING</h2>
         </div>
-        <p class="pl-20 text-2xl text-center">Ontdek nu de actuele ranglijst van de EhB Voetbal App! Met ons
+        <p class="text-2xl text-center md:pl-20">Ontdek nu de actuele ranglijst van de EhB Voetbal App! Met ons
           geavanceerde Puntensysteem worden studententeams van alle campussen van Erasmushogeschool Brussel beoordeeld
           op basis van hun prestaties in verschillende wedstrijden.
           Dit zorgt voor een nauwkeurige weergave van de prestaties van elk team gedurende het seizoen <span
             id="jaartal"></span>.
           Mis niets van de actie en blijf op de hoogte van welk team de koploper is in EhB voetbal excellence!</p>
 
-        <p class="pl-20 mt-10 text-2xl pb-50">Als echte sportliefhebber wil je altijd op de hoogte zijn van de laatste
+        <p class="mt-10 text-2xl text-center pb-50 md:pl-20">Als echte sportliefhebber wil je altijd op de hoogte zijn
+          van de
+          laatste
           ontwikkelingen.
           Daarom wordt onze Standings-functie automatisch bijgewerkt, waardoor je in realtime de huidige ranglijst van
           studententeams kunt bekijken op basis van de gedurende het seizoen behaalde punten.
@@ -138,22 +140,23 @@
 
       </div>
 
-      <div class="flex flex-row items-center pr-20">
-        <!-- Design 2 Vertical -->
-        <div class="relative flex items-end pb-12">
-          <!-- Red line -->
-          <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-red-500"></div>
-          <!-- Blue line, positioned to overlap the red line -->
-          <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
-        </div>
-      </div>
 
-    </div>
+      <div class="mx-auto pl-10">
+        <div class="hidden md:flex md:flex-row md:items-center md:pr-20">
+          <!-- Design 2 Vertical -->
+          <div class="relative flex items-end pb-12">
+            <!-- Red line -->
+            <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-red-500"></div>
+            <!-- Blue line, positioned to overlap the red line -->
+            <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
+          </div>
+        </div>
   </main>
 
+
   <main class="bg-red-500 items-center justify-center pt-5">
-    <div class="bg-white md:p-0 md:flex md:items-center md:justify- evenly w-full bg-cover pb-50"
-      style="background-image: url('futsalcover.jpg');">
+    <div class="bg-white md:p-0 md:flex md:items-center md:justify-evenly w-full bg-cover min-h-screen"
+      style="background-image: url('futsalcover.jpg'); height: 800px;"> <!-- Ajustez la hauteur selon vos besoins -->
 
       <!-- Table Team Ranking -->
 
@@ -207,12 +210,12 @@
     </div>
   </main>
 
-  <main class="bg-white flex-1 pt-5">
+  <main class="bg-white flex-1 pt-5 md:mt-40 mt-32">
 
     <div class="mx-auto pl-10">
       <div class="flex flex-row items-center">
         <!-- Design 2 Vertical -->
-        <div class="relative flex items-end pb-20">
+        <div class="relative flex items-end">
           <!-- Red line -->
           <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
           <!-- Blue line, positioned to overlap the red line -->
@@ -222,7 +225,7 @@
         <!-- Titre -->
         <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">ZIE OOK</h2>
       </div>
-      <div class="flex space-x-4 mt-6 pl-20 pb-10">
+      <div class="flex space-x-4 mt-32 pl-20 pb-10">
         <button type="submit" onclick="window.location.href='{{ url('calendars') }}'"
           class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
           KALENDER</button>
@@ -230,9 +233,9 @@
           class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
           INSCHRIJVING </button>
       </div>
-
     </div>
   </main>
+
 
   <footer>
     <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
