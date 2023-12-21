@@ -1,14 +1,24 @@
-function setTeamID() {
+function setTeamIDAndSubmit(event) {
+    event.preventDefault();
+
     sessionStorage.clear();
 
     var selectedTeamID = document.querySelector(
         'input[name="TeamID"]:checked'
-    ).value;
-    console.log("Geselecteerde TeamID:", selectedTeamID);
-    sessionStorage.setItem("TeamID", selectedTeamID);
+    );
+
+    if(selectedTeamID){
+    console.log("Geselecteerde TeamID:", selectedTeamID.value);
+    sessionStorage.setItem("TeamID", selectedTeamID.value);
 
     var storedTeamID = sessionStorage.getItem("TeamID");
     console.log("TeamID in sessie:", storedTeamID);
+
+    document.getElementById('registerTeamForm').submit();
+
+    } else{
+        alert('Je moet een team kiezen!');
+    }  
 }
 
 let menuInitialized = false;
