@@ -15,18 +15,28 @@ In the future, the student services STUVO and Enigma (student association of Cam
 -   Clone the project on your IDE
 -   Open your terminal
 -   Typ these command :
-    -   npm composer
-    -   php artisan key:generate
+    -   composer install
     -   cp .env.example .env
-    -   php artisan migrate
+    -   php artisan key:generate
+    -   php artisan migrate:fresh --seed (Wait for Seeding database)
     -   npm install
     -   npm run dev
+        Open new terminal :
     -   php artisan serve
 -   You can now open your browser and enjoy the platform!
 
 ## Configurations and Structure
 
-(UPDATE COMING SOON)
+-   Go to .env file and copy this code :
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.googlemail.com
+    MAIL_PORT=465
+    MAIL_USERNAME=info.va.ehb@gmail.com
+    MAIL_PASSWORD=zxsajznwtlugkvrr
+    MAIL_ENCRYPTION=ssl
+    MAIL_FROM_ADDRESS=info.va.ehb@gmail.com
+    MAIL_FROM_NAME="Interschool Voetbal App"
+
 The XAMPP software is essential to activate the Apache and MySQL modules. It is through the 'Admin' button in MySQL that your PhpMyAdmin will open, allowing you to view your seed migrations.
 
 The project is easy for modifications, both in the frontend and the backend. We have structured our code, occasionally adding comments to facilitate modification for external developers: Controllers, Models, Seeders, Routes, Blades (Tailwind), and JS & CSS files. Do you want to work on the project locally? Perform the installation and launch the application via the terminal by typing: "php artisan serve."

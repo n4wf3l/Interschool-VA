@@ -81,9 +81,11 @@
               class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img onclick="window.location.href='{{ url('profile') }}'" class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
-                                src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
-                <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
+                <p class="text-white bg-teal-500 text-center text-xl pb-2">{{ Auth::user()->name }} <img
+                    onclick="window.location.href='{{ url('profile') }}'"
+                    class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
+                    src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
+                <a href="#" class="block px-5 py-2 text-xl text-gray-700 hover:bg-red-500 hover:text-white"
                   onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
               </form>
             </div>
@@ -94,159 +96,196 @@
     </nav>
   </header>
 
-  <main class="bg-white flex-1">
-    <!-- Container -->
-    <div class="bg-gray-100 p-8 md:p-0  md:items-center md:justify-evenly mt-20">
+  <main class="bg-white flex-1 flex-col  w-full mt-10" style="background-image: url('headbackgroundmyteam4.jpg');">
+    <div class="flex flex-row items-center ml-10 mt-10">
+      <!-- Design 2 Vertical -->
 
-      <h1>YourCasss marche Team: {{ $playerWithGoals->first()->Team->Teamnaam }}</h1>
+      <div class="relative flex items-end pb-12">
+
+        <!-- Red line -->
+        <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
+        <!-- Blue line, positioned to overlap the red line -->
+        <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
+      </div>
+      <!-- Titre -->
+      <h2 class="text-7xl font-bold mb-4 duration-500 pl-5 pb-15 text-white">
+        MyTEAM - {!! $playerWithGoals->first()->Team->Teamnaam !!}
+      </h2>
 
       @if($isTeamLeader)
-      <!-- Display an edit button -->
-      <button onclick="showEditForm()">Edit Team Name</button>
+      <div x-data="{ isOpen: false }">
+        <img @click="isOpen = true" class="ml-3 hover:bg-red-500 h-10 inline @auth rounded-full @endauth"
+          src="{{ asset('iconsettings.png') }}" alt="Settings Icon">
 
-      <!-- Edit Team Name Form -->
-      <div id="editForm" style="display: none;">
-        <form method="POST" action="{{ route('updateTeamName') }}">
-          @csrf
-          <label for="newTeamName">New Team Name:</label>
-          <input type="text" id="newTeamName" name="newTeamName" required>
-          <button type="submit">Save</button>
-        </form>
-      </div>
-
-      <!-- JavaScript to toggle the visibility of the edit form -->
-      <script>
-        function showEditForm() {
-          document.getElementById('editForm').style.display = 'block';
-        }
-      </script>
-      @endif
-
-<<<<<<< HEAD
+        <!-- Pop-up formulier -->
+        <div x-show="isOpen" @click.away="isOpen = false"
+          class="fixed inset-0 bg-black bg-opacity-25 flex items-center justify-center">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <form method="POST" action="{{ route('updateTeamName') }}">
+              @csrf
+              <label for="newTeamName" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nieuwe
+                teamnaam:</label>
+              <div class="flex flex-col items-center space-y-2">
+                <input type="text" id="newTeamName" name="newTeamName"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  required>
+                <div class="flex space-x-2">
+                  <button type="button" @click="isOpen = false"
+                    class="bg-red-500 text-1xl text-white px-2 py-1 rounded transition duration-500 hover:bg-teal-500">Sluiten</button>
+                  <button type="submit"
+                    class="bg-teal-500 text-1xl text-white px-2 py-1 rounded transition duration-500 hover:bg-red-500">Opslaan</button>
+                </div>
+              </div>
+            </form>
           </div>
-          <div class="bg-gray-100 p-8 md:p-0  md:items-center md:justify-evenly mt-20">
-
-          <form method="POST" action="{{ route('updatePlayerGoals') }}">
-    @csrf
-
-    @foreach($playerWithGoals as $player)
-        <div>
-            <p>
-                {{ $player->user->name }} {{ $player->user->surname }}
-                @if($player->teamleader == 1)
-                    teamleader
-                @endif
-                @if($player->reserveplayer == 1)
-                    reserve
-                @endif
-                Goals:
-                <!-- Display the goals using input fields -->
-                @if($isTeamLeader)
-                    <input type="number" name="player_goals[{{ $player->playerID }}]" value="{{ $player->goals }}" min="0">
-                @else
-                    {{ $player->goals }}
-                @endif
-            </p>
         </div>
-    @endforeach
-
-    <!-- Display the "Confirm" button for the team leader -->
-    @if($isTeamLeader)
-        <button type="submit">Confirm</button>
-    @endif
-</form>
-
-</div>
-=======
-    </div>
->>>>>>> myteam-page
-
-    <!-- spelers + goals -->
-    <div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
-      @foreach($playerWithGoals as $player)
-      <div>
-        <p>
-          {{ $player->user->name }} {{ $player->user->surname }}
-          @if($player->teamleader == 1)
-          teamleader
-          @endif
-          @if($player->reserveplayer == 1)
-          reserve
-          @endif
-          Goals: {{ $player->goals }}
-        </p>
+        @endif
       </div>
-      @endforeach
     </div>
+  </main>
 
+
+  <div class="bg-gray-100 w-full flex flex-row">
     <!-- Games van het team + score indienen-->
-    <div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
-      <h1>Games of Your Team</h1>
+    <main class="w-1/2">
+      <div class="flex flex-col items-center justify-center bg-gray-100 p-8 md:p-0 mt-2">
+        <h1 class="text-5xl font-bold mb-4 duration-500 mt-10">Aankomende wedstrijden</h1>
+        <div class="text-center pt-5 pb-5">
+          <span class="text-red-500">TS (Tijdelijke score)</span> = De score die je ingeeft moet gelijk zijn aan die van
+          de tegenstander
+          <br>
+          <span class="text-blue-500">C (Captain)</span> = Aanvoerder
+          <br>
+          <span class="text-teal-500">R</span> = Reservespeler
+        </div>
 
-      @foreach($teamGames as $game)
-      <div>
-        <p>{{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }} {{ $game->team1->Teamnaam }} VS {{
-          $game->team2->Teamnaam }} score: {{$game->scoreTeam1}} - {{$game->scoreTeam2}}
-        </p>
+        @foreach($teamGames as $game)
+        <div class="text-center mb-4 flex flex-col border border-red-500">
+          <p>Wedstrijddatum : {{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }}</p>
+          {{ $game->team1->Teamnaam }} VS {{
+          $game->team2->Teamnaam }} score: {{$game->scoreTeam1}} - {{$game->scoreTeam2}}</p>
 
-        <!-- Input fields for team leaders to save temporary scores -->
-        @if($isTeamLeader && $game->scoreTeam1 === null && $game->scoreTeam2 === null)
-        @php
-        $disableInput = request()->cookie('scoreEntered');
-        @endphp
+          <!-- Input fields for team leaders to save temporary scores -->
+          @if($isTeamLeader && $game->scoreTeam1 === null && $game->scoreTeam2 === null)
+          @php
+          $disableInput = request()->cookie('scoreEntered');
+          @endphp
 
-                    <form method="POST" action="{{ route('saveTemporaryScores', ['gameId' => $game->gameID]) }}">
-                        @csrf
-                        <label for="tijdelijkScoreTeam1">Temporary Scores Team 1:</label>
-                        <input type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" required {{ $disableInput ? 'disabled' : '' }}>
-                        <label for="tijdelijkScoreTeam2">Temporary Score Team 2:</label>
-                        <input type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" required {{ $disableInput ? 'disabled' : '' }}>
+          <form class="flex flex-row" method="POST"
+            action="{{ route('saveTemporaryScores', ['gameId' => $game->gameID]) }}">
+            @csrf
+            <div>
+              <h2 class="text-2xl font-bold mb-4 duration-500 bg-red-500 text-white pl-2 pr-2 ">Geef de
+                score in : </h2>
+
+              <label for="tijdelijkScoreTeam1"><span class="text-red-500">TS</span> Tegenstander:</label>
+              <input class="w-7" type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" value="0" min="0"
+                required {{ $disableInput ? 'disabled' : '' }}>
+
+              <label for="tijdelijkScoreTeam2"><span class="text-red-500">TS</span> {!!
+                $playerWithGoals->first()->Team->Teamnaam !!}:</label>
+              <input class="w-7" type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" value="0" min="0"
+                required {{ $disableInput ? 'disabled' : '' }}>
+
+            </div>
+            <div>
+              <h2 class="text-2xl font-bold mb-4 duration-500  bg-teal-500 text-white pl-2 pr-2">Geef de doelpuntmakers
+                in
+                :
+              </h2>
+              <!-- Display player details and input fields for goals -->
+              @foreach($playerWithGoals as $player)
+
+              <div>
+                <p class="pb-2">
+                  {{ $player->user->name }} {{ $player->user->surname }}
+                  @if($player->teamleader == 1)
+                  <span class="text-blue-500">C</span>
+                  @endif
+                  @if($player->reserveplayer == 1)
+                  <span class="text-teal-500">R</span>
+                  @endif
+                  :
+                  <!-- Display the goals using input fields -->
+                  @if($isTeamLeader)
+                  <input class="w-7" type="number" name="player_goals[{{ $player->playerID }}]" value="0" min="0">
+                  @else
+                  {{ $player->goals }}
+                  @endif
+                </p>
+              </div>
+              @endforeach
+              <button
+                class="bg-teal-500 text-1xl text-white mb-3 px-2 py-1 rounded transition duration-500 hover:bg-red-500"
+                type="submit" {{ $disableInput ? 'disabled' : '' }}>Bevestig tijdelijke score</button>
+            </div>
+          </form>
+          @endif
+          <!-- Display other game details as needed -->
+        </div>
+        @endforeach
+      </div>
+    </main>
 
 
-          <br><br>
+    <main class="w-1/2 flex flex-col items-center justify-center h-screen bg-gray-100">
 
+
+      <p>Welkom, {{ Auth::user()->name }}!</p>
+      <p> Wijzig <a class="hover:text-teal-500 transition duration-500" href="{{ url('/profile') }}">hier</a> jouw
+        profiel </p>
+      <p>Indien er een technisch probleem is, neem hieronder contact op met de admin.</p>
+      <button type="submit" onclick="window.location.href='{{ url('contacts') }}'"
+        class="bg-red-500 text-sm text-white px-10  rounded transition duration-500 hover:bg-white hover:text-red-500">
+        ADMIN </button>
+
+      <h2 class="text-5xl font-bold mb-4 duration-500 mt-10">{!! $playerWithGoals->first()->Team->Teamnaam !!}</h2>
+      <table class="border-collapse border border-gray-300 bg-white shadow-md">
+        <thead>
+          <tr>
+            <th class="p-3 border-b bg-teal-500 text-white">Naam</th>
+            <th class="p-3 border-b bg-teal-500 text-white">Voornaam</th>
+            <th class="p-3 border-b bg-teal-500 text-white">Rol</th>
+            <th class="p-3 border-b bg-teal-500 text-white">Aant. DP</th>
+          </tr>
+        </thead>
+        <tbody>
           @foreach($playerWithGoals as $player)
-          <div>
-            <p>
-              {{ $player->user->name }} {{ $player->user->surname }}
+          <tr class="hover:bg-gray-50">
+            <td class="p-3 border-b">{{ $player->user->name }}</td>
+            <td class="p-3 border-b">{{ $player->user->surname }}</td>
+            <td class="p-3 border-b">
               @if($player->teamleader == 1)
-              teamleader
+              <span class="text-blue-500">C</span>
               @endif
               @if($player->reserveplayer == 1)
-              reserve
+              <span class="text-teal-500">R</span>
               @endif
-              Goals:
-              <!-- Display the goals using input fields -->
-              @if($isTeamLeader)
-              <input type="number" name="player_goals[{{ $player->playerID }}]" value="0" min="0">
-              @else
-              {{ $player->goals }}
-              @endif
-            </p>
-          </div>
+            </td>
+            <td class="p-3 border-b text-center">{{ $player->goals }}</td>
+          </tr>
           @endforeach
+        </tbody>
+      </table>
 
-          <br>
-          <button type="submit" {{ $disableInput ? 'disabled' : '' }}>Save Temporary Scores</button>
-          <br><br>
-
-
-
-
-        </form>
-        @endif
-
-        <!-- Display other game details as needed -->
+      <div class="flex flex-col items-center mt-8 space-y-4">
+        <button type="submit" onclick="window.location.href='{{ url('calendars') }}'"
+          class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
+          KALENDER</button>
+        <button type="submit" onclick="window.location.href='{{ url('rakings') }}'"
+          class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
+          RANKING </button>
       </div>
-      @endforeach
-    </div>
 
-    @if(session('showAlert'))
-    <script>
-      alert("{{ session('Alert!') }}");
-    </script>
-    @endif
-    </div>
+    </main>
+  </div>
+
+  @if(session('showAlert'))
+  <script>
+    alert("{{ session('Alert!') }}");
+  </script>
+  @endif
+  </div>
 
   </main>
 
@@ -282,21 +321,6 @@
         <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
       </div>
 
-<<<<<<< HEAD
-        <!-- Derde kolom (social media)-->
-        <div class="w-full md:w-1/2 flex flex-col items-center">
-            <div class="flex space-x-2">
-                <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
-                <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-                <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
-            </div>
-            <div class="text-center mt-2">
-                <p class="text-sm mx-2 pl-4 pr-6">
-                    Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws,
-                        updates en spannende momenten van het EhB-voetbalseizoen.
-                </p>
-            </div>
-=======
       <!-- Derde kolom (social media)-->
       <div class="w-full md:w-1/2 flex flex-col items-center">
         <div class="flex space-x-2">
@@ -306,17 +330,14 @@
               src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
           <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}"
               class="h-6"></a>
->>>>>>> myteam-page
         </div>
         <div class="text-center mt-2">
           <p class="text-sm mx-2 pl-4 pr-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit.
-            Integer vestibulum efficitur sapien, id laoreet risus fringilla nec.
+            Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws,
+            updates en spannende momenten van het EhB-voetbalseizoen.
           </p>
         </div>
-      </div>
-    </div>
+
   </footer>
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
