@@ -21,7 +21,7 @@ class AdminController extends Controller
         $players = players::all();
 
 
-
+        $playersWithGoals = [];
 
 
         $games = games::where('bevestigd', false)
@@ -44,10 +44,14 @@ class AdminController extends Controller
         foreach ($games as $game) {
             $team1ID = $game->team1ID;
             $team2ID = $game->team2ID;
-            $player1WithGoals = Players::with('team')->where('teamID', $team1ID)->get();
 
-            $player2WithGoals = Players::with('team')->where('teamID', $team2ID)->get();
+            $team1Players = Players::with('team')->where('teamID', $team1ID)->get();
+            $team2Players = Players::with('team')->where('teamID', $team2ID)->get();
 
+            $playersWithGoals[$game->gameID] = [
+                'team1' => $team1Players,
+                'team2' => $team2Players,
+            ];
 
         }
 
@@ -55,7 +59,7 @@ class AdminController extends Controller
 
 
 
-        return view('admins.index', compact('teams', 'games', 'player2WithGoals', 'player1WithGoals'));
+        return view('admins.index', compact('teams', 'games', 'playersWithGoals'));
     }
 
     public function sendMessageToAllUsers(Request $request)
@@ -103,8 +107,6 @@ class AdminController extends Controller
 
     public function saveDefinitiveScores(Request $request, $gameId)
     {
-
-
         $validatedData = $request->validate([
             'scoreTeam1' => 'required|integer',
             'scoreTeam2' => 'required|integer',
@@ -117,6 +119,23 @@ class AdminController extends Controller
         $game = Games::find($gameId);
         if (!$game) {
             return redirect()->back()->with('error', 'Game not found.');
+        }
+
+        $team1GoalsSum = 0;
+        $team2GoalsSum = 0;
+        foreach ($validatedData['players_goals'] as $playerID => $goals) {
+            $player = Players::find($playerID);
+            if ($player) {
+                if ($player->teamID == $game->team1ID) {
+                    $team1GoalsSum += $goals;
+                } elseif ($player->teamID == $game->team2ID) {
+                    $team2GoalsSum += $goals;
+                }
+            }
+        }
+
+        if ($team1GoalsSum != $validatedData['scoreTeam1'] || $team2GoalsSum != $validatedData['scoreTeam2']) {
+            return redirect()->back()->with('errorScore', 'The team scores do not match the sum of individual player goals.');
         }
 
         $game->scoreTeam1 = $validatedData['scoreTeam1'];
@@ -132,7 +151,7 @@ class AdminController extends Controller
             }
         }
 
-        return redirect()->back()->with('success', 'Definitive scores and player goals saved successfully.');
+        return redirect()->back()->with('successScore', 'Definitive scores and player goals saved successfully.');
     }
 
 

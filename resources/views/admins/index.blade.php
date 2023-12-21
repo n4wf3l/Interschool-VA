@@ -68,8 +68,8 @@
     <ul>
         @foreach($games as $game)
         <li>
-            <strong>Game:</strong> Team 1: {{ $game->team1_name }} (Leader: {{ $game->team1_leader_name }}) vs
-            Team 2:
+            <strong>Game:</strong> {{ $game->team1_name }} (Leader: {{ $game->team1_leader_name }}) vs
+
             {{ $game->team2_name }} (Leader: {{ $game->team2_leader_name }})
             <form action="{{ route('notify-team-leaders', ['game' => $game->gameID]) }}" method="POST">
                 @csrf
@@ -89,26 +89,26 @@
     <form action="{{ route('admins.save-scores', ['game' => $game->gameID]) }}" method="POST">
         @csrf
 
-        <label for="scoreTeam1">Score for Team 1:</label>
+        <label for="scoreTeam1">Score {{ $game->team1_name }}:</label>
         <input type="number" name="scoreTeam1" id="scoreTeam1" required>
 
-        <label for="scoreTeam2">Score for Team 2:</label>
+        <label for="scoreTeam2">Score {{ $game->team2_name }}:</label>
         <input type="number" name="scoreTeam2" id="scoreTeam2" required>
 
-        @foreach($player1WithGoals as $player)
+        @foreach($playersWithGoals[$game->gameID]['team1'] as $player)
         <div>
             <label>{{ $player->user->name }}: </label>
-            <input type="number" name="players_goals[{{ $player->playerID }}]" value="{{ $player->goals }}" required>
+            <input type="number" name="players_goals[{{ $player->playerID }}]" value="0" required>
         </div>
         @endforeach
         <br>
         <hr>
         <hr>
         <br>
-        @foreach($player2WithGoals as $player)
+        @foreach($playersWithGoals[$game->gameID]['team2'] as $player)
         <div>
             <label>{{ $player->user->name }}: </label>
-            <input type="number" name="players_goals[{{ $player->playerID }}]" value="{{ $player->goals }}" required>
+            <input type="number" name="players_goals[{{ $player->playerID }}]" value="0" required>
         </div>
         @endforeach
 
@@ -116,6 +116,13 @@
     </form>
     @endforeach
 
+    @if(session('errorScore'))
+    <div>{{ session('errorScore') }}</div>
+    @endif
+
+    @if(session('successScore'))
+    <div>{{ session('successScore') }}</div>
+    @endif
 
 
 </body>
