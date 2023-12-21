@@ -99,7 +99,47 @@
   <main class="bg-white flex-1">
     <!-- Container -->
     <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-20">
-      PAGINA ZICHTBAAR ALLEEN VOOR INGESCHREVEN USERS
+      <div class="teams">
+        <h1>Teams</h1>
+        <!-- we loop through the teams -->
+        @foreach($teams as $team)
+
+        <!-- We show every teamname -->
+        <h2>{{ $team->Teamnaam }}</h2>
+
+        <ul>
+          <!-- we loop through the players by teamID with an index -->
+          @foreach($players[$team->TeamID] as $index => $player)
+
+          <!-- we show the index and the name of the player per team -->
+          <li>{{$index + 1}}. {{ $player->user->name }}</li>
+
+          <!-- we check wether a player is a reserve, if so 'R' next to the name-->
+          @if($player->reserveplayer == 1)
+          <span>R</span>
+          @endif
+
+          <!-- we check wether a player is a Teamleader, if so 'C' next to the name-->
+          @if($player->teamleader == 1)
+          <span>C</span>
+          @endif
+          @endforeach
+        </ul>
+
+        @endforeach
+      </div>
+
+      <br>
+
+      <div class="topscorer">
+
+        <h2>Topscorer</h2>
+
+        <h3>{{$topscorer->user->name}}</h3>
+
+        <p>Goals: {{$topscorer->goals}}</p>
+      </div>
+
     </div>
 
 
