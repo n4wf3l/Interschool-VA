@@ -30,19 +30,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/registerteams', function () {
-    if (auth()->check()) {
-        return redirect()->route('dashboard');
-    } else {
-        return view('registratie_teams');
-    }
-    return view('registratie_teams');
-})->name('registerteams');
+
+
 
 
 // web.php
 
-Route::get('/registerteams', [PlayersController::class, 'index'])->name('registerteams');
+Route::get('/registerteams', function () {
+
+    if (auth()->check()) {
+
+        return redirect()->route('dashboard');
+    }
+
+
+    return app(PlayersController::class)->index();
+
+})->name('registerteams');
+
+
 
 Route::get('/myteam', function () {
     return view('myteam');
@@ -56,20 +62,11 @@ Route::post('/myteam/update', [MyTeamController::class, 'updatePlayerGoals'])->n
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-    //Route::get('/dashboard', function () {
-    //return view('dashboard');
 
     Route::get('/dashboard', [DashboardController::class, 'showTeams'])->name('dashboard');
 });
 
 
-
-//});
-
-//Route::get('/dashboard', function () {
-//   return view('dashboard');
-
-//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
