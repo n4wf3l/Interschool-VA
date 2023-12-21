@@ -34,8 +34,13 @@
           class="md:flex md:items-center md:static absolute bg-red w-full left-0 md:py-0 py-4 md:pl-0 pl-7 top-[60px] hidden"
           style="background-color: red;">
           <li class="mx-4 my-0 md:my-0 bg-red">
+            @auth
+            <a href="{{ url('/dashboard') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">DASHBOARD</a>
+            @else
             <a href="{{ url('/') }}" class="text x1 hover:text-teal-500 duration-500"
               style="background-color: red;">HOME</a>
+            @endauth
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
@@ -113,15 +118,23 @@
           </div>
           <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">RANKING</h2>
         </div>
-        <p class="pl-20 text-2xl text-center">Ontdek nu de actuele ranglijst van de EhB Voetbal App! Met ons geavanceerde Puntensysteem worden studententeams van alle campussen van Erasmushogeschool Brussel beoordeeld op basis van hun prestaties in verschillende wedstrijden.
-            Dit zorgt voor een nauwkeurige weergave van de prestaties van elk team gedurende het seizoen <span id="jaartal"></span>.
-            Mis niets van de actie en blijf op de hoogte van welk team de koploper is in EhB voetbal excellence!</p>
+        <p class="pl-20 text-2xl text-center">Ontdek nu de actuele ranglijst van de EhB Voetbal App! Met ons
+          geavanceerde Puntensysteem worden studententeams van alle campussen van Erasmushogeschool Brussel beoordeeld
+          op basis van hun prestaties in verschillende wedstrijden.
+          Dit zorgt voor een nauwkeurige weergave van de prestaties van elk team gedurende het seizoen <span
+            id="jaartal"></span>.
+          Mis niets van de actie en blijf op de hoogte van welk team de koploper is in EhB voetbal excellence!</p>
 
-            <p class="pl-20 mt-10 text-2xl pb-50">Als echte sportliefhebber wil je altijd op de hoogte zijn van de laatste ontwikkelingen.
-                Daarom wordt onze Standings-functie automatisch bijgewerkt, waardoor je in realtime de huidige ranglijst van studententeams kunt bekijken op basis van de gedurende het seizoen behaalde punten.
-                Of je nu thuis bent, onderweg of op het veld, je hebt altijd een actueel overzicht van de competitie binnen handbereik.
-                Bovendien houden we niet alleen rekening met teamprestaties, maar handhaven we ook een dynamische ranglijst van Top Scorers en Key Passers, waar individuele prestaties worden benadrukt en buitengewone bijdragen aan het team worden erkend.
-                Welkom bij de pinnacle van interschoolvoetbal excellence!</p>
+        <p class="pl-20 mt-10 text-2xl pb-50">Als echte sportliefhebber wil je altijd op de hoogte zijn van de laatste
+          ontwikkelingen.
+          Daarom wordt onze Standings-functie automatisch bijgewerkt, waardoor je in realtime de huidige ranglijst van
+          studententeams kunt bekijken op basis van de gedurende het seizoen behaalde punten.
+          Of je nu thuis bent, onderweg of op het veld, je hebt altijd een actueel overzicht van de competitie binnen
+          handbereik.
+          Bovendien houden we niet alleen rekening met teamprestaties, maar handhaven we ook een dynamische ranglijst
+          van Top Scorers en Key Passers, waar individuele prestaties worden benadrukt en buitengewone bijdragen aan het
+          team worden erkend.
+          Welkom bij de pinnacle van interschoolvoetbal excellence!</p>
 
       </div>
 
