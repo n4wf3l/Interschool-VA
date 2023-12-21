@@ -84,6 +84,38 @@
     <div>{{ session('sent') }}</div>
     @endif
 
+    <h2>Resultaten aanpassen</h2>
+    @foreach($games as $game)
+    <form action="{{ route('admins.save-scores', ['game' => $game->gameID]) }}" method="POST">
+        @csrf
+
+        <label for="scoreTeam1">Score for Team 1:</label>
+        <input type="number" name="scoreTeam1" id="scoreTeam1" required>
+
+        <label for="scoreTeam2">Score for Team 2:</label>
+        <input type="number" name="scoreTeam2" id="scoreTeam2" required>
+
+        @foreach($player1WithGoals as $player)
+        <div>
+            <label>{{ $player->user->name }}: </label>
+            <input type="number" name="players_goals[{{ $player->playerID }}]" value="{{ $player->goals }}" required>
+        </div>
+        @endforeach
+        <br>
+        <hr>
+        <hr>
+        <br>
+        @foreach($player2WithGoals as $player)
+        <div>
+            <label>{{ $player->user->name }}: </label>
+            <input type="number" name="players_goals[{{ $player->playerID }}]" value="{{ $player->goals }}" required>
+        </div>
+        @endforeach
+
+        <button type="submit">Save Scores</button>
+    </form>
+    @endforeach
+
 
 
 </body>

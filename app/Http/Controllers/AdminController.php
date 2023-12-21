@@ -20,6 +20,10 @@ class AdminController extends Controller
         $teams = Teams::all();
         $players = players::all();
 
+
+
+
+
         $games = games::where('bevestigd', false)
             ->join('teams as team1', 'games.team1ID', '=', 'team1.TeamID')
             ->join('teams as team2', 'games.team2ID', '=', 'team2.TeamID')
@@ -33,11 +37,25 @@ class AdminController extends Controller
             })
             ->join('users as user1', 'player1.userID', '=', 'user1.userID')
             ->join('users as user2', 'player2.userID', '=', 'user2.userID')
-            ->select('games.gameID', 'team1.Teamnaam as team1_name', 'user1.name as team1_leader_name',
+            ->select('games.gameID', 'games.team1ID', 'games.team2ID', 'team1.Teamnaam as team1_name', 'user1.name as team1_leader_name',
                 'team2.Teamnaam as team2_name', 'user2.name as team2_leader_name')
             ->get();
 
-        return view('admins.index', compact('teams', 'games'));
+        foreach ($games as $game) {
+            $team1ID = $game->team1ID;
+            $team2ID = $game->team2ID;
+            $player1WithGoals = Players::with('team')->where('teamID', $team1ID)->get();
+
+            $player2WithGoals = Players::with('team')->where('teamID', $team2ID)->get();
+
+
+        }
+
+
+
+
+
+        return view('admins.index', compact('teams', 'games', 'player2WithGoals', 'player1WithGoals'));
     }
 
     public function sendMessageToAllUsers(Request $request)
@@ -81,6 +99,40 @@ class AdminController extends Controller
         } else {
             return back()->with('error', 'Game not found.');
         }
+    }
+
+    public function saveDefinitiveScores(Request $request, $gameId)
+    {
+
+
+        $validatedData = $request->validate([
+            'scoreTeam1' => 'required|integer',
+            'scoreTeam2' => 'required|integer',
+            'players_goals' => 'required|array',
+            'players_goals.*' => 'integer|min:0',
+
+        ]);
+
+
+        $game = Games::find($gameId);
+        if (!$game) {
+            return redirect()->back()->with('error', 'Game not found.');
+        }
+
+        $game->scoreTeam1 = $validatedData['scoreTeam1'];
+        $game->scoreTeam2 = $validatedData['scoreTeam2'];
+        $game->bevestigd = 1; // Mark as confirmed
+        $game->save();
+
+        foreach ($validatedData['players_goals'] as $playerID => $goals) {
+            $player = Players::find($playerID);
+            if ($player) {
+                $player->goals = $goals;
+                $player->save();
+            }
+        }
+
+        return redirect()->back()->with('success', 'Definitive scores and player goals saved successfully.');
     }
 
 
