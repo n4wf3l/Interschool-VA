@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap"
     rel="stylesheet">
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ asset('css blades/login.blade.css') }}">
+  <link rel="stylesheet" href="{{ asset('css blades/myteam.blade.css') }}">
 </head>
 
 <body class="flex flex-col h-screen">
@@ -81,11 +81,11 @@
               class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
               <form method="POST" action="{{ route('logout') }}">
                 @csrf
-                <p class="text-white bg-teal-500 text-center text-xl pb-2">{{ Auth::user()->name }} <img
+                <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img
                     onclick="window.location.href='{{ url('profile') }}'"
                     class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
                     src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
-                <a href="#" class="block px-5 py-2 text-xl text-gray-700 hover:bg-red-500 hover:text-white"
+                <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
                   onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
               </form>
             </div>
@@ -347,7 +347,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="{{ asset('js blades/login.blade.js') }}"></script>
+  <script src="{{ asset('js blades/myteam.blade.js') }}"></script>
 </body>
 
 </html>
