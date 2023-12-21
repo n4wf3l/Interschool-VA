@@ -124,7 +124,8 @@
     </div>
     </div>
     <div class=" p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-20">
-      <div class="teams grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 text-center">
+      <div
+        class="teams grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 text-center pb-20">
         <!-- we loop through the teams -->
         @foreach($teams as $team)
         <div class="team-box border text-white">
