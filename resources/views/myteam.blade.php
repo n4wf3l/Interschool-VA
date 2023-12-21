@@ -101,7 +101,7 @@
     </nav>
   </header>
 
-  <main class="bg-white flex-1 flex-col  w-full mt-10" style="background-image: url('headbackgroundmyteam4.jpg');">
+  <main class="flex-1 flex-col  w-full mt-10 bg-color bg-center" style="background-image: url('composition.jpg');">
     <div class="flex flex-row items-center ml-10 mt-10">
       <!-- Design 2 Vertical -->
 
@@ -149,28 +149,35 @@
     </div>
   </main>
 
+  <div class="bg-red-500 h-3 w-full pt-3 pb-3"></div>
+  <div class="bg-teal-500 h-3 w-full pt-3 pb-3"></div>
+  <div class="flex flex-col md:flex-row">
 
-  <div class="bg-gray-100 w-full flex flex-row">
     <!-- Games van het team + score indienen-->
-    <main class="w-1/2">
-      <div class="flex flex-col items-center justify-center bg-gray-100 p-8 md:p-0 mt-2">
+
+    <main class="w-full md:w-1/2" x-data="{ openForm: null, currentFormNumber: 0 }">
+      <div class="flex flex-col items-center justify-center md:p-0 mt-2">
         <h1 class="text-5xl font-bold mb-4 duration-500 mt-10">Aankomende wedstrijden</h1>
-        <div class="text-center pt-5 pb-5">
-          <span class="text-red-500">TS (Tijdelijke score)</span> = De score die je ingeeft moet gelijk zijn aan die van
-          de tegenstander
+        <div class="text-left pt-5 pb-5">
+          <span class="text-red-500">TS (Tijdelijke score)</span> = De score die je ingeeft moet gelijk zijn aan
+          die van de tegenstander
           <br>
           <span class="text-blue-500">C (Captain)</span> = Aanvoerder
           <br>
           <span class="text-teal-500">R</span> = Reservespeler
         </div>
 
-        @foreach($teamGames as $game)
-        <div class="text-center mb-4 flex flex-col border border-red-500">
-          <p>Wedstrijddatum : {{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }}</p>
-          {{ $game->team1->Teamnaam }} VS {{
-          $game->team2->Teamnaam }} score: {{$game->scoreTeam1}} - {{$game->scoreTeam2}}</p>
+        @foreach($teamGames as $key => $game)
+        <div x-show="openForm === '{{$game->gameID}}'" class="text-center mb-4 flex flex-col border border-red-500">
+          <button @click="openForm = null"
+            class="bg-red-500 text-1xl text-white mb-3 px-2 py-1 rounded transition duration-500 hover:bg-teal-500">
+            Sluiten
+          </button>
+          <!-- Reste du contenu du formulaire -->
+          <p>WEDSTRIJDDATUM : {{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }}</p>
+          {{ $game->team1->Teamnaam }} VS {{ $game->team2->Teamnaam }} | Score: {{$game->scoreTeam1}} -
+          {{$game->scoreTeam2}}</p>
 
-          <!-- Input fields for team leaders to save temporary scores -->
           @if($isTeamLeader && $game->scoreTeam1 === null && $game->scoreTeam2 === null)
           @php
           $disableInput = request()->cookie('scoreEntered');
@@ -183,17 +190,17 @@
               <h2 class="text-2xl font-bold mb-4 duration-500 bg-red-500 text-white pl-2 pr-2 ">Geef de
                 score in : </h2>
 
-              <label for="tijdelijkScoreTeam1"><span class="text-red-500">TS</span> Tegenstander:</label>
-              <input class="w-7" type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" value="0" min="0"
-                required {{ $disableInput ? 'disabled' : '' }}>
+              <label for="tijdelijkScoreTeam1"><span class="text-red-500 ml-2">TS</span> Tegenstander:</label>
+              <input class="w-7 bg-gray-200" type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" value="0"
+                min="0" required {{ $disableInput ? 'disabled' : '' }}>
 
               <label for="tijdelijkScoreTeam2"><span class="text-red-500">TS</span> {!!
                 $playerWithGoals->first()->Team->Teamnaam !!}:</label>
-              <input class="w-7" type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" value="0" min="0"
-                required {{ $disableInput ? 'disabled' : '' }}>
+              <input class="w-7 bg-gray-200" type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" value="0"
+                min="0" required {{ $disableInput ? 'disabled' : '' }}>
 
             </div>
-            <div>
+            <div class="text-right mt-auto mr-3">
               <h2 class="text-2xl font-bold mb-4 duration-500  bg-teal-500 text-white pl-2 pr-2">Geef de doelpuntmakers
                 in
                 :
@@ -201,7 +208,7 @@
               <!-- Display player details and input fields for goals -->
               @foreach($playerWithGoals as $player)
 
-              <div>
+              <div class="text-right">
                 <p class="pb-2">
                   {{ $player->user->name }} {{ $player->user->surname }}
                   @if($player->teamleader == 1)
@@ -213,7 +220,8 @@
                   :
                   <!-- Display the goals using input fields -->
                   @if($isTeamLeader)
-                  <input class="w-7" type="number" name="player_goals[{{ $player->playerID }}]" value="0" min="0">
+                  <input class="w-7 bg-gray-200" type="number" name="player_goals[{{ $player->playerID }}]" value="0"
+                    min="0">
                   @else
                   {{ $player->goals }}
                   @endif
@@ -221,30 +229,35 @@
               </div>
               @endforeach
               <button
-                class="bg-teal-500 text-1xl text-white mb-3 px-2 py-1 rounded transition duration-500 hover:bg-red-500"
-                type="submit" {{ $disableInput ? 'disabled' : '' }}>Bevestig tijdelijke score</button>
+                class="mr-1 bg-teal-500 text-1xl text-white mb-3 px-2 py-1 rounded transition duration-500 hover:bg-red-500"
+                type="submit" {{ $disableInput ? 'disabled' : '' }}>Bevestig TS</button>
             </div>
           </form>
           @endif
-          <!-- Display other game details as needed -->
         </div>
+        <button
+          @click="openForm = openForm === '{{$game->gameID}}' ? null :'{{$game->gameID}}'; currentFormNumber = {{$key + 1}}"
+          class="bg-teal-500 text-1xl text-white mb-3 px-2 py-1 rounded transition duration-500 hover:bg-red-500">
+          Toon wedstrijd {{ $key + 1 }}
+        </button>
         @endforeach
       </div>
     </main>
 
 
-    <main class="w-1/2 flex flex-col items-center justify-center h-screen bg-gray-100">
-
-
-      <p>Welkom, {{ Auth::user()->name }}!</p>
-      <p> Wijzig <a class="hover:text-teal-500 transition duration-500" href="{{ url('/profile') }}">hier</a> jouw
+    <main class=" md:w-1/2 flex flex-col items-center justify-center h-screen"
+      style="background-image: url('goalcover3.jpg');">
+      <p class="text-white">Welkom, {{ Auth::user()->name }}!</p>
+      <p class="text-white"> Wijzig <a class="hover:text-teal-500 transition duration-500"
+          href="{{ url('/profile') }}">hier</a> jouw
         profiel </p>
-      <p>Indien er een technisch probleem is, neem hieronder contact op met de admin.</p>
+      <p class="text-white">Indien er een technisch probleem is, neem hieronder contact op met de admin.</p>
       <button type="submit" onclick="window.location.href='{{ url('contacts') }}'"
         class="bg-red-500 text-sm text-white px-10  rounded transition duration-500 hover:bg-white hover:text-red-500">
         ADMIN </button>
 
-      <h2 class="text-5xl font-bold mb-4 duration-500 mt-10">{!! $playerWithGoals->first()->Team->Teamnaam !!}</h2>
+      <h2 class="text-5xl font-bold mb-4 duration-500 mt-10 text-white">{!! $playerWithGoals->first()->Team->Teamnaam
+        !!}</h2>
       <table class="border-collapse border border-gray-300 bg-white shadow-md">
         <thead>
           <tr>
