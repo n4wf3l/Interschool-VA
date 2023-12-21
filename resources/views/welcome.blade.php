@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Browser Logo & Title -->
-    <title>Interschool Voetbal App</title>
+    <title>Home — EhB Voetbal App</title>
     <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
 
     <!-- Fonts -->
@@ -154,13 +154,18 @@
                 </div>
                 <!-- Paragraphe -->
                 <!-- Updated Paragraphe -->
-               <!-- Updated Paragraphe in Second Person -->
-<p class="text-2xl text-base mb-6 duration-500">
-    Welkom bij de Interschool Football App, waar jij en je medestudenten passie en competitie delen op het voetbalveld!
-    Het platform is toegewijd aan het bevorderen van een levendige voetbalgemeenschap tussen de verschillende campussen van Erasmus Hogeschool Brussel.
-    Of je nu een doorgewinterde speler of een rijzende ster bent, met onze registratiefunctie kun jij een team kiezen om deel te nemen aan een toernooi.
-    Voer jouw spelersdetails in, zoals namen, posities en indrukwekkende spelersstatistieken, om het talent binnen jouw team te laten zien.
-    Vier samen met ons de geest van sportiviteit en teamwork terwijl jij begint aan een spannende reis van interschool football excellence!</p>
+                <!-- Updated Paragraphe in Second Person -->
+                <p class="text-2xl text-base mb-6 duration-500">
+                    Welkom bij de Interschool Football App, waar jij en je medestudenten passie en competitie delen op
+                    het voetbalveld!
+                    Het platform is toegewijd aan het bevorderen van een levendige voetbalgemeenschap tussen de
+                    verschillende campussen van Erasmus Hogeschool Brussel.
+                    Of je nu een doorgewinterde speler of een rijzende ster bent, met onze registratiefunctie kun jij
+                    een team kiezen om deel te nemen aan een toernooi.
+                    Voer jouw spelersdetails in, zoals namen, posities en indrukwekkende spelersstatistieken, om het
+                    talent binnen jouw team te laten zien.
+                    Vier samen met ons de geest van sportiviteit en teamwork terwijl jij begint aan een spannende reis
+                    van interschool football excellence!</p>
 
 
                 <!-- Bouton -->
@@ -185,15 +190,17 @@
                 </div>
                 <div class="flex items-center mt-2">
                     <a href="tel:+32499842525">
-                    <img src="{{asset('icontel.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">
-                        <a href="tel:+32499842525">+32 499 84 25 25</p>
+                        <img src="{{asset('icontel.png')}}" class="h-6">
+                        <p class="ml-2 text-sm">
+                            <a href="tel:+32499842525">+32 499 84 25 25
+                        </p>
                 </div>
                 <div class="flex items-center mt-2">
                     <a href="mailto:info.va.ehb@gmail.com">
-                    <img src="{{asset('messagelogo.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">
-                      <a href="mailto:info.va.ehb@gmail.com"></a>  info.va.ehb@gmail.com</p>
+                        <img src="{{asset('messagelogo.png')}}" class="h-6">
+                        <p class="ml-2 text-sm">
+                            <a href="mailto:info.va.ehb@gmail.com"></a> info.va.ehb@gmail.com
+                        </p>
                 </div>
             </div>
 
@@ -206,9 +213,12 @@
             <!-- Derde kolom (social media)-->
             <div class="w-full md:w-1/2 flex flex-col items-center">
                 <div class="flex space-x-2">
-                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
-                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
+                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
+                            src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
+                            src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
+                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img
+                            src="{{asset('iconyoutube.png')}}" class="h-6"></a>
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-sm mx-2 pl-4 pr-6">

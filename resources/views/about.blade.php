@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Browser Logo & Title -->
-    <title>Interschool Voetbal App</title>
+    <title>Over Ons — EhB Voetbal App</title>
     <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
 
     <!-- Fonts -->
@@ -275,15 +275,17 @@
                 </div>
                 <div class="flex items-center mt-2">
                     <a href="tel:+32499842525">
-                    <img src="{{asset('icontel.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">
-                        <a href="tel:+32499842525">+32 499 84 25 25</p>
+                        <img src="{{asset('icontel.png')}}" class="h-6">
+                        <p class="ml-2 text-sm">
+                            <a href="tel:+32499842525">+32 499 84 25 25
+                        </p>
                 </div>
                 <div class="flex items-center mt-2">
                     <a href="mailto:info.va.ehb@gmail.com">
-                    <img src="{{asset('messagelogo.png')}}" class="h-6">
-                    <p class="ml-2 text-sm">
-                      <a href="mailto:info.va.ehb@gmail.com"></a>  info.va.ehb@gmail.com</p>
+                        <img src="{{asset('messagelogo.png')}}" class="h-6">
+                        <p class="ml-2 text-sm">
+                            <a href="mailto:info.va.ehb@gmail.com"></a> info.va.ehb@gmail.com
+                        </p>
                 </div>
             </div>
 
@@ -296,9 +298,12 @@
             <!-- Derde kolom (social media)-->
             <div class="w-full md:w-1/2 flex flex-col items-center">
                 <div class="flex space-x-2">
-                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img src="{{asset('iconfacebook.png')}}" class="h-6"></a>
-                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}" class="h-6"></a>
+                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
+                            src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
+                            src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
+                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img
+                            src="{{asset('iconyoutube.png')}}" class="h-6"></a>
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-sm mx-2 pl-4 pr-6">
