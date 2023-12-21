@@ -159,7 +159,7 @@
 
                     <form method="POST" action="{{ route('saveTemporaryScores', ['gameId' => $game->gameID]) }}">
                         @csrf
-                        <label for="tijdelijkScoreTeam1">Temporary Score Team 1:</label>
+                        <label for="tijdelijkScoreTeam1">Temporary Scores Team 1:</label>
                         <input type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" required {{ $disableInput ? 'disabled' : '' }}>
                         <label for="tijdelijkScoreTeam2">Temporary Score Team 2:</label>
                         <input type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" required {{ $disableInput ? 'disabled' : '' }}>

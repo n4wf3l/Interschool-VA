@@ -208,7 +208,7 @@ public function saveTemporaryScores(SaveTemporaryScoresRequest $request, $gameId
                     $game->bevestigd = 0;
                     $game->save();
 
-                    return redirect()->back()->with('Alert!', 'Scores zijn verschillend, de admin neemt contact op met u')->with('showAlert', true)->cookie('scoreEntered', true, 28.000);
+                    return redirect()->back()->with('Alert!', 'Scores zijn verschillends, de admin neemt contact op met u')->with('showAlert', true)->cookie('scoreEntered', true, 28.000);
         }
         } else {
             // If there are no temporary scores, save the entered scores
