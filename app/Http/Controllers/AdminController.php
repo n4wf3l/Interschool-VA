@@ -37,7 +37,7 @@ class AdminController extends Controller
             })
             ->join('users as user1', 'player1.userID', '=', 'user1.userID')
             ->join('users as user2', 'player2.userID', '=', 'user2.userID')
-            ->select('games.gameID', 'games.team1ID', 'games.team2ID', 'team1.Teamnaam as team1_name', 'user1.name as team1_leader_name',
+            ->select('games.gameID', 'games.date as date_game', 'games.team1ID', 'games.team2ID', 'team1.Teamnaam as team1_name', 'user1.name as team1_leader_name',
                 'team2.Teamnaam as team2_name', 'user2.name as team2_leader_name')
             ->get();
 
