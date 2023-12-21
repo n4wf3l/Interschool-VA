@@ -87,7 +87,7 @@ class DatabaseSeeder extends Seeder
         }
 
 
-        /*
+        
                 //gamesseeder
                 $teamsCount = 10; // Aantal teams
 
@@ -102,13 +102,11 @@ class DatabaseSeeder extends Seeder
                                 'team1ID' => $team1ID,
                                 'team2ID' => $team2ID,
                                 'date' => now(),
-                                'scoreTeam1' => rand(0, 5), // Willekeurige score, pas aan indien nodig
-                                'scoreTeam2' => rand(0, 5),
                             ]);
                         }
                      }
                 }
-                */
+                
 
     }
 }

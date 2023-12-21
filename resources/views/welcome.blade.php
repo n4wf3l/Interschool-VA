@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Browser Logo & Title -->
-    <title>EhB Voetbal App</title>
+    <title>Home — EhB Voetbal App</title>
     <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
 
     <!-- Fonts -->
@@ -159,6 +159,7 @@
                 <!-- Paragraphe -->
                 <!-- Updated Paragraphe -->
                 <!-- Updated Paragraphe in Second Person -->
+<<<<<<< HEAD
                 <p class="text-4xl text-base mb-6 duration-500">
                     Ben jij gepassioneerd door voetbal of wil je graag sportief deelnemen aan wedstrijden tussen
                     studenten van verschillende
@@ -169,6 +170,19 @@
                     kampioenschap, de topscorers en de kalender voor het hele jaar. Vier samen met ons de geest van
                     sportiviteit en teamwork terwijl jij begint aan een spannende reis van interschool football
                     excellence!</p>
+=======
+                <p class="text-2xl text-base mb-6 duration-500">
+                    Welkom bij de Interschool Football App, waar jij en je medestudenten passie en competitie delen op
+                    het voetbalveld!
+                    Het platform is toegewijd aan het bevorderen van een levendige voetbalgemeenschap tussen de
+                    verschillende campussen van Erasmus Hogeschool Brussel.
+                    Of je nu een doorgewinterde speler of een rijzende ster bent, met onze registratiefunctie kun jij
+                    een team kiezen om deel te nemen aan een toernooi.
+                    Voer jouw spelersdetails in, zoals namen, posities en indrukwekkende spelersstatistieken, om het
+                    talent binnen jouw team te laten zien.
+                    Vier samen met ons de geest van sportiviteit en teamwork terwijl jij begint aan een spannende reis
+                    van interschool football excellence!</p>
+>>>>>>> myteam-page
 
 
                 <!-- Bouton -->

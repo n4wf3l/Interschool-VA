@@ -8,6 +8,10 @@ use App\Models\games;
 use App\Http\Requests\StoreteamsRequest;
 use App\Http\Requests\UpdateteamsRequest;
 use App\Http\Requests\updatePlayerGoalsRequest;
+use App\Http\Requests\SaveTemporaryScoresRequest;
+use Illuminate\Support\Facades\Cookie;
+
+
 
 use App\Http\Requests\StoreTeamNameRequest;
 use Illuminate\Support\Facades\Auth;
@@ -105,6 +109,117 @@ public function updateTeamName(StoreTeamNameRequest $request)
     }
 
     return redirect()->route('myteam')->with('status', 'Player goals updated successfully.');
+}
+
+
+
+public function saveTemporaryScores(SaveTemporaryScoresRequest $request, $gameId)
+{
+    $user = Auth::user();
+    $player = Players::where('userID', $user->userID)->first();
+    $team = teams::where('teamID', $player->teamID)->first();
+
+    // Check if the logged-in user is a team leader
+    if ($player->teamleader !== 1) {
+        return redirect()->route('myteam')->with('error', 'You are not authorized to update the team name.');
+    }
+
+    // Validate the form data
+    $request->validate([
+        'player_goals' => 'required|array',
+        'player_goals.*' => 'integer|min:0',
+        'tijdelijkScoreTeam1' => 'required|integer',
+        'tijdelijkScoreTeam2' => 'required|integer',
+    ]);
+
+    $game = Games::find($gameId);
+    $totscoreteam = 0;
+
+    if ($request->has('player_goals')) {
+        // Update the goals for each player
+        foreach ($request->input('player_goals') as $playerId => $goals) {
+            $player = Players::find($playerId);
+            $player->goals = $goals + $player->goals;
+            $totscoreteam = $totscoreteam + $goals;
+            $player->save();
+
+        }
+        $message = 'Player goals updated successfully.';
+    } 
+
+    if($team->TeamID == $game->team1ID)
+    {
+        if($totscoreteam != $request->input('tijdelijkScoreTeam1'))
+        {
+            if ($request->has('player_goals')) {
+                // Update the goals for each player
+                foreach ($request->input('player_goals') as $playerId => $goals) {
+                    $player = Players::find($playerId);
+                    $player->goals = $player->goals - $goals;
+                    $player->save();
+        
+                }
+                $message = 'Player goals updated successfully.';
+            } 
+
+            return redirect()->back()->with('Alert!', 'Score komt niet overeen met aantal aangegeven goals')->with('showAlert', true);
+        }
+        
+    }
+    else
+    {
+        if($totscoreteam != $request->input('tijdelijkScoreTeam2'))
+        {
+            if ($request->has('player_goals')) {
+                // Update the goals for each player
+                foreach ($request->input('player_goals') as $playerId => $goals) {
+                    $player = Players::find($playerId);
+                    $player->goals = $goals - $player->goals;
+                    $player->save();
+        
+                }
+                $message = 'Player goals updated successfully.';
+            } 
+
+            return redirect()->back()->with('Alert!', 'Score komt niet overeen met aantal aangegeven goals')->with('showAlert', true);
+        }
+
+
+    }
+
+
+    if ($request->has('tijdelijkScoreTeam1') && $request->has('tijdelijkScoreTeam2')) {
+        // Check if there are already temporary scores saved
+        if ($game->tijdelijkScoreTeam1 !== null && $game->tijdelijkScoreTeam2 !== null) {
+            if ($game->tijdelijkScoreTeam1 == $request->input('tijdelijkScoreTeam1') && $game->tijdelijkScoreTeam2 == $request->input('tijdelijkScoreTeam2')) {
+                    // Scores zijn gelijk
+                    // Update de gamescores met de tijdelijke scores
+
+                    $game->scoreTeam1 = $request->input('tijdelijkScoreTeam1');
+                    $game->scoreTeam2 = $request->input('tijdelijkScoreTeam2');
+                    $game->bevestigd = 1;
+                    $game->save();
+
+                    // Stel de cookie in zodat het invoerveld wordt uitgeschakeld
+                    return redirect()->back()->with('Alert!', 'Scores zijn door beide teamleaders bevestigd')->with('showAlert', true)->cookie('scoreEntered', true, 28.000);
+                } else {
+                    // Scores zijn niet gelijk
+
+                    $game->bevestigd = 0;
+                    $game->save();
+
+                    return redirect()->back()->with('Alert!', 'Scores zijn verschillends, de admin neemt contact op met u')->with('showAlert', true)->cookie('scoreEntered', true, 28.000);
+        }
+        } else {
+            // If there are no temporary scores, save the entered scores
+            $game->tijdelijkScoreTeam1 = $request->input('tijdelijkScoreTeam1');
+            $game->tijdelijkScoreTeam2 = $request->input('tijdelijkScoreTeam2');
+            $game->save();
+            return redirect()->back()->with('Alert!', 'tijdelijke score is doorgevoerd')->with('showAlert', true)->cookie('scoreEntered', true, 28.000);
+        }
+    }
+
+    return redirect()->route('myteam')->with('status', $message);
 }
 
 

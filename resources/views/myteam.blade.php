@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Browser Logo & Title -->
-  <title>EhB Voetbal App</title>
+  <title>MyTEAM — EhB Voetbal App</title>
   <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
@@ -98,30 +98,31 @@
     <!-- Container -->
     <div class="bg-gray-100 p-8 md:p-0  md:items-center md:justify-evenly mt-20">
 
-<h1>Your Team: {{ $playerWithGoals->first()->Team->Teamnaam }}</h1>
+      <h1>YourCasss marche Team: {{ $playerWithGoals->first()->Team->Teamnaam }}</h1>
 
-@if($isTeamLeader)
-        <!-- Display an edit button -->
-        <button onclick="showEditForm()">Edit Team Name</button>
+      @if($isTeamLeader)
+      <!-- Display an edit button -->
+      <button onclick="showEditForm()">Edit Team Name</button>
 
-        <!-- Edit Team Name Form -->
-        <div id="editForm" style="display: none;">
-            <form method="POST" action="{{ route('updateTeamName') }}">
-                @csrf
-                <label for="newTeamName">New Team Name:</label>
-                <input type="text" id="newTeamName" name="newTeamName" required>
-                <button type="submit">Save</button>
-            </form>
-        </div>
+      <!-- Edit Team Name Form -->
+      <div id="editForm" style="display: none;">
+        <form method="POST" action="{{ route('updateTeamName') }}">
+          @csrf
+          <label for="newTeamName">New Team Name:</label>
+          <input type="text" id="newTeamName" name="newTeamName" required>
+          <button type="submit">Save</button>
+        </form>
+      </div>
 
-        <!-- JavaScript to toggle the visibility of the edit form -->
-        <script>
-            function showEditForm() {
-                document.getElementById('editForm').style.display = 'block';
-            }
-        </script>
-    @endif
+      <!-- JavaScript to toggle the visibility of the edit form -->
+      <script>
+        function showEditForm() {
+          document.getElementById('editForm').style.display = 'block';
+        }
+      </script>
+      @endif
 
+<<<<<<< HEAD
           </div>
           <div class="bg-gray-100 p-8 md:p-0  md:items-center md:justify-evenly mt-20">
 
@@ -156,55 +157,132 @@
 </form>
 
 </div>
+=======
+    </div>
+>>>>>>> myteam-page
 
+    <!-- spelers + goals -->
     <div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
+      @foreach($playerWithGoals as $player)
+      <div>
+        <p>
+          {{ $player->user->name }} {{ $player->user->surname }}
+          @if($player->teamleader == 1)
+          teamleader
+          @endif
+          @if($player->reserveplayer == 1)
+          reserve
+          @endif
+          Goals: {{ $player->goals }}
+        </p>
+      </div>
+      @endforeach
+    </div>
 
+    <!-- Games van het team + score indienen-->
+    <div class="bg-gray-100 p-8 md:p-0 md:items-center md:justify-evenly mt-20">
       <h1>Games of Your Team</h1>
 
       @foreach($teamGames as $game)
       <div>
         <p>{{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }} {{ $game->team1->Teamnaam }} VS {{
-          $game->team2->Teamnaam }} {{ $game->scoreTeam1 }} {{ $game->scoreTeam2 }} </p>
+          $game->team2->Teamnaam }} score: {{$game->scoreTeam1}} - {{$game->scoreTeam2}}
+        </p>
 
-        <!-- Add other game details as needed -->
+        <!-- Input fields for team leaders to save temporary scores -->
+        @if($isTeamLeader && $game->scoreTeam1 === null && $game->scoreTeam2 === null)
+        @php
+        $disableInput = request()->cookie('scoreEntered');
+        @endphp
+
+                    <form method="POST" action="{{ route('saveTemporaryScores', ['gameId' => $game->gameID]) }}">
+                        @csrf
+                        <label for="tijdelijkScoreTeam1">Temporary Scores Team 1:</label>
+                        <input type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" required {{ $disableInput ? 'disabled' : '' }}>
+                        <label for="tijdelijkScoreTeam2">Temporary Score Team 2:</label>
+                        <input type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" required {{ $disableInput ? 'disabled' : '' }}>
+
+
+          <br><br>
+
+          @foreach($playerWithGoals as $player)
+          <div>
+            <p>
+              {{ $player->user->name }} {{ $player->user->surname }}
+              @if($player->teamleader == 1)
+              teamleader
+              @endif
+              @if($player->reserveplayer == 1)
+              reserve
+              @endif
+              Goals:
+              <!-- Display the goals using input fields -->
+              @if($isTeamLeader)
+              <input type="number" name="player_goals[{{ $player->playerID }}]" value="0" min="0">
+              @else
+              {{ $player->goals }}
+              @endif
+            </p>
+          </div>
+          @endforeach
+
+          <br>
+          <button type="submit" {{ $disableInput ? 'disabled' : '' }}>Save Temporary Scores</button>
+          <br><br>
+
+
+
+
+        </form>
+        @endif
+
+        <!-- Display other game details as needed -->
       </div>
-
-
       @endforeach
     </div>
+
+    @if(session('showAlert'))
+    <script>
+      alert("{{ session('Alert!') }}");
+    </script>
+    @endif
     </div>
+
   </main>
 
   <footer>
     <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
-        <!-- Eerste kolom (data) -->
-        <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
-            <div class="flex items-center">
-                <a href="{{ url('about') }}#onze-campussen">
-                    <img src="{{asset('positionicon.png')}}" class="h-6">
-                </a>
-                <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
-            </div>
-            <div class="flex items-center mt-2">
-                <a href="tel:+32499842525">
-                <img src="{{asset('icontel.png')}}" class="h-6">
-                <p class="ml-2 text-sm">
-                    <a href="tel:+32499842525">+32 499 84 25 25</p>
-            </div>
-            <div class="flex items-center mt-2">
-                <a href="mailto:info.va.ehb@gmail.com">
-                <img src="{{asset('messagelogo.png')}}" class="h-6">
-                <p class="ml-2 text-sm">
-                  <a href="mailto:info.va.ehb@gmail.com"></a>  info.va.ehb@gmail.com</p>
-            </div>
+      <!-- Eerste kolom (data) -->
+      <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
+        <div class="flex items-center">
+          <a href="{{ url('about') }}#onze-campussen">
+            <img src="{{asset('positionicon.png')}}" class="h-6">
+          </a>
+          <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
         </div>
-
-        <!-- Tweede kolom (logo erasmus) -->
-        <div class="w-full md:w-1/2 flex flex-col items-center">
-            <img class="h-5" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-            <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
+        <div class="flex items-center mt-2">
+          <a href="tel:+32499842525">
+            <img src="{{asset('icontel.png')}}" class="h-6">
+            <p class="ml-2 text-sm">
+              <a href="tel:+32499842525">+32 499 84 25 25
+            </p>
         </div>
+        <div class="flex items-center mt-2">
+          <a href="mailto:info.va.ehb@gmail.com">
+            <img src="{{asset('messagelogo.png')}}" class="h-6">
+            <p class="ml-2 text-sm">
+              <a href="mailto:info.va.ehb@gmail.com"></a> info.va.ehb@gmail.com
+            </p>
+        </div>
+      </div>
 
+      <!-- Tweede kolom (logo erasmus) -->
+      <div class="w-full md:w-1/2 flex flex-col items-center">
+        <img class="h-5" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+        <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
+      </div>
+
+<<<<<<< HEAD
         <!-- Derde kolom (social media)-->
         <div class="w-full md:w-1/2 flex flex-col items-center">
             <div class="flex space-x-2">
@@ -218,9 +296,28 @@
                         updates en spannende momenten van het EhB-voetbalseizoen.
                 </p>
             </div>
+=======
+      <!-- Derde kolom (social media)-->
+      <div class="w-full md:w-1/2 flex flex-col items-center">
+        <div class="flex space-x-2">
+          <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
+              src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+          <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
+              src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
+          <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}"
+              class="h-6"></a>
+>>>>>>> myteam-page
         </div>
+        <div class="text-center mt-2">
+          <p class="text-sm mx-2 pl-4 pr-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit.
+            Integer vestibulum efficitur sapien, id laoreet risus fringilla nec.
+          </p>
+        </div>
+      </div>
     </div>
-</footer>
+  </footer>
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
