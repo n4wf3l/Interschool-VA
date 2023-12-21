@@ -121,7 +121,7 @@
 
     <main class="mt-20">
 
-        <div class="flex flex-row items-center ml-10">
+        <div class="flex flex-row items-center ml-60">
             <!-- Design 2 Vertical -->
 
             <div class="relative flex items-end pb-12">
@@ -141,12 +141,14 @@
             de informaticadocenten Robin Bervoets, Tom Aertssens en Ruben Dejonckheere. Met de steun van STUVO en Enigma
             werd het gelanceerd in 2024 met als doel het bevorderen van een vermakelijk en sportief aspect van de
             Erasmushogeschool Brussel en haar acht campussen.</p>
-        <p class="pl-80 pr-80 text-1xl text-center ">EhB Voetbal App haalt zijn inspiratie uit de
+        <p class="pl-80 pr-80 text-1xl text-center pb-5">EhB Voetbal App haalt zijn inspiratie uit de
             Erasmushogeschool Brussel (EhB), die haar naam ontleent aan de humanistische filosoof Desiderius Erasmus. In
             lijn met de EhB kiezen wij voor een humanistisch perspectief in onze benadering. Het recht op vrijheid en
             menselijke waardigheid, het geloof in menselijk potentieel, open en rationele dialoog, en het nemen van
             zelfverantwoordelijkheid staan centraal in onze missie. Deze verantwoordelijkheid voor de wereld, de
-            maatschappij en onszelf vertaalt zich in duurzaamheid in de breedste zin van het woord. Als je de vraag
+            maatschappij en onszelf vertaalt zich in duurzaamheid in de breedste zin van het woord.</p>
+
+        <p class="pl-80 pr-80 text-1xl text-center ">Als je de vraag
             krijgt welke sport het populairst is in België, zal je waarschijnlijk antwoorden... wielrennen! Dat klopt
             helemaal, en we kunnen zelfs tennis aan dat lijstje toevoegen. Wij geven echter de voorkeur aan teamsporten,
             omdat dit een mentale impact heeft op samenleven en de samenwerking tussen studenten bevordert. Dit is iets
@@ -163,11 +165,12 @@
                 <!-- Blue line, positioned to overlap the red line -->
                 <div class="mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
             </div>
-
     </main>
 
-    <main class="flex flex-col items-center pt-20">
-        <div class="flex flex-row items-center ml-10">
+
+    <main class="mt-20">
+
+        <div class="flex flex-row items-center ml-60">
             <!-- Design 2 Vertical -->
 
             <div class="relative flex items-end pb-12">
@@ -197,19 +200,21 @@
                 Het antwoord ligt in de handen van de gepassioneerde en getalenteerde teams die deelnemen aan het
                 Interschool Voetbaltoernooi. Laat het spel beginnen en moge het beste team zegevieren!</p>
         </div>
-
     </main>
 
-    <main id="onze-campussen" class="mx-auto mt-20">
-        <!-- Titre -->
-        <div class="flex items-center mb-4 ml-10">
+    <main id="onze-campussen" class="mt-20">
+
+        <div class="flex flex-row items-center ml-60">
             <!-- Design 2 Vertical -->
+
             <div class="relative flex items-end pb-12">
+
                 <!-- Red line -->
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
                 <!-- Blue line, positioned to overlap the red line -->
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
             </div>
+            <!-- Titre -->
             <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">ONZE CAMPUSSEN</h2>
         </div>
 
