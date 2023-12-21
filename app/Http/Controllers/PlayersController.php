@@ -20,7 +20,8 @@ class PlayersController extends Controller
 
         foreach ($teams as $team) {
             $players = Players::where('teamID', $team->TeamID)->get();
-            $playersByTeam[$team->TeamID] = $players;
+            $playersByTeam[$team->TeamID]['Teamnaam'] = $team->Teamnaam;
+            $playersByTeam[$team->TeamID]['players'] = $players;
         }
 
         return view('registratie_teams', compact('playersByTeam'));

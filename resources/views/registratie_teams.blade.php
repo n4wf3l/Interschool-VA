@@ -174,11 +174,11 @@
         <form id="registerTeamForm" action="{{ route('register', ['TeamID' => 'selectedTeamID']) }}" method="get">
           @csrf
           <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 text-center">
-            @foreach($playersByTeam as $teamID => $players)
+            @foreach($playersByTeam as $teamID => $teamData)
             <div class="team-box border">
-              <h2 class="text-white bg-red-500">Team {{ $teamID }}</h2>
+              <h2 class="text-white bg-red-500">{{ $teamData['Teamnaam'] }}</h2>
               <div class="player-box">
-                @foreach($players as $player)
+                @foreach($teamData['players'] as $player)
                 <div class="player">
                   {{ $player->user->name }} {{ $player->user->surname }}
                   @if($player->reserveplayer == 1)
@@ -190,9 +190,9 @@
                 </div>
                 @endforeach
               </div>
-              @if(count($players) < 7) <input type="radio" name="TeamID" value="{{ $teamID }}">
+              @if(count($teamData['players']) < 7) <input type="radio" name="TeamID" value="{{ $teamID }}">
                 @endif
-                @if(count($players) === 7)
+                @if(count($teamData['players']) === 7)
                 <p class="text-red-500">Vol</p>
                 @endif
             </div>
