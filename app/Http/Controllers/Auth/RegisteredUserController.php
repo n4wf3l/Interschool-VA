@@ -11,11 +11,14 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
+use Illuminate\Validation\Rule;
 use Illuminate\View\View;
+
+
 
 class RegisteredUserController extends Controller
 {
+
 
     /** JUISTE VERSIE */
     /**
@@ -27,6 +30,7 @@ class RegisteredUserController extends Controller
         session(['TeamID' => $selectedTeamID]);
 
         return view('auth.register');
+
 
 
     }
@@ -43,12 +47,25 @@ class RegisteredUserController extends Controller
 
         //valdiatie van de inputwaarden
         $request->validate([
-            'name' => ['required'],
-            'surname' => ['required'],
-            'email' => ['required', 'lowercase', 'email'],
+            'name' => ['required_name'],
+            'surname' => ['required_surname'],
+            'email' => ['required_email', 'lowercase', 'email_format', Rule::unique('users', 'email'), 'student_email'],
             'reserveplayer' => ['required'],
             'teamleader' => ['required'],
-            'password' => ['required', 'confirmed'],
+            'password' => ['required', 'confirmed', 'min: 8'],
+
+
+        ], [
+
+            //error messages wanneer een waarde niet is gevalideerd
+
+            'email.lowercase' => 'Het e-mailadres moet in kleine letters zijn',
+            'email.unique' => 'Dit e-mailadres is al in gebruik',
+            'reserveplayer.required' => 'Selecteer of je een reservespeler bent',
+            'teamleader.required' => 'Selecteer of je een teamleider bent',
+            'password.required' => 'Je moet een wachtwoord ingeven',
+            'password.confirmed' => 'Wachtwoord bevestiging komt niet overeen',
+            'password.min' => 'Wachtwoord moet minstens 8 karakters zijn'
 
         ]);
 
@@ -86,6 +103,7 @@ class RegisteredUserController extends Controller
         }
 
         // if ($playercount === 4 && $request->reserveplayer == 0 && $request->teamleader == 0) {
+        // if ($playercount === 4 && $request->reserveplayer == 0 && $request->teamleader == 0) {
 //     return redirect()->back()->with('error', 'Je moet voor een reservespeler of teamleader kiezen')->with('showAlert', true);
 // }
 
@@ -103,6 +121,7 @@ class RegisteredUserController extends Controller
         //nieuwe user aanmaken en inputwaarden aan properties van user assignen
         $user = new User([
 
+
             'name' => $request->name,
             'surname' => $request->surname,
             'email' => $request->email,
@@ -111,6 +130,7 @@ class RegisteredUserController extends Controller
 
         //user in de db saven
         $user->save();
+
 
 
         //nieuwe player aanmaken
