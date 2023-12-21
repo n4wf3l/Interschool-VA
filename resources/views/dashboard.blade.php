@@ -14,7 +14,7 @@
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=IM+Fell+Double+Pica+SC&family=Inter&family=Koulen&family=League+Gothic&family=Lobster&family=Playfair+Display+SC&family=Saira+Condensed:wght@600&family=Saira+Stencil+One&family=Waterfall&display=swap"
     rel="stylesheet">
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ asset('css blades/login.blade.css') }}">
+  <link rel="stylesheet" href="{{ asset('css blades/dashboard.blade.css') }}">
 </head>
 
 <body class="flex flex-col h-screen">
@@ -96,54 +96,77 @@
     </nav>
   </header>
 
-  <main class="bg-white flex-1">
+
+  <main class=" flex-1 bg-cover w-full" style="background-image: url('goalcover3.jpg');">
     <!-- Container -->
-    <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-20">
-      <div class="teams">
-        <h1>Teams</h1>
-        <!-- we loop through the teams -->
-        @foreach($teams as $team)
+    <div class="flex flex-row items-center ml-10 mt-20">
+      <!-- Design 2 Vertical -->
 
-        <!-- We show every teamname -->
-        <h2>{{ $team->Teamnaam }}</h2>
+      <div class="relative flex items-end pb-12">
 
-        <ul>
-          <!-- we loop through the players by teamID with an index -->
-          @foreach($players[$team->TeamID] as $index => $player)
-
-          <!-- we show the index and the name of the player per team -->
-          <li>{{$index + 1}}. {{ $player->user->name }}</li>
-
-          <!-- we check wether a player is a reserve, if so 'R' next to the name-->
-          @if($player->reserveplayer == 1)
-          <span>R</span>
-          @endif
-
-          <!-- we check wether a player is a Teamleader, if so 'C' next to the name-->
-          @if($player->teamleader == 1)
-          <span>C</span>
-          @endif
-          @endforeach
-        </ul>
-
-        @endforeach
+        <!-- Red line -->
+        <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
+        <!-- Blue line, positioned to overlap the red line -->
+        <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
       </div>
-
-      <br>
-
-      <div class="topscorer">
-
-        <h2>Topscorer</h2>
-
-        <h3>{{$topscorer->user->name}}</h3>
-
-        <p>Goals: {{$topscorer->goals}}</p>
-      </div>
-
+      <!-- Titre -->
+      <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15 text-white">Welkom, {{ Auth::user()->name }} !
+      </h2>
     </div>
 
+    <div class="text-white bg-teal-500 p-2 w-full overflow-hidden">
+      <div class="scrolling-text w-full">
+        Welkom {{ Auth::user()->name }} op de EhB Voetbal App! Bekijk hieronder de opgenomen selectie voor dit seizoen.
+        De beste doelpuntmaker
+        is momenteel
+        {{$topscorer->user->name}} met {{$topscorer->goals}} doelpunten !
+      </div>
+    </div>
+    </div>
+    <div class=" p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-20">
+      <div class="teams grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 text-center">
+        <!-- we loop through the teams -->
+        @foreach($teams as $team)
+        <div class="team-box border text-white">
+          <h2 class="text-white bg-teal-500">{{ $team->Teamnaam }}</h2>
+          <ul>
+            <!-- we loop through the players by teamID with an index -->
+            @foreach($players[$team->TeamID] as $index => $player)
+            <!-- we show the index and the name of the player per team -->
+            <li class="ml-3 mr-3"> {{ $player->user->name }}
+              @if($player->reserveplayer == 1)
+              <span class="text-teal-500">R</span>
+              @endif
+              @if($player->teamleader == 1)
+              <span class="text-blue-500">C</span>
+              @endif
+            </li>
+            @endforeach
+          </ul>
+        </div>
+        @endforeach
+      </div>
+      <div class="topscorer border-4 border-red-500 rounded-lg shadow-md bg-gray-100">
+        <h2 class="text-2xl font-bold mb-4 text-black p-2">Topscorer</h2>
+
+        <div class="flex items-center">
+          <!-- Ajoutez l'image ici -->
+          <img src="{{ asset('topscorericon.png') }}" alt="Description de l'image" class="h-10 w-10 rounded-full">
+
+          <h3 class="text-lg font-medium mr-2">{{ $topscorer->user->name }}</h3>
+        </div>
+
+        <div class="flex">
+          <p class="ml-2 pt-8 mb-2">Goals:
+          <p class="text-8xl ml-6">{{ $topscorer->goals }}</p>
+          </p>
+        </div>
+      </div>
+    </div>
 
   </main>
+
+
 
   <footer>
     <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
@@ -189,14 +212,8 @@
         </div>
         <div class="text-center mt-2">
           <p class="text-sm mx-2 pl-4 pr-6">
-<<<<<<< HEAD
-            Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws,
-            updates en spannende momenten van het EhB-voetbalseizoen.
-=======
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit.
-            Integer vestibulum efficitur sapien, id laoreet risus fringilla nec.
->>>>>>> myteam-page
+            Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws, updates
+            en spannende momenten van het EhB-voetbalseizoen.
           </p>
         </div>
       </div>
@@ -210,7 +227,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="{{ asset('js blades/login.blade.js') }}"></script>
+  <script src="{{ asset('js blades/dashboard.blade.js') }}"></script>
 </body>
 
 </html>
