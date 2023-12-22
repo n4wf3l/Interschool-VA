@@ -194,7 +194,8 @@
             <div
                 class="w-full md:w-1/3 mb-3 md:mb-0 p-8 rounded-lg shadow-md text-white border rounded-lg shadow-lg mt-7 mr-10">
                 <h2 class="text-2xl font-bold mb-4">Onopgeloste resultaten</h2>
-                <p class="pb-3">De onderstaande teams hebben verschillende wedstrijduitslagen doorgegeven. Druk op de
+                <p class="pb-3">De onderstaande teams hebben verschillende wedstrijduitslagen doorgegeven. Druk op
+                    de
                     meldingsknop om
                     automatisch een e-mail te sturen naar de betrokken teamcaptains, zodat ze de juiste score op hun
                     MyTeam-pagina kunnen doorgeven.</p>
@@ -211,7 +212,8 @@
                     <tbody>
                         @foreach($games as $game)
                         <tr>
-                            <td class="px-4 py-2 border">{{\Carbon\Carbon::parse($game->date)->translatedFormat('l, jS F
+                            <td class="px-4 py-2 border">{{\Carbon\Carbon::parse($game->date)->translatedFormat('l,
+                                jS F
                                 Y') }}</td>
                             <td class="px-4 py-2 border">{{ $game->team1_name }} <br> (C:{{ $game->team1_leader_name
                                 }})</td>

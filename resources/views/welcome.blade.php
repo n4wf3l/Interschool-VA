@@ -131,29 +131,19 @@
                 Vul <span class="hidden sm:inline-flex sm:ms-2">formulier</span>
             </li>
         </ol>
-        <!-- Container -->
         <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly p-10">
-            <!-- Flex Img and Data -->
             <div class="md:w-2/5 mx-auto md:mx-0">
-                <!-- Img Blue -->
                 <img src="{{ asset('balimg.jpg') }}" alt="Votre Image" class="w-30 h-70">
             </div>
             <div class="md:w-2/5 md:ml-8 mx-auto md:mx-0 flex flex-col md:items-start">
                 <div class="flex flex-row">
-                    <!-- Design 2 Vertical -->
                     <div class="relative flex items-end pb-12">
-                        <!-- Red line -->
                         <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-                        <!-- Blue line, positioned to overlap the red line -->
                         <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem; /* 3px */">
                         </div>
                     </div>
-                    <!-- Titre -->
                     <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">SCHRIJF JE IN!</h2>
                 </div>
-                <!-- Paragraphe -->
-                <!-- Updated Paragraphe -->
-                <!-- Updated Paragraphe in Second Person -->
                 <p class="text-4xl text-base mb-6 duration-500">
                     Ben jij gepassioneerd door voetbal of wil je graag sportief deelnemen aan wedstrijden tussen
                     studenten van verschillende
@@ -164,16 +154,10 @@
                     kampioenschap, de topscorers en de kalender voor het hele jaar. Vier samen met ons de geest van
                     sportiviteit en teamwork terwijl jij begint aan een spannende reis van interschool football
                     excellence!</p>
-
-
-                <!-- Bouton -->
                 <button type="submit" onclick="window.location.href='{{ route('registerteams') }}'"
                     class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
                     INSCHRIJVING </button>
             </div>
-    </main>
-    <main class="bg-white flex-1 pb-20">
-        <!-- white spacing : sectie 2 - next feature? -->
     </main>
 
     <footer>
