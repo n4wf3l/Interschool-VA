@@ -119,8 +119,9 @@
 
       @if($isTeamLeader)
       <div x-data="{ isOpen: false }">
-        <img @click="isOpen = true" class="ml-3 hover:bg-red-500 h-10 inline @auth rounded-full @endauth"
-          src="{{ asset('iconsettings.png') }}" alt="Settings Icon">
+        <img @click="isOpen = true"
+          class="ml-3 hover:bg-teal-500 h-10 inline @auth transition duration-500 rounded-full @endauth"
+          src="{{ asset('whiteiconsettings.png') }}" alt="Settings Icon">
 
         <!-- Pop-up formulier -->
         <div x-show="isOpen" @click.away="isOpen = false"

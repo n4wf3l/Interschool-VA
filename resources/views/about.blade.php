@@ -120,35 +120,34 @@
 
 
     <main class="mt-20">
-
-        <div class="flex flex-row items-center ml-60">
-            <!-- Design 2 Vertical -->
-
+        <div class="flex flex-row items-center sm:ml-0 lg:ml-60 xl:ml-60">
             <div class="relative flex items-end pb-12">
-
-                <!-- Red line -->
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-                <!-- Blue line, positioned to overlap the red line -->
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
             </div>
-            <!-- Titre -->
             <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">OVER ONS</h2>
         </div>
 
-        <p class="pl-80 pr-80 text-1xl text-center pb-5">
+        <p
+            class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
             EhB Voetbal App (EhB VA) werd bedacht door Nawfel Ajari en ontwikkeld in 2023 in samenwerking met
             Kristian Vasiaj, Jack Thyssens, Ismael Bouzrouti en Soufian Jaâtar voor een schoolproject onder toezicht van
             de informaticadocenten Robin Bervoets, Tom Aertssens en Ruben Dejonckheere. Met de steun van STUVO en Enigma
             werd het gelanceerd in 2024 met als doel het bevorderen van een vermakelijk en sportief aspect van de
             Erasmushogeschool Brussel en haar acht campussen.</p>
-        <p class="pl-80 pr-80 text-1xl text-center pb-5">EhB Voetbal App haalt zijn inspiratie uit de
+        <p
+            class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
+            EhB
+            Voetbal App haalt zijn inspiratie uit de
             Erasmushogeschool Brussel (EhB), die haar naam ontleent aan de humanistische filosoof Desiderius Erasmus. In
             lijn met de EhB kiezen wij voor een humanistisch perspectief in onze benadering. Het recht op vrijheid en
             menselijke waardigheid, het geloof in menselijk potentieel, open en rationele dialoog, en het nemen van
             zelfverantwoordelijkheid staan centraal in onze missie. Deze verantwoordelijkheid voor de wereld, de
             maatschappij en onszelf vertaalt zich in duurzaamheid in de breedste zin van het woord.</p>
 
-        <p class="pl-80 pr-80 text-1xl text-center ">Als je de vraag
+        <p
+            class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
+            Als je de vraag
             krijgt welke sport het populairst is in België, zal je waarschijnlijk antwoorden... wielrennen! Dat klopt
             helemaal, en we kunnen zelfs tennis aan dat lijstje toevoegen. Wij geven echter de voorkeur aan teamsporten,
             omdat dit een mentale impact heeft op samenleven en de samenwerking tussen studenten bevordert. Dit is iets
@@ -170,59 +169,46 @@
 
     <main class="mt-20">
 
-        <div class="flex flex-row items-center ml-60">
-            <!-- Design 2 Vertical -->
-
+        <div class="flex flex-row items-center sm:ml-0 lg:ml-60 xl:ml-60">
             <div class="relative flex items-end pb-12">
-
-                <!-- Red line -->
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-                <!-- Blue line, positioned to overlap the red line -->
+
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
             </div>
-            <!-- Titre -->
             <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">REGELS</h2>
         </div>
 
-        <div class="flex flex-col items-center">
-            <p class="pl-80 pr-80 text-1xl text-center pb-5">Wij heten alle studenten van de Erasmushogeschool Brussel
-                van harte welkom bij het EhB Voetbal App, een opwindend evenement dat ontworpen is om sportiviteit,
-                teamgeest en plezier te bevorderen. Voor een succesvol verloop van het toernooi vragen we alle
-                deelnemers om de regels en richtlijnen zorgvuldig door te nemen en zich hieraan te houden.</p>
-            <!-- ... Voeg hier de andere paragrafen toe -->
+        <p
+            class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
+            Wij heten alle studenten van de Erasmushogeschool Brussel
+            van harte welkom bij het EhB Voetbal App, een opwindend evenement dat ontworpen is om sportiviteit,
+            teamgeest en plezier te bevorderen. Voor een succesvol verloop van het toernooi vragen we alle
+            deelnemers om de regels en richtlijnen zorgvuldig door te nemen en zich hieraan te houden.</p>
         </div>
 
-        <div class="flex flex-col items-center">
-            <p class="pl-80 pr-80 text-1xl text-center pb-5">Met deze puntentelling komt de cruciale vraag naar voren:
-                welk team zal zichzelf tot kampioen van de EhB-competitie kronen aan het einde van dit seizoen? Elk team
-                heeft de kans om zijn talent en vastberadenheid te tonen en op te klimmen naar de hoogste positie in de
-                ranking. De spanning stijgt en de competitie is fel. Wie zal de felbegeerde titel mee naar huis nemen?
-                Het antwoord ligt in de handen van de gepassioneerde en getalenteerde teams die deelnemen aan het
-                Interschool Voetbaltoernooi. Laat het spel beginnen en moge het beste team zegevieren!</p>
+        <p
+            class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
+            Met deze puntentelling komt de cruciale vraag naar voren:
+            welk team zal zichzelf tot kampioen van de EhB-competitie kronen aan het einde van dit seizoen? Elk team
+            heeft de kans om zijn talent en vastberadenheid te tonen en op te klimmen naar de hoogste positie in de
+            ranking. De spanning stijgt en de competitie is fel. Wie zal de felbegeerde titel mee naar huis nemen?
+            Het antwoord ligt in de handen van de gepassioneerde en getalenteerde teams die deelnemen aan het
+            Interschool Voetbaltoernooi. Laat het spel beginnen en moge het beste team zegevieren!</p>
         </div>
     </main>
 
     <main id="onze-campussen" class="mt-20">
 
-        <div class="flex flex-row items-center ml-60">
-            <!-- Design 2 Vertical -->
-
+        <div class="flex flex-row items-center sm:ml-0 lg:ml-60 xl:ml-60">
             <div class="relative flex items-end pb-12">
-
-                <!-- Red line -->
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-                <!-- Blue line, positioned to overlap the red line -->
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
             </div>
-            <!-- Titre -->
             <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">ONZE CAMPUSSEN</h2>
         </div>
 
         <div class="w-full flex flex-row items-center justify-evenly">
-            <!-- Image à 50% -->
             <img src="{{ asset('erasmusgebouw.png') }}" alt="" class="w-1/2 h-200 md:w-1/5 mb-4">
-
-            <!-- Adresses -->
             <div class="flex flex-col ml-4">
                 <div class="flex items-center mb-2">
                     <img src="{{ asset('positionicon.png') }}" class="h-7">
@@ -317,44 +303,6 @@
                 </div>
             </div>
         </div>
-
-
-        <script>
-            const map = L.map('map').setView([50.85045, 4.34878], 12);
-
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-
-            L.marker([50.841778, 4.322869], { icon: L.divIcon({ className: 'red-marker', html: '<div></div>' }) }).addTo(map)
-                .bindPopup('Campus Kaai');
-
-            L.marker([50.847519, 4.343530]).addTo(map)
-                .bindPopup('Campus Bloemenhof');
-
-            L.marker([50.884310, 4.306160]).addTo(map)
-                .bindPopup('Campus Jette');
-
-            L.marker([50.8519583, 4.3423934]).addTo(map)
-                .bindPopup('Campus Kanal');
-
-            L.marker([50.839395, 4.3557524]).addTo(map)
-                .bindPopup('Campus KCB');
-
-            L.marker([50.8529853, 4.3302741]).addTo(map)
-                .bindPopup('Campus RITCS - Bottelarij');
-
-            L.marker([50.8503145, 4.3458185]).addTo(map)
-                .bindPopup('Campus RITCS - Dansaert');
-
-            L.marker([50.8154515, 4.2948993]).addTo(map)
-                .bindPopup('Campus COOVI');
-
-            L.marker([50.8154515, 4.2948993]).addTo(map)
-                .bindPopup('Campus COOVI');
-
-            L.marker([50.8455, 4.3557]).addTo(map)
-                .bindPopup('VUB (Wedstrijdlocatie)');
-        </script>
-
     </footer>
 
     <!-- Scripts -->
@@ -367,6 +315,42 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="{{ asset('js blades/about.blade.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+            const map = L.map('map').setView([50.85045, 4.34878], 12);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        L.marker([50.841778, 4.322869], { icon: L.divIcon({ className: 'red-marker', html: '<div></div>' }) }).addTo(map)
+            .bindPopup('Campus Kaai');
+
+        L.marker([50.847519, 4.343530]).addTo(map)
+            .bindPopup('Campus Bloemenhof');
+
+        L.marker([50.884310, 4.306160]).addTo(map)
+            .bindPopup('Campus Jette');
+
+        L.marker([50.8519583, 4.3423934]).addTo(map)
+            .bindPopup('Campus Kanal');
+
+        L.marker([50.839395, 4.3557524]).addTo(map)
+            .bindPopup('Campus KCB');
+
+        L.marker([50.8529853, 4.3302741]).addTo(map)
+            .bindPopup('Campus RITCS - Bottelarij');
+
+        L.marker([50.8503145, 4.3458185]).addTo(map)
+            .bindPopup('Campus RITCS - Dansaert');
+
+        L.marker([50.8154515, 4.2948993]).addTo(map)
+            .bindPopup('Campus COOVI');
+
+        L.marker([50.8154515, 4.2948993]).addTo(map)
+            .bindPopup('Campus COOVI');
+
+        L.marker([50.8455, 4.3557]).addTo(map)
+            .bindPopup('VUB (Wedstrijdlocatie)');
+    </script>
+
 </body>
 
 </html>
