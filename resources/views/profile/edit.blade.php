@@ -22,9 +22,7 @@
     <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
       style="background-color: red;">
       <div class="flex items-center justify-between">
-        <!--Erasmus logo -->
         <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-        <!--Hamburger menu for responsive  -->
         <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
           <ion-icon name="menu" id="menuIcon"></ion-icon>
         </span>
@@ -111,14 +109,10 @@
   <main class="bg-white flex-1 mt-20 ml-5 pb-10">
 
     <div class="flex flex-row">
-      <!-- Design 2 Vertical -->
       <div class="relative flex items-end pb-12">
-        <!-- Red line -->
         <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-        <!-- Blue line, positioned to overlap the red line -->
         <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem; /* 3px */"></div>
       </div>
-      <!-- Titre -->
       <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">MIJN PROFIEL : {{ Auth::user()->name }}</h2>
     </div>
     <div class="">

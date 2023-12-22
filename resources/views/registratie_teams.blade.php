@@ -22,9 +22,7 @@
     <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
       style="background-color: red;">
       <div class="flex items-center justify-between">
-        <!--Erasmus logo -->
         <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-        <!--Hamburger menu for responsive  -->
         <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
           <ion-icon name="menu" id="menuIcon"></ion-icon>
         </span>
@@ -104,7 +102,6 @@
   </header>
 
   <main class="bg-white flex-1 pt-20">
-
     <ol class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
       <li
         class="flex md:w-full items-center after:content-[''] after:w-full after:h-1 after:border-b after:border-gray-200 after:border-1 after:hidden sm:after:inline-block after:mx-6 xl:after:mx-10 dark:after:border-gray-700">
@@ -145,22 +142,15 @@
     </ol>
 
 
-    <!-- Container -->
     <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly">
-      <!-- Flex Img and Data -->
       <div class="mx-auto md:mx-0 items-center ">
-        <!-- Img Blue -->
       </div>
-      <div class="mx-auto"> <!-- Ajoutez la classe mx-auto pour centrer horizontalement -->
+      <div class="mx-auto">
         <div class="flex flex-row items-center">
-          <!-- Design 2 Vertical -->
           <div class="relative flex items-end pb-12">
-            <!-- Red line -->
             <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-            <!-- Blue line, positioned to overlap the red line -->
             <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
           </div>
-          <!-- Titre -->
           <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">KIES EEN TEAM</h2>
         </div>
 
@@ -278,30 +268,23 @@
         </div>
         <div class="text-center mt-2">
           <p class="text-sm mx-2 pl-4 pr-6">
-            <<<<<<< HEAD Volg de EhB Voetball App op de sociale media! Blijf op de hoogte van het laatste nieuws,
-              updates en spannende momenten van het EhB voetbalseizoen.=======Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit. Quisque vehicula libero at quam tristique, ut volutpat metus hendrerit. Integer
-              vestibulum efficitur sapien, id laoreet risus fringilla nec. </p>
-              >>>>>>> myteam-page
+            Volg de EhB Voetball App op de sociale media! Blijf op de hoogte van het laatste nieuws,
+            updates en spannende momenten van het EhB voetbalseizoen.</p>
         </div>
       </div>
     </div>
-  </footer>
-  </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
-    integrity="sha384-b4V1JRM/CJhqFWE4/gs1SMgeu+2SL1OrS5t9jQQI4Im7oJ/rRlFxG/X+De4eL9ES"
-    crossorigin="anonymous"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="{{ asset('js blades/registratie_teams.blade.js') }}"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-b4V1JRM/CJhqFWE4/gs1SMgeu+2SL1OrS5t9jQQI4Im7oJ/rRlFxG/X+De4eL9ES"
+      crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="{{ asset('js blades/registratie_teams.blade.js') }}"></script>
 </body>
 
 </html>
-
-</body>
 
 </html>

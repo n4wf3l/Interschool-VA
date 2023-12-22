@@ -22,9 +22,7 @@
     <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
       style="background-color: red;">
       <div class="flex items-center justify-between">
-        <!--Erasmus logo -->
         <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-        <!--Hamburger menu for responsive  -->
         <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
           <ion-icon name="menu" id="menuIcon"></ion-icon>
         </span>
@@ -115,8 +113,9 @@
 
       @if($isTeamLeader)
       <div x-data="{ isOpen: false }">
-        <img @click="isOpen = true" class="ml-3 hover:bg-red-500 h-10 inline @auth rounded-full @endauth"
-          src="{{ asset('iconsettings.png') }}" alt="Settings Icon">
+        <img @click="isOpen = true"
+          class="ml-3 hover:bg-teal-500 h-10 inline @auth transition duration-500 rounded-full @endauth"
+          src="{{ asset('whiteiconsettings.png') }}" alt="Settings Icon">
 
         <div x-show="isOpen" @click.away="isOpen = false"
           class="fixed inset-0 bg-black bg-opacity-25 flex items-center justify-center">

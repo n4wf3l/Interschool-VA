@@ -24,14 +24,11 @@
         <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
             style="background-color: red;">
             <div class="flex items-center justify-between">
-                <!--Erasmus logo -->
                 <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-                <!--Hamburger menu for responsive  -->
                 <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
                     <ion-icon name="menu" id="menuIcon"></ion-icon>
                 </span>
 
-                <!--Navigation list -->
                 <ul class="md:flex md:items-center md:static absolute bg-red w-full left-0 md:py-0 py-4 md:pl-0 pl-7 top-[60px] hidden"
                     style="background-color: red;">
                     <li class="mx-4 my-0 md:my-0 bg-red">
@@ -67,7 +64,6 @@
                             style="background-color: red;">MyADMIN</a>
                     </li>
                     @endif
-
                 </ul>
                 <!--Login list icon-->
                 <div x-data="{ open: false }"
@@ -108,7 +104,6 @@
 
     <main class="bg-white flex-1">
         <img src="{{asset('backgroundimage.png')}}" alt="" srcset="" class="w-full">
-
         <ol
             class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
             <li
@@ -136,29 +131,19 @@
                 Vul <span class="hidden sm:inline-flex sm:ms-2">formulier</span>
             </li>
         </ol>
-        <!-- Container -->
         <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly p-10">
-            <!-- Flex Img and Data -->
             <div class="md:w-2/5 mx-auto md:mx-0">
-                <!-- Img Blue -->
                 <img src="{{ asset('balimg.jpg') }}" alt="Votre Image" class="w-30 h-70">
             </div>
             <div class="md:w-2/5 md:ml-8 mx-auto md:mx-0 flex flex-col md:items-start">
                 <div class="flex flex-row">
-                    <!-- Design 2 Vertical -->
                     <div class="relative flex items-end pb-12">
-                        <!-- Red line -->
                         <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-                        <!-- Blue line, positioned to overlap the red line -->
                         <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem; /* 3px */">
                         </div>
                     </div>
-                    <!-- Titre -->
                     <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">SCHRIJF JE IN!</h2>
                 </div>
-                <!-- Paragraphe -->
-                <!-- Updated Paragraphe -->
-                <!-- Updated Paragraphe in Second Person -->
                 <p class="text-4xl text-base mb-6 duration-500">
                     Ben jij gepassioneerd door voetbal of wil je graag sportief deelnemen aan wedstrijden tussen
                     studenten van verschillende
@@ -169,16 +154,10 @@
                     kampioenschap, de topscorers en de kalender voor het hele jaar. Vier samen met ons de geest van
                     sportiviteit en teamwork terwijl jij begint aan een spannende reis van interschool football
                     excellence!</p>
-
-
-                <!-- Bouton -->
                 <button type="submit" onclick="window.location.href='{{ route('registerteams') }}'"
                     class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
                     INSCHRIJVING </button>
             </div>
-    </main>
-    <main class="bg-white flex-1 pb-20">
-        <!-- white spacing : sectie 2 - next feature? -->
     </main>
 
     <footer>
