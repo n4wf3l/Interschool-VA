@@ -107,46 +107,43 @@
     </nav>
   </header>
 
-  <main class="bg-white flex-1">
-    <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly">
 
-      <div class="mx-auto pl-10">
-        <div class="flex flex-row items-center">
-          <div class="relative flex items-end pb-20">
-            <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-            <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
-          </div>
-          <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">SEIZOENSKALENDER</h2>
-        </div>
-        <p class="pl-20 text-2xl text-center "> Je kunt je verheugen op het aankomende voetbalseizoen van het
-          EhB Voetbal App!
-          Het seizoen <span id="jaartal"></span> zal een uitgebreide kalender presenteren met geplande wedstrijden
-          tussen studententeams van alle campussen van het Erasmushogeschool Brussel (EHB).
-          De teams zijn exclusief samengesteld uit enthousiaste EHB-studenten, wat zorgt voor spannende en competitieve
-          matches.
-          Blijf op de hoogte van het wedstrijdschema en mis geen enkel moment van deze interschool voetbalcompetitie!
-        </p>
-
-        <p class="pl-20 mt-10 text-2xl pb-50">Ontdek de hoogtepunten van het seizoen en blijf op de hoogte van alle
-          wedstrijddata en -tijden.
-          Wij vinden het van uiterst belang dat jij deze nauwlettend volgt om geen enkel moment van het interschool
-          voetbalseizoen te missen.
-          Als liefhebber van voetbal op topniveau wil je geen enkele uitslag, geen enkele wedstrijd overslaan.
-          Bekijk de resultaten van de seizoensduels en markeer de kalender met de meeslepende ontmoetingen tussen
-          EhB-studenten.
-          Mis deze professioneel opgezette competitie niet en beleef het voetbal op het hoogste niveau!</p>
+  <main class="mt-20">
+    <div class="flex flex-row items-center sm:ml-0 lg:ml-60 xl:ml-60">
+      <div class="relative flex items-end pb-12">
+        <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
+        <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
       </div>
+      <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">KALENDER</h2>
+    </div>
 
-      <div class="flex flex-row items-center pr-20">
-        <!-- Design 2 Vertical -->
-        <div class="relative flex items-end pb-12">
-          <!-- Red line -->
-          <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-red-500"></div>
-          <!-- Blue line, positioned to overlap the red line -->
-          <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
-        </div>
-
+    <div class="relative flex flex-row-reverse items-center ml-10">
+      <div class="absolute top-0 right-0 flex flex-col items-end">
+        <div class="mb-3 h-32 w-4 bg-red-500"></div>
+        <div class="mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
       </div>
+    </div>
+
+    <p class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
+      Je kunt je verheugen op het aankomende voetbalseizoen van het
+      EhB Voetbal App!
+      Het seizoen <span id="jaartal"></span> zal een uitgebreide kalender presenteren met geplande wedstrijden
+      tussen studententeams van alle campussen van het Erasmushogeschool Brussel (EHB).
+      De teams zijn exclusief samengesteld uit enthousiaste EHB-studenten, wat zorgt voor spannende en competitieve
+      matches.
+      Blijf op de hoogte van het wedstrijdschema en mis geen enkel moment van deze interschool voetbalcompetitie!
+    </p>
+
+    <p class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
+      Ontdek de hoogtepunten van het seizoen en blijf op de hoogte van alle
+      wedstrijddata en -tijden.
+      Wij vinden het van uiterst belang dat jij deze nauwlettend volgt om geen enkel moment van het interschool
+      voetbalseizoen te missen.
+      Als liefhebber van voetbal op topniveau wil je geen enkele uitslag, geen enkele wedstrijd overslaan.
+      Bekijk de resultaten van de seizoensduels en markeer de kalender met de meeslepende ontmoetingen tussen
+      EhB-studenten.
+      Mis deze professioneel opgezette competitie niet en beleef het voetbal op het hoogste niveau!</p>
+    </div>
   </main>
 
   <main class="pt-5 w-full bg-cover" style="background-image: url('futsalcover.jpg');">

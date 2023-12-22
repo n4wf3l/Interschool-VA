@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Verschil in Scores</title>
+    <title>Verschil in scores</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
     <p>Bedankt voor jullie snelle reactie.</p>
 
     <p>Met vriendelijke groet,</p>
-    <p>Interschool Voetbal Applicatie</p>
+    <p style="color:red;">EhB Voetbal App</p>
 </body>
 
 </html>
