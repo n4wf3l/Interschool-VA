@@ -290,7 +290,7 @@
         <button type="submit" onclick="window.location.href='{{ url('calendars') }}'"
           class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
           KALENDER</button>
-        <button type="submit" onclick="window.location.href='{{ url('rakings') }}'"
+        <button type="submit" onclick="window.location.href='{{ url('rankings') }}'"
           class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
           RANKING </button>
       </div>
