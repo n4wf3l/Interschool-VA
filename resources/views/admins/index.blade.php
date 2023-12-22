@@ -68,7 +68,8 @@
     <ul>
         @foreach($games as $game)
         <li>
-            <strong>Game:</strong>{{ $game->date_game }} {{ $game->team1_name }} (Leader: {{ $game->team1_leader_name
+            <strong>Game:</strong>{{\Carbon\Carbon::parse($game->date)->translatedFormat('l, jS F Y') }} {{
+            $game->team1_name }} (Leader: {{ $game->team1_leader_name
             }}) vs
 
             {{ $game->team2_name }} (Leader: {{ $game->team2_leader_name }})
