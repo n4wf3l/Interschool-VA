@@ -22,9 +22,7 @@
     <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
       style="background-color: red;">
       <div class="flex items-center justify-between">
-        <!--Erasmus logo -->
         <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-        <!--Hamburger menu for responsive  -->
         <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
           <ion-icon name="menu" id="menuIcon"></ion-icon>
         </span>
@@ -143,11 +141,8 @@
 
       <div class="mx-auto pl-10">
         <div class="hidden md:flex md:flex-row md:items-center md:pr-20">
-          <!-- Design 2 Vertical -->
           <div class="relative flex items-end pb-12">
-            <!-- Red line -->
             <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-red-500"></div>
-            <!-- Blue line, positioned to overlap the red line -->
             <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
           </div>
         </div>
@@ -156,12 +151,9 @@
 
   <main class="bg-red-500 items-center justify-center pt-5">
     <div class="bg-white md:p-0 md:flex md:items-center md:justify-evenly w-full bg-cover min-h-screen"
-      style="background-image: url('futsalcover.jpg'); height: 800px;"> <!-- Ajustez la hauteur selon vos besoins -->
-
-      <!-- Table Team Ranking -->
-
+      style="background-image: url('futsalcover.jpg'); height: 800px;">
       <div class="mx-auto  bg-gray-100 rounded-lg p-4">
-        <h1 class="text-center mb-4 text-black">EhBVA-ranking</h1>
+        <h1 class="text-center mb-4 text-black">Competitie</h1>
         <table class="w-full border border-gray-300 text-white">
           <thead class="bg-teal-500">
             <tr>
@@ -181,7 +173,6 @@
           </tbody>
         </table>
       </div>
-      <!-- Table Goalscorers Ranking -->
       <div class="mx-auto w-34 bg-gray-100 rounded-lg p-4">
         <h1 class="text-center mb-4 text-black">Topscorers</h1>
         <table class="w-full border border-gray-300 text-white">
@@ -211,18 +202,12 @@
   </main>
 
   <main class="bg-white flex-1 pt-5 md:mt-40 mt-32">
-
     <div class="mx-auto pl-10">
       <div class="flex flex-row items-center">
-        <!-- Design 2 Vertical -->
         <div class="relative flex items-end">
-          <!-- Red line -->
           <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-          <!-- Blue line, positioned to overlap the red line -->
           <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
         </div>
-
-        <!-- Titre -->
         <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">ZIE OOK</h2>
       </div>
       <div class="flex space-x-4 mt-32 pl-20 pb-10">

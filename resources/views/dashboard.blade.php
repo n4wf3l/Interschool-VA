@@ -22,9 +22,7 @@
     <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
       style="background-color: red;">
       <div class="flex items-center justify-between">
-        <!--Erasmus logo -->
         <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-        <!--Hamburger menu for responsive  -->
         <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
           <ion-icon name="menu" id="menuIcon"></ion-icon>
         </span>
@@ -68,7 +66,6 @@
           @endif
         </ul>
         <!--Login list icon-->
-
         <div x-data="{ open: false }"
           class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
           @if (Route::has('login'))
@@ -98,18 +95,11 @@
 
 
   <main class=" flex-1 bg-cover w-full" style="background-image: url('goalcover3.jpg');">
-    <!-- Container -->
     <div class="flex flex-row items-center ml-10 mt-20">
-      <!-- Design 2 Vertical -->
-
       <div class="relative flex items-end pb-12">
-
-        <!-- Red line -->
         <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-        <!-- Blue line, positioned to overlap the red line -->
         <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
       </div>
-      <!-- Titre -->
       <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15 text-white">Welkom, {{ Auth::user()->name }} !
       </h2>
     </div>
@@ -126,14 +116,11 @@
     <div class=" p-8 md:p-0 md:flex md:items-center md:justify-evenly mt-20">
       <div
         class="teams grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 text-center pb-20">
-        <!-- we loop through the teams -->
         @foreach($teams as $team)
         <div class="team-box border text-white">
           <h2 class="text-white bg-teal-500">{{ $team->Teamnaam }}</h2>
           <ul>
-            <!-- we loop through the players by teamID with an index -->
             @foreach($players[$team->TeamID] as $index => $player)
-            <!-- we show the index and the name of the player per team -->
             <li class="ml-3 mr-3"> {{ $player->user->name }}
               @if($player->reserveplayer == 1)
               <span class="text-teal-500">R</span>
@@ -149,14 +136,10 @@
       </div>
       <div class="topscorer border-4 border-red-500 rounded-lg shadow-md bg-gray-100">
         <h2 class="text-2xl font-bold mb-4 text-black p-2">Topscorer</h2>
-
         <div class="flex items-center">
-          <!-- Ajoutez l'image ici -->
           <img src="{{ asset('topscorericon.png') }}" alt="Description de l'image" class="h-10 w-10 rounded-full">
-
           <h3 class="text-lg font-medium mr-2">{{ $topscorer->user->name }}</h3>
         </div>
-
         <div class="flex">
           <p class="ml-2 pt-8 mb-2">Goals:
           <p class="text-8xl ml-6">{{ $topscorer->goals }}</p>
@@ -164,10 +147,7 @@
         </div>
       </div>
     </div>
-
   </main>
-
-
 
   <footer>
     <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">

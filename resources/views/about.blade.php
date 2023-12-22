@@ -29,9 +29,7 @@
         <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
             style="background-color: red;">
             <div class="flex items-center justify-between">
-                <!--Erasmus logo -->
                 <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-                <!--Hamburger menu for responsive  -->
                 <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
                     <ion-icon name="menu" id="menuIcon"></ion-icon>
                 </span>
@@ -344,7 +342,6 @@
         L.marker([50.8455, 4.3557]).addTo(map)
             .bindPopup('VUB (Wedstrijdlocatie)');
     </script>
-
 </body>
 
 </html>
