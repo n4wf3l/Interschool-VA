@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\teams;
 use App\Models\players;
 use App\Models\games;
+use App\Models\Archived_game;
+
 
 
 class DatabaseSeeder extends Seeder
@@ -316,6 +318,18 @@ class DatabaseSeeder extends Seeder
                     ]);
                 }
             }
+        }
+
+
+        //archived games
+        for ($i = 1; $i <= 5; $i++) {
+            Archived_game::create([
+                'year' => 2023 + $i,  // Assuming the years start from 2023 and increment by 1 for each record
+                'teamname' => "Team " . $i,
+                'points' => rand(1, 80),  // Random points for demonstration
+                'topscorer_name' => 'topscorer' . $i,
+                'topscorer_goals' => rand(1, 40),  // Random number of goals for demonstration
+            ]);
         }
 
     }
