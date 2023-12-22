@@ -103,16 +103,12 @@
 
   <main class="flex-1 flex-col  w-full mt-10 bg-color bg-center" style="background-image: url('composition.jpg');">
     <div class="flex flex-row items-center ml-10 mt-10">
-      <!-- Design 2 Vertical -->
 
       <div class="relative flex items-end pb-12">
 
-        <!-- Red line -->
         <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-        <!-- Blue line, positioned to overlap the red line -->
         <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
       </div>
-      <!-- Titre -->
       <h2 class="text-7xl font-bold mb-4 duration-500 pl-5 pb-15 text-white">
         MyTEAM - {!! $playerWithGoals->first()->Team->Teamnaam !!}
       </h2>
@@ -123,7 +119,6 @@
           class="ml-3 hover:bg-teal-500 h-10 inline @auth transition duration-500 rounded-full @endauth"
           src="{{ asset('whiteiconsettings.png') }}" alt="Settings Icon">
 
-        <!-- Pop-up formulier -->
         <div x-show="isOpen" @click.away="isOpen = false"
           class="fixed inset-0 bg-black bg-opacity-25 flex items-center justify-center">
           <div class="bg-white p-6 rounded-lg shadow-md">
@@ -154,7 +149,6 @@
   <div class="bg-teal-500 h-3 w-full pt-3 pb-3"></div>
   <div class="flex flex-col md:flex-row">
 
-    <!-- Games van het team + score indienen-->
 
     <main class="w-full md:w-1/2" x-data="{ openForm: null, currentFormNumber: 0 }">
       <div class="flex flex-col items-center justify-center md:p-0 mt-2">
@@ -174,7 +168,6 @@
             class="bg-red-500 text-1xl text-white mb-3 px-2 py-1 rounded transition duration-500 hover:bg-teal-500">
             Sluiten
           </button>
-          <!-- Reste du contenu du formulaire -->
           <p>WEDSTRIJDDATUM : {{ \Carbon\Carbon::parse($game->date)->format('Y-m-d') }}</p>
           {{ $game->team1->Teamnaam }} VS {{ $game->team2->Teamnaam }} | Score: {{$game->scoreTeam1}} -
           {{$game->scoreTeam2}}</p>
@@ -206,7 +199,6 @@
                 in
                 :
               </h2>
-              <!-- Display player details and input fields for goals -->
               @foreach($playerWithGoals as $player)
 
               <div class="text-right">
@@ -219,7 +211,6 @@
                   <span class="text-teal-500">R</span>
                   @endif
                   :
-                  <!-- Display the goals using input fields -->
                   @if($isTeamLeader)
                   <input class="w-7 bg-gray-200" type="number" name="player_goals[{{ $player->playerID }}]" value="0"
                     min="0">
@@ -310,7 +301,6 @@
 
   <footer>
     <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
-      <!-- Eerste kolom (data) -->
       <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
         <div class="flex items-center">
           <a href="{{ url('about') }}#onze-campussen">
@@ -334,13 +324,11 @@
         </div>
       </div>
 
-      <!-- Tweede kolom (logo erasmus) -->
       <div class="w-full md:w-1/2 flex flex-col items-center">
         <img class="h-5" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
         <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
       </div>
 
-      <!-- Derde kolom (social media)-->
       <div class="w-full md:w-1/2 flex flex-col items-center">
         <div class="flex space-x-2">
           <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
@@ -358,7 +346,6 @@
         </div>
 
   </footer>
-  <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
     integrity="sha384-b4V1JRM/CJhqFWE4/gs1SMgeu+2SL1OrS5t9jQQI4Im7oJ/rRlFxG/X+De4eL9ES"
