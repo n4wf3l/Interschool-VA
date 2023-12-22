@@ -33,8 +33,13 @@ class TournamentController extends Controller
 
         $schedule = $this->generateRoundRobinSchedule($all_teams);
 
-        $startDate = Carbon::parse('Friday next week')->setTime(20, 0); // Start date, next Friday at 20:00
+
+        $startDate = Carbon::parse('Friday next week')->setTime(20, 0);
+        //$startDate = $startDate->format('l, jS F Y');
+
         $gameNumber = 0;
+
+
 
         // Save games to database
         foreach ($schedule as $round => $matches) {

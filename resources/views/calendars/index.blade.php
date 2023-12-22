@@ -166,7 +166,9 @@
         <tbody>
           @foreach($games as $game)
           <tr>
-            <td class="text-center bg-gray-300 text-black border border-solid">{{ $game->date }}</td>
+            <td class="text-center bg-gray-300 text-black border border-solid">
+              {{\Carbon\Carbon::parse($game->date)->translatedFormat('l, jS F Y') }}
+            </td>
             <td class="text-center bg-gray-300 text-black border border-solid">{{ $game->team1->Teamnaam }}</td>
             <td class="text-center bg-gray-300 text-black border border-solid">{{ $game->team2->Teamnaam }}</td>
             <td class="text-center bg-gray-300 text-black border border-solid">{{ $game->team1->Teamnaam }} | {{

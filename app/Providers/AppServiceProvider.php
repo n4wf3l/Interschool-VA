@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -95,5 +96,6 @@ class AppServiceProvider extends ServiceProvider
 
             return str_replace(':attribute', $attribute, 'Gelieve een juiste :attribute formaat in te geven');
         });
+        Carbon::setLocale('nl');
     }
 }
