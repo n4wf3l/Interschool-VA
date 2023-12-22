@@ -138,8 +138,13 @@
           team worden erkend.
           Welkom bij de pinnacle van interschoolvoetbal excellence!</p>
 
-      </div>
 
+      </div>
+      <div class="flex space-x-4 mt-32 pl-20 pb-10">
+        <button type="submit" onclick="window.location.href='{{ url('/rankings/archived') }}'"
+          class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
+          Ranking Previous Competitions</button>
+      </div>
 
       <div class="mx-auto pl-10">
         <div class="hidden md:flex md:flex-row md:items-center md:pr-20">
