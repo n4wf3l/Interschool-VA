@@ -1,0 +1,39 @@
+header {
+    background: red;
+    color: white;
+}
+
+main {
+    background: white;
+}
+
+footer {
+    background: red;
+    color: white;
+}
+
+body {
+    font-family: "Saira Condensed", sans-serif;
+    color: black;
+}
+
+#messageDropdown {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.messageOption {
+    display: inline-block;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.messageOption:hover {
+    animation: scrollText 5s linear infinite;
+}
+
+@keyframes scrollText {
+    to {
+        transform: translateX(-100%);
+    }
+}

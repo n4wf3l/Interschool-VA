@@ -98,8 +98,12 @@ Route::get('/about', function () {
 Route::middleware('admin')->group(function () {
 
     Route::get('/admins', [AdminController::class, 'index'])->name('admins.index');
+    Route::post('/send-message', [AdminController::class, 'sendMessageToAllUsers'])->name('send-message');
+    Route::post('/notify-team-leaders/{game}', [AdminController::class, 'unsolvedScoreNotifier'])->name('notify-team-leaders');
+    Route::post('/admins/games/{game}/save-scores', [AdminController::class, 'saveDefinitiveScores'])->name('admins.save-scores');
 
 });
+
 
 
 Route::middleware('teamleader')->group(function () {
