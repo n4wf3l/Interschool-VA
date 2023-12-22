@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Archived_game;
 use Carbon\Carbon;
 use App\Models\games;
 use Illuminate\Http\Request;
@@ -9,6 +10,7 @@ use App\Models\teams;
 use App\Models\players;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use DateTime;
 
 
 class TournamentController extends Controller
@@ -123,6 +125,21 @@ class TournamentController extends Controller
     public function resetTournament()
     {
         $adminUsers = User::where('admin', 1)->get(['userID', 'name', 'surname', 'email', 'admin', 'password']);
+
+        $topScorer = players::orderBy('goals', 'desc')->first();
+        $rankedTeams = teams::orderByDesc('points')->get();
+        $all_games = games::all()->first();
+
+        foreach ($rankedTeams as $team) {
+            $archived_game = new Archived_game();
+            $date = new DateTime($all_games->date);
+            $archived_game->year = (int) $date->format('Y');
+            $archived_game->teamname = $team->Teamnaam;
+            $archived_game->points = $team->points;
+            $archived_game->topscorer_name = $topScorer->user->name;
+            $archived_game->topscorer_goals = $topScorer->goals;
+            $archived_game->save();
+        }
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 

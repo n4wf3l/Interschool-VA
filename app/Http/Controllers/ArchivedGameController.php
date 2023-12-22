@@ -5,15 +5,31 @@ namespace App\Http\Controllers;
 use App\Models\Archived_game;
 use App\Http\Requests\StoreArchived_gameRequest;
 use App\Http\Requests\UpdateArchived_gameRequest;
+use Illuminate\Http\Request;
 
 class ArchivedGameController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+
+
+        $selectedYear = $request->input('year');
+        $years = Archived_game::select('year')->distinct()->pluck('year'); // Get distinct years
+
+        $rankings = Archived_game::when($selectedYear, function ($query) use ($selectedYear) {
+            return $query->where('year', $selectedYear);
+        })->orderBy('points', 'desc')->get();
+
+        $topscorer = Archived_game::when($selectedYear, function ($query) use ($selectedYear) {
+            return $query->where('year', $selectedYear);
+        })->orderBy('topscorer_goals', 'desc')->first();
+
+
+        return view('rankings.archived', compact('rankings', 'years', 'selectedYear', 'topscorer'));
+
     }
 
     /**
@@ -21,7 +37,7 @@ class ArchivedGameController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
