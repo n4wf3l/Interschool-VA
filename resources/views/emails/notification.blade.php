@@ -11,8 +11,6 @@
 
     <p>{{ $messageContent }}</p>
 
-    <p>Bedankt voor jullie snelle reactie.</p>
-
     <p>Met vriendelijke groet,</p>
     <p>Interschool Voetbal Applicatie</p>
 </body>
