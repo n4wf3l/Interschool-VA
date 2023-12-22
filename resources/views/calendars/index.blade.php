@@ -178,27 +178,6 @@
         </tbody>
       </table>
     </div>
-    <!--
-    <form action="{{ route('generate-schedule') }}" method="POST">
-        @csrf
-        <button type="submit" class="btn btn-primary">Generate Schedule</button>
-    </form>
-
-    @if (session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
-    @endif
-
-
-    <form action="{{ route('reset-tournament') }}" method="POST">
-        @csrf
-        <button type="submit" class="btn btn-danger"
-            onclick="return confirm('Are you sure you want to reset the tournament? This action cannot be undone.');">
-            Reset Tournament
-        </button>
-    </form> -->
-
     </div>
   </main>
 
