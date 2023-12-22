@@ -24,14 +24,11 @@
         <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
             style="background-color: red;">
             <div class="flex items-center justify-between">
-                <!--Erasmus logo -->
                 <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-                <!--Hamburger menu for responsive  -->
                 <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
                     <ion-icon name="menu" id="menuIcon"></ion-icon>
                 </span>
 
-                <!--Navigation list -->
                 <ul class="md:flex md:items-center md:static absolute bg-red w-full left-0 md:py-0 py-4 md:pl-0 pl-7 top-[60px] hidden"
                     style="background-color: red;">
                     <li class="mx-4 my-0 md:my-0 bg-red">
@@ -67,7 +64,6 @@
                             style="background-color: red;">MyADMIN</a>
                     </li>
                     @endif
-
                 </ul>
                 <!--Login list icon-->
                 <div x-data="{ open: false }"
@@ -108,7 +104,6 @@
 
     <main class="bg-white flex-1">
         <img src="{{asset('backgroundimage.png')}}" alt="" srcset="" class="w-full">
-
         <ol
             class="flex items-center w-full text-sm font-medium text-center text-gray-500 dark:text-gray-400 sm:text-base">
             <li

@@ -25,7 +25,6 @@
 </head>
 
 <body class="flex flex-col h-screen">
-
     <header>
         <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
             style="background-color: red;">
@@ -117,8 +116,6 @@
         </nav>
     </header>
 
-
-
     <main class="mt-20">
         <div class="flex flex-row items-center sm:ml-0 lg:ml-60 xl:ml-60">
             <div class="relative flex items-end pb-12">
@@ -157,11 +154,8 @@
             vieren!</p>
 
         <div class="relative flex flex-row-reverse items-center ml-10">
-            <!-- Design 2 Vertical à droite -->
             <div class="absolute top-0 right-0 flex flex-col items-end">
-                <!-- Red line -->
                 <div class="mb-3 h-32 w-4 bg-red-500"></div>
-                <!-- Blue line, positioned to overlap the red line -->
                 <div class="mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
             </div>
     </main>
