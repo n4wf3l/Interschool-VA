@@ -39,7 +39,7 @@ class ContactController extends Controller
 
         Mail::to('info.va.ehb@gmail.com')->send(new ContactMail($validatedData));
 
-        return back()->with('success', 'Your message has been sent.');
+        return back()->with('success', 'Je bericht is verzonden.');
     }
 
     /**
