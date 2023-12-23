@@ -109,9 +109,7 @@ Route::get('/rankings/archived', [ArchivedGameController::class, 'index'])->name
 
 
 
-Route::middleware('teamleader')->group(function () {
 
-});
 
 
 
