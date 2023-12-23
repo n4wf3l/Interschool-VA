@@ -151,8 +151,8 @@
 
     <main class="w-full md:w-1/2" x-data="{ openForm: null, currentFormNumber: 0 }">
       <div class="flex flex-col items-center justify-center md:p-0 mt-2">
-        <h1 class="text-5xl font-bold mb-4 duration-500 mt-10">Aankomende wedstrijden</h1>
-        <div class="text-left pt-5 pb-5">
+        <h1 class="text-5xl font-bold mb-4 duration-500 mt-10 m-20">Aankomende wedstrijden</h1>
+        <div class="text-left pt-2 pb-2 m-20">
           <span class="text-red-500">TS (Tijdelijke score)</span> = De score die je ingeeft moet gelijk zijn aan
           die van de tegenstander
           <br>
@@ -183,11 +183,13 @@
               <h2 class="text-2xl font-bold mb-4 duration-500 bg-red-500 text-white pl-2 pr-2 ">Geef de
                 score in : </h2>
 
-              <label for="tijdelijkScoreTeam1"><span class="text-red-500 ml-2">TS</span> {{ $game->team1->Teamnaam }}</label>
+              <label for="tijdelijkScoreTeam1"><span class="text-red-500 ml-2">TS</span> {{ $game->team1->Teamnaam
+                }}</label>
               <input class="w-7 bg-gray-200" type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" value="0"
                 min="0" required {{ $disableInput ? 'disabled' : '' }}>
 
-              <label for="tijdelijkScoreTeam2"><span class="text-red-500">TS</span> {{ $game->team2->Teamnaam }} </label>
+              <label for="tijdelijkScoreTeam2"><span class="text-red-500">TS</span> {{ $game->team2->Teamnaam }}
+              </label>
               <input class="w-7 bg-gray-200" type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" value="0"
                 min="0" required {{ $disableInput ? 'disabled' : '' }}>
 
