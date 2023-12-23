@@ -23,7 +23,7 @@ Follow these steps to set up and run the project locally:
     -   php artisan migrate:fresh --seed (Wait for Seeding database)
     -   php artisan serve
 
-    Open a new terminal and use thes commands:
+    Open a new terminal and use these commands:
 
     -   npm install
     -   npm run dev
@@ -113,6 +113,30 @@ For the full text of the MIT License, please see the LICENSE file included in th
 We encourage contributions to this project. Check out the CONTRIBUTING.md for more information on how to get involved.
 
 **Note:** While this project was created in an academic context, adding a license aims to clearly define usage terms and protect the rights of contributors.
+
+# Image Credits
+In the project's public directory, you will find a file called "img blades" containing a variety of images used to illustrate the platform's pages.
+
+This project uses images from various sources, and we would like to express our gratitude to the talented photographers who created these works. Below is a list of the images used, along with the appropriate credits:
+
+## Background Image
+
+1. !backgroundimage.png ([Link](https://stock.adobe.com/jp/images/blue-futsal-ball-in-the-center-of-a-futuristic-indoor-soccer-field-with-glowing-white-lines-background/450869893)  
+*Photo Credit: Martin Piechotta ([Link to Profile](photographer_profile_link))*
+2. !composition.jpg ([Link](https://www.gettyimages.be/detail/illustratie/the-concept-of-development-of-events-and-royalty-free-illustraties/1407376618?adppopup=true)   
+   *Photo Credit: Elena Kopusova ([Link to Profile](https://www.gettyimages.be/search/photographer?photographer=Elena%20Kopusova))*
+3. !coveradmin.jpg ([Link](https://www.istockphoto.com/jp/%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF%E3%83%95%E3%82%A9%E3%83%88/%E3%83%90%E3%83%83%E3%82%AF%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E9%81%B8%E6%89%8B%E3%81%AE%E5%89%8D%E3%81%AB%E3%83%95%E3%83%AB%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0-gm94735731-1625308)   
+   *Photo Credit: Jan du Bois ([Link to Profile](https://brunswyck-wathelet.brussels/nl/catalogus/erasmus-hogeschool-cvo-brussel-nijverheidskaai-170-materiaalstraat-67-anderlecht))*
+
+## Other Images
+
+1. !backgroundfoto.jpg ([Link](https://www.wallpapertip.com/wpic/TxbibJ_torneo-de-futsal/)  
+   *Photo Credit: Cherry Chapstick ([Link to Profile](https://www.wallpapertip.com/uwall/4313/))*
+2. !erasmusgebouw.png ([Link](https://brunswyck-wathelet.brussels/nl/catalogus/erasmus-hogeschool-cvo-brussel-nijverheidskaai-170-materiaalstraat-67-anderlecht)  
+   *Photo Credit: Cherry Chapstick ([Link to Profile](https://www.wallpapertip.com/uwall/4313/))*
+
+
+We are thankful to these artists for their outstanding visual contributions to our project.
 
 # Contributors
 
