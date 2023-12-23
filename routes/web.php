@@ -52,7 +52,11 @@ Route::get('/registerteams', function () {
 
 
 Route::get('/myteam', function () {
-    return view('myteam');
+    if (auth()->check()) {
+        return view('myteam');
+    } else {
+        return redirect()->route('login');
+    }
 })->name('myteam');
 
 Route::get('/myteam', [MyTeamController::class, 'index'])->name('myteam');
