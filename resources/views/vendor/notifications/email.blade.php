@@ -1,7 +1,9 @@
 {{-- resources/views/emails/verification.blade.php --}}
 
 @component('mail::message')
-{{-- Subject --}}
+
+@slot('subject', 'Bevestiging Emailadres')
+
 # Bevestiging emailadres
 
 
@@ -15,7 +17,7 @@ Klik op de knop hieronder om uw emailadres te bevestigen.
 $color = $level === 'success' || $level === 'error' ? $level : 'primary';
 @endphp
 @component('mail::button', ['url' => $actionUrl, 'color' => $color])
-{{ $actionText }}
+Bevestig Emailadres
 @endcomponent
 @endisset
 
@@ -28,7 +30,7 @@ Ehb Voetbal App.
 @slot('subcopy')
 @lang(
 
-"Als u problemen ondervindt bij het klikken op de knop \":actionText\", kopieer en plak dan de URL hieronder\n".
+"Als u problemen ondervindt bij het klikken op de knop Bevestig Emailadres, kopieer en plak dan de URL hieronder\n".
 'in uw webbrowser:',
 [
 'actionText' => $actionText,
