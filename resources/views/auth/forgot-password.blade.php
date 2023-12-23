@@ -152,62 +152,59 @@
     </div>
   </main>
 
-  <footer>
-    <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
-      <!-- Eerste kolom (data) -->
-      <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
-        <div class="flex items-center">
-          <img src="{{asset('img blades/positionicon.png')}}" class="h-6">
-          <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
-        </div>
-        <<<<<<< HEAD </form>
-      </div>
-    </div>
-    </main>
 
     <footer>
-      <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
-        <!-- Eerste kolom (data) -->
-        <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
-          <div class="flex items-center">
-            <img src="{{asset('img blades/positionicon.png')}}" class="h-6">
-            <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
-          </div>
-          <div class="flex items-center mt-2">
-            <img src="{{asset('img blades/icontel.png')}}" class="h-6">
-            <p class="ml-2 text-sm">+32 499 84 25 25</p>
-          </div>
-          <div class="flex items-center mt-2">
-            <img src="{{asset('img blades/messagelogo.png')}}" class="h-6">
-            <p class="ml-2 text-sm">info.va.ehb@gmail.com</p>
-          </div>
+        <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
+            <!-- Eerste kolom (data) -->
+            <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
+                <div class="flex items-center">
+                    <a href="{{ url('about') }}#onze-campussen">
+                        <img src="{{asset('img blades/positionicon.png')}}" class="h-6">
+                    </a>
+                    <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
+                </div>
+                <div class="flex items-center mt-2">
+                    <a href="tel:+32499842525">
+                        <img src="{{asset('img blades/icontel.png')}}" class="h-6">
+                        <p class="ml-2 text-sm">
+                            <a href="tel:+32499842525">+32 499 84 25 25
+                        </p>
+                </div>
+                <div class="flex items-center mt-2">
+                    <a href="mailto:info.va.ehb@gmail.com">
+                        <img src="{{asset('img blades/messagelogo.png')}}" class="h-6">
+                        <p class="ml-2 text-sm">
+                            <a href="mailto:info.va.ehb@gmail.com"></a> info.va.ehb@gmail.com
+                        </p>
+                </div>
+            </div>
+
+            <!-- Tweede kolom (logo erasmus) -->
+            <div class="w-full md:w-1/2 flex flex-col items-center">
+                <img class="h-5" src="{{ asset('img blades/erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+                <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
+            </div>
+
+            <!-- Derde kolom (social media)-->
+            <div class="w-full md:w-1/2 flex flex-col items-center">
+                <div class="flex space-x-2">
+                    <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
+                            src="{{asset('img blades/iconfacebook.png')}}" class="h-6"></a>
+                    <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
+                            src="{{asset('img blades/iconlinkedin.png')}}" class="h-6"></a>
+                    <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img
+                            src="{{asset('img blades/iconyoutube.png')}}" class="h-6"></a>
+                </div>
+                <div class="text-center mt-2">
+                    <p class="text-sm mx-2 pl-4 pr-6">
+                        Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws,
+                        updates en spannende momenten van het EhB-voetbalseizoen.
+                    </p>
+                </div>
+            </div>
         </div>
-        <!-- Tweede kolom (logo erasmus) -->
-        <div class="w-full md:w-1/2 flex flex-col items-center">
-          <img class="h-5" src="{{ asset('img blades/erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-          <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
-        </div>
-        <!-- Derde kolom (social media)-->
-        <div class="w-full md:w-1/2 flex flex-col items-center">
-          <div class="flex space-x-2">
-            <a href="#" class="text-white">
-              <img src="{{asset('img blades/iconfacebook.png')}}" class="h-6">
-            </a>
-            <a href="#" class="text-white">
-              <img src="{{asset('img blades/iconlinkedin.png')}}" class="h-6">
-            </a>
-            <a href="#" class="text-white">
-              <img src="{{asset('img blades/iconyoutube.png')}}" class="h-6">
-            </a>
-          </div>
-          <div class="text-center mt-2">
-            <p class="text-sm mx-2 pl-4 pr-6"> Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het
-              laatste nieuws,
-              updates en spannende momenten van het EhB-voetbalseizoen. </p>
-          </div>
-        </div>
-      </div>
     </footer>
+
     <!-- Scripts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
