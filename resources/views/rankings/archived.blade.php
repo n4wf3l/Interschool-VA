@@ -135,7 +135,8 @@
                                 onchange="this.form.submit()">
                                 <option value="">GOAT</option>
                                 @foreach ($years as $year)
-                                <option value="{{ $year }}" {{ $selectedYear==$year ? 'selected' : '' }}>{{ $year }}
+                                <option class="text-center" value="{{ $year }}" {{ $selectedYear==$year ? 'selected'
+                                    : '' }}>{{ $year }}
                                 </option>
                                 @endforeach
                             </select>
