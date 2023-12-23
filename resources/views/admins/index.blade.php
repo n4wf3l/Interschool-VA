@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Browser Logo & Title -->
     <title>MyTEAM — EhB Voetbal App</title>
-    <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
+    <link rel="icon" href="{{ asset('img blades/erasmuslogo2.png') }}" type="image/x-icon" />
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link
@@ -22,9 +22,7 @@
         <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
             style="background-color: red;">
             <div class="flex items-center justify-between">
-                <!--Erasmus logo -->
-                <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-                <!--Hamburger menu for responsive  -->
+                <img class="h-10 inline" src="{{ asset('img blades/erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
                 <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
                     <ion-icon name="menu" id="menuIcon"></ion-icon>
                 </span>
@@ -72,15 +70,15 @@
                     </li>
                     @endif
                 </ul>
-                <!--Login list icon-->
 
+                <!--Login list icon-->
                 <div x-data="{ open: false }"
                     class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
                     @if (Route::has('login'))
                     @auth
                     <div class="relative rounded-full bg-green-700">
                         <a href="#" @click="open = !open">
-                            <img class="h-7 inline" src="{{ asset('loginicon.png') }}" alt="Login Icon">
+                            <img class="h-7 inline" src="{{ asset('img blades/loginicon.png') }}" alt="Login Icon">
                         </a>
                         <div x-show="open" @click.away="open = false"
                             class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
@@ -89,7 +87,7 @@
                                 <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img
                                         onclick="window.location.href='{{ url('profile') }}'"
                                         class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
-                                        src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
+                                        src="{{ asset('img blades/iconsettings.png') }}" alt="Settings Icon"></p>
                                 <a href="#"
                                     class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
                                     onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
@@ -104,18 +102,12 @@
 
     <main>
         <div class="flex-1 flex-col w-full mt-5 bg-cover bg-center"
-            style="background-image: url('headadminpage.jpg'); margin-top: 50px;">
+            style="background-image: url('img blades/headadminpage.jpg'); margin-top: 50px;">
             <div class="flex flex-row items-center ml-10 pb-10">
-                <!-- Design 2 Vertical -->
-
                 <div class="relative flex items-end pt-10">
-
-                    <!-- Red line -->
                     <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-                    <!-- Blue line, positioned to overlap the red line -->
                     <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
                 </div>
-                <!-- Titre -->
                 <h1 class="text-7xl font-bold ml-5 duration-500 text-white pt-12">
                     MyADMIN - {{ Auth::user()->name }}
                 </h1>
@@ -123,7 +115,8 @@
         </div>
     </main>
 
-    <main class="bg-cover bg-center" style="background-image: url('coveradmin.jpg'); background-attachment: fixed;">
+    <main class="bg-cover bg-center"
+        style="background-image: url('img blades/coveradmin.jpg'); background-attachment: fixed;">
         <div class="flex flex-col md:flex-row pt-10 pb-20" style="margin-top: -50px;">
             <div class="w-full md:w-1/3 mb-8 md:mb-0">
                 <div class="md:ml-10 container mx-auto my-8 p-8 text-center border rounded-lg shadow-lg">
@@ -167,7 +160,6 @@
             </div>
 
 
-            <!-- Deuxième conteneur -->
             <div class="w-full md:w-1/3 mb-8 md:mb-0 mt-[-300px]">
                 <div class="w-full h-screen flex items-center justify-center ml-3">
                     <div class="p-8 rounded-lg shadow-md text-white border rounded-lg shadow-lg">
@@ -190,7 +182,6 @@
                 </div>
             </div>
 
-            <!-- Troisième conteneur -->
             <div
                 class="w-full md:w-1/3 mb-3 md:mb-0 p-8 rounded-lg shadow-md text-white border rounded-lg shadow-lg mt-7 mr-10">
                 <h2 class="text-2xl font-bold mb-4">Onopgeloste resultaten</h2>
@@ -239,20 +230,13 @@
                 @endif
             </div>
         </div>
-        </div>
 
 
         <div class="flex flex-row items-center ml-10">
-            <!-- Design 2 Vertical -->
-
             <div class="relative flex items-end pb-12">
-
-                <!-- Red line -->
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
-                <!-- Blue line, positioned to overlap the red line -->
                 <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
             </div>
-            <!-- Titre -->
             <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15 text-white">Resultaten aanpassen</h2>
         </div>
 
@@ -332,7 +316,6 @@
             </form>
             @endforeach
         </div>
-
         @if(session('errorScore'))
         <div class="text-red-500">{{ session('errorScore') }}</div>
         @endif
@@ -340,7 +323,6 @@
         @if(session('successScore'))
         <div class="text-green-500">{{ session('successScore') }}</div>
         @endif
-
     </main>
 
 
@@ -351,20 +333,20 @@
             <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
                 <div class="flex items-center">
                     <a href="{{ url('about') }}#onze-campussen">
-                        <img src="{{asset('positionicon.png')}}" class="h-6">
+                        <img src="{{asset('img blades/positionicon.png')}}" class="h-6">
                     </a>
                     <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
                 </div>
                 <div class="flex items-center mt-2">
                     <a href="tel:+32499842525">
-                        <img src="{{asset('icontel.png')}}" class="h-6">
+                        <img src="{{asset('img blades/icontel.png')}}" class="h-6">
                         <p class="ml-2 text-sm">
                             <a href="tel:+32499842525">+32 499 84 25 25
                         </p>
                 </div>
                 <div class="flex items-center mt-2">
                     <a href="mailto:info.va.ehb@gmail.com">
-                        <img src="{{asset('messagelogo.png')}}" class="h-6">
+                        <img src="{{asset('img blades/messagelogo.png')}}" class="h-6">
                         <p class="ml-2 text-sm">
                             <a href="mailto:info.va.ehb@gmail.com"></a> info.va.ehb@gmail.com
                         </p>
@@ -373,7 +355,7 @@
 
             <!-- Tweede kolom (logo erasmus) -->
             <div class="w-full md:w-1/2 flex flex-col items-center">
-                <img class="h-5" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+                <img class="h-5" src="{{ asset('img blades/erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
                 <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
             </div>
 
@@ -381,11 +363,11 @@
             <div class="w-full md:w-1/2 flex flex-col items-center">
                 <div class="flex space-x-2">
                     <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
-                            src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+                            src="{{asset('img blades/iconfacebook.png')}}" class="h-6"></a>
                     <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
-                            src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
+                            src="{{asset('img blades/iconlinkedin.png')}}" class="h-6"></a>
                     <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img
-                            src="{{asset('iconyoutube.png')}}" class="h-6"></a>
+                            src="{{asset('img blades/iconyoutube.png')}}" class="h-6"></a>
                 </div>
                 <div class="text-center mt-2">
                     <p class="text-sm mx-2 pl-4 pr-6">
