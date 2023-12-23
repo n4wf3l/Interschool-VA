@@ -117,7 +117,10 @@
             <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
             <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem; /* 3px */"></div>
           </div>
-          <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">WACHTWOORD VERGETEN ?</h2>
+          <h2 class="text-4xl md:text-4xl lg:text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">WACHTWOORD VERGETEN?
+          </h2>
+
+
         </div>
         <div class="mb-4 text-sm text-gray-600">
           {{ __('Ben je je wachtwoord vergeten? Geen probleem. Laat ons gewoon weten welk e-mailadres je hebt gebruikt,
