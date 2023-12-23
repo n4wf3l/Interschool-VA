@@ -143,13 +143,12 @@
           Bent u competitief? Schrijf het verhaal: Vind door op de onderstaande knop te klikken, de
           archieven van voorgaande seizoenen: De ranglijst, de beste prestaties van de 'GOAT'-clubs en de topscorers van
           voorgaande jaren, en probeer de records te overtreffen!</p>
-
-
-      </div>
-      <div class="flex space-x-4 mt-32 pl-20 pb-10">
         <button type="submit" onclick="window.location.href='{{ url('/rankings/archived') }}'"
-          class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
-          Ranking Previous Competitions</button>
+          class="my-auto sm:ml-40mx-auto bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-yellow-500">
+          GESCHIEDENIS
+        </button>
+
+
       </div>
 
       <div class="mx-auto pl-10">
@@ -164,12 +163,6 @@
         </div>
       </div>
     </div>
-
-    <button type="submit" onclick="window.location.href='{{ url('rankings') }}'"
-      class="my-auto sm:ml-40mx-auto bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-yellow-500">
-      GESCHIEDENIS
-    </button>
-
   </main>
 
   <main class="bg-red-500 items-center justify-center pt-5">
