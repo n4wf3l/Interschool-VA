@@ -157,7 +157,7 @@
       </div>
     </div>
     <div class="flex flex-col justify-center items-center pt-10">
-      <img src="{{ asset('bal.gif') }}" alt="" class="w-40 h-70">
+      <img src="{{ asset('img blades/bal.gif') }}" alt="" class="w-40 h-70">
       <i class="hover:text-red-500 transition duration-500">"Voetbalcompetitie bevordert niet alleen fysieke fitheid,
         maar promoot ook teamwork, strategisch denken en doorzettingsvermogen, waardoor het een complete levenservaring
         wordt op en buiten het veld."</i>

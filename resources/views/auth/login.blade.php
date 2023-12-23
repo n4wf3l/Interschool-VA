@@ -150,7 +150,7 @@
       </div>
     </div>
     <div class="flex flex-col justify-center items-center pt-10">
-      <img src="{{ asset('bal.gif') }}" alt="" class="w-40 h-70">
+      <img src="{{ asset('img blades/bal.gif') }}" alt="" class="w-40 h-70">
       <i class="hover:text-red-500 transition duration-500">"De gezamenlijke teams in de intercampuscompetitie tonen de
         kracht van samenwerking, waar spelers van verschillende scholen één worden op zoek naar succes."</i>
     </div>
