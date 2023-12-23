@@ -115,10 +115,10 @@
       <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">KALENDER</h2>
     </div>
 
-    <div class="relative flex flex-row-reverse items-center ml-10">
+    <div class="relative flex items-center ml-10 md:hidden">
       <div class="absolute top-0 right-0 flex flex-col items-end">
-        <div class="mb-3 h-32 w-4 bg-red-500"></div>
-        <div class="mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
+        <div class="mb-3 h-32 w-2 bg-red-500"></div>
+        <div class="mb-3 h-32 w-2 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
       </div>
     </div>
 
@@ -175,17 +175,17 @@
     </div>
   </main>
 
-  <main class="bg-white flex-1 pt-5">
 
+  <main class="bg-white flex-1 pt-5 md:mt-40 mt-32">
     <div class="mx-auto pl-10">
       <div class="flex flex-row items-center">
-        <div class="relative flex items-end pb-20">
+        <div class="relative flex items-end">
           <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
           <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
         </div>
         <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">ZIE OOK</h2>
       </div>
-      <div class="flex space-x-4 mt-6 pl-20 pb-10">
+      <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 mt-4 pl-10 pb-10">
         <button type="submit" onclick="window.location.href='{{ url('rankings') }}'"
           class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
           RANKING</button>
