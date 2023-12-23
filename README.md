@@ -78,13 +78,20 @@ The programming language used in this project is PHP. A portion of the project h
 
 ## Sources/References
 Here are some sources consulted during the development of this project:
-•	https://laravel.com/docs/10.x/readme 
-•	https://www.php.net/docs.php 
-•	https://stackoverflow.com/ 
-•	https://medium.com/
-•	https://laracasts.com/ 
-•	https://www.javatpoint.com/ 
-•	https://www.webdew.com/ 
+
+•https://laravel.com/docs/10.x/readme 
+
+• https://www.php.net/docs.php 
+
+• https://stackoverflow.com/ 
+
+• https://medium.com/
+
+• https://laracasts.com/ 
+
+• https://www.javatpoint.com/ 
+
+• https://www.webdew.com/ 
 
 
 
