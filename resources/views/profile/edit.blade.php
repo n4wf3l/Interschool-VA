@@ -116,7 +116,8 @@
       <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">MIJN PROFIEL : {{ Auth::user()->name }}</h2>
     </div>
     <div class="">
-      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6 bg-gray-300 rounded-lg pb-10 pt-10">
+      <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6 rounded-lg pb-10 pt-10"
+        style="background-image: url('img blades/futsalcovermyprofile.jpg');">
         <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg max-w-xl mx-auto bg-teal-500">
           @include('profile.partials.update-profile-information-form')
         </div>
