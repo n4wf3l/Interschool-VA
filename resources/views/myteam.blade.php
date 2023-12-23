@@ -241,7 +241,7 @@
       <p class="text-white">Welkom, {{ Auth::user()->name }}!</p>
       <p class="text-white"> Wijzig <a class="hover:text-teal-500 transition duration-500"
           href="{{ url('/profile') }}">hier</a> jouw
-        profiel </p>
+        profiel aan.</p>
       <p class="text-white">Indien er een technisch probleem is, neem hieronder contact op met de admin.</p>
       <button type="submit" onclick="window.location.href='{{ url('contacts') }}'"
         class="bg-red-500 text-sm text-white px-10  rounded transition duration-500 hover:bg-white hover:text-red-500">
