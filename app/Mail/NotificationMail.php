@@ -30,7 +30,7 @@ class NotificationMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Notification Mail',
+            subject: 'Notificatie',
         );
     }
 

@@ -72,7 +72,7 @@ class AdminController extends Controller
             }
         });
 
-        return back()->with('success', 'Message sent to all users.');
+        return back()->with('success', 'Bericht verzonden naar alle gebruikers.');
     }
 
     public function unsolvedScoreNotifier($gameId)
@@ -99,9 +99,9 @@ class AdminController extends Controller
             Mail::to($game->team1_leader_email)->send(new UnsolvedScoreNotificationMail($game));
             Mail::to($game->team2_leader_email)->send(new UnsolvedScoreNotificationMail($game));
 
-            return back()->with('sent', 'Emails sent to team leaders for game ' . $gameId);
+            return back()->with('sent', 'E-mails verstuurd naar teamleiders voor game ' . $gameId);
         } else {
-            return back()->with('error', 'Game not found.');
+            return back()->with('error', 'Game niet gevonden.');
         }
     }
 
@@ -118,7 +118,7 @@ class AdminController extends Controller
 
         $game = Games::find($gameId);
         if (!$game) {
-            return redirect()->back()->with('error', 'Game not found.');
+            return redirect()->back()->with('error', 'Game niet gevonden.');
         }
 
         $team1GoalsSum = 0;
@@ -135,7 +135,7 @@ class AdminController extends Controller
         }
 
         if ($team1GoalsSum != $validatedData['scoreTeam1'] || $team2GoalsSum != $validatedData['scoreTeam2']) {
-            return redirect()->back()->with('errorScore', 'The team scores do not match the sum of individual player goals.');
+            return redirect()->back()->with('errorScore', 'De teamscores komen niet overeen met de som van de individuele doelpunten van de spelers.');
         }
 
         $game->scoreTeam1 = $validatedData['scoreTeam1'];
@@ -151,7 +151,7 @@ class AdminController extends Controller
             }
         }
 
-        return redirect()->back()->with('successScore', 'Definitive scores and player goals saved successfully.');
+        return redirect()->back()->with('successScore', 'Definitieve scores en doelpunten van spelers succesvol opgeslagen.');
     }
 
 

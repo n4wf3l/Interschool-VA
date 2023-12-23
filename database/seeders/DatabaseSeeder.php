@@ -21,16 +21,6 @@ class DatabaseSeeder extends Seeder
     {
 
 
-        // Creëer een admin gebruiker
-        User::create([
-            'name' => 'admin',
-            'surname' => 'admin',
-            'email' => 'info.va.ehb@gmail.com',
-            'admin' => true,
-            'password' => bcrypt('password'),
-        ]);
-
-
         //Usersseeder
 
         // Other users
@@ -214,6 +204,16 @@ class DatabaseSeeder extends Seeder
                 ]);
             }
         }
+
+
+        // Creëer een admin gebruiker
+        User::create([
+            'name' => 'admin',
+            'surname' => 'admin',
+            'email' => 'info.va.ehb@gmail.com',
+            'admin' => true,
+            'password' => bcrypt('password'),
+        ]);
 
     }
 }

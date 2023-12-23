@@ -53,6 +53,13 @@ Route::get('/registerteams', function () {
 
 
 
+Route::get('/myteam', function () {
+    if (auth()->check()) {
+        return view('myteam');
+    } else {
+        return redirect()->route('login');
+    }
+})->name('myteam');
 
 Route::post('/myteam', [MyTeamController::class, 'updateTeamName'])->name('updateTeamName');
 

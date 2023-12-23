@@ -40,7 +40,8 @@
             @endauth
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
-            <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">OVER ONS</a>
+            <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">OVER ONS</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500"
@@ -260,50 +261,59 @@
 
   </main>
 
-
   <footer>
     <div class="bg-red p-4 text-white flex flex-col md:flex-row justify-center items-center">
-      <!-- Eerste kolom (data) -->
-      <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
-        <div class="flex items-center">
-          <img src="{{asset('img blades/positionicon.png')}}" class="h-6">
-          <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
+        <!-- Eerste kolom (data) -->
+        <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
+            <div class="flex items-center">
+                <a href="{{ url('about') }}#onze-campussen">
+                    <img src="{{asset('img blades/positionicon.png')}}" class="h-6">
+                </a>
+                <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
+            </div>
+            <div class="flex items-center mt-2">
+                <a href="tel:+32499842525">
+                    <img src="{{asset('img blades/icontel.png')}}" class="h-6">
+                    <p class="ml-2 text-sm">
+                        <a href="tel:+32499842525">+32 499 84 25 25
+                    </p>
+            </div>
+            <div class="flex items-center mt-2">
+                <a href="mailto:info.va.ehb@gmail.com">
+                    <img src="{{asset('img blades/messagelogo.png')}}" class="h-6">
+                    <p class="ml-2 text-sm">
+                        <a href="mailto:info.va.ehb@gmail.com"></a> info.va.ehb@gmail.com
+                    </p>
+            </div>
         </div>
-        <div class="flex items-center mt-2">
-          <img src="{{asset('img blades/icontel.png')}}" class="h-6">
-          <p class="ml-2 text-sm">+32 499 84 25 25</p>
+
+        <!-- Tweede kolom (logo erasmus) -->
+        <div class="w-full md:w-1/2 flex flex-col items-center">
+            <img class="h-5" src="{{ asset('img blades/erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+            <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
         </div>
-        <div class="flex items-center mt-2">
-          <img src="{{asset('img blades/messagelogo.png')}}" class="h-6">
-          <p class="ml-2 text-sm">info.va.ehb@gmail.com</p>
+
+        <!-- Derde kolom (social media)-->
+        <div class="w-full md:w-1/2 flex flex-col items-center">
+            <div class="flex space-x-2">
+                <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
+                        src="{{asset('img blades/iconfacebook.png')}}" class="h-6"></a>
+                <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
+                        src="{{asset('img blades/iconlinkedin.png')}}" class="h-6"></a>
+                <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img
+                        src="{{asset('img blades/iconyoutube.png')}}" class="h-6"></a>
+            </div>
+            <div class="text-center mt-2">
+                <p class="text-sm mx-2 pl-4 pr-6">
+                    Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het laatste nieuws,
+                    updates en spannende momenten van het EhB-voetbalseizoen.
+                </p>
+            </div>
         </div>
-      </div>
-      <!-- Tweede kolom (logo erasmus) -->
-      <div class="w-full md:w-1/2 flex flex-col items-center">
-        <img class="h-5" src="{{ asset('img blades/erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
-        <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
-      </div>
-      <!-- Derde kolom (social media)-->
-      <div class="w-full md:w-1/2 flex flex-col items-center">
-        <div class="flex space-x-2">
-          <a href="#" class="text-white">
-            <img src="{{asset('img blades/iconfacebook.png')}}" class="h-6">
-          </a>
-          <a href="#" class="text-white">
-            <img src="{{asset('img blades/iconlinkedin.png')}}" class="h-6">
-          </a>
-          <a href="#" class="text-white">
-            <img src="{{asset('img blades/iconyoutube.png')}}" class="h-6">
-          </a>
-        </div>
-        <div class="text-center mt-2">
-          <p class="text-sm mx-2 pl-4 pr-6"> Volg de EhB Voetbal App op de sociale media. Blijf op de hoogte van het
-            laatste nieuws,
-            updates en spannende momenten van het EhB-voetbalseizoen. </p>
-        </div>
-      </div>
     </div>
-  </footer>
+</footer>
+
+
   <!-- Scripts -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
@@ -313,6 +323,45 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="{{ asset('js blades/register.blade.js') }}"></script>
+
+  <!-- Add this script to your HTML file -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aanvoerderYes = document.getElementById("aanvoerder_yes");
+    const aanvoerderNo = document.getElementById("aanvoerder_no");
+    const reservespelerYes = document.getElementById("reservespeler_yes");
+    const reservespelerNo = document.getElementById("reservespeler_no");
+
+    // Event listener for aanvoerder radio buttons
+    aanvoerderYes.addEventListener("change", function () {
+      if (aanvoerderYes.checked) {
+        reservespelerYes.disabled = true;
+        reservespelerNo.checked = true;
+      }
+    });
+
+    aanvoerderNo.addEventListener("change", function () {
+      if (aanvoerderNo.checked) {
+        reservespelerYes.disabled = false;
+      }
+    });
+
+    // Event listener for reservespeler radio buttons
+    reservespelerYes.addEventListener("change", function () {
+      if (reservespelerYes.checked) {
+        aanvoerderYes.disabled = true;
+        aanvoerderNo.checked = true;
+      }
+    });
+
+    reservespelerNo.addEventListener("change", function () {
+      if (reservespelerNo.checked) {
+        aanvoerderYes.disabled = false;
+      }
+    });
+  });
+</script>
+
 </body>
 
 </html>
