@@ -134,17 +134,17 @@
         </div>
         @endforeach
       </div>
-      <div class="topscorer border-4 border-red-500 rounded-lg shadow-md bg-gray-100">
+      <div
+        class="topscorer border-4 border-red-500 rounded-lg shadow-md bg-gray-100 md:mx-auto md:mr-0 md:ml-0 md:mb-8 mr-40 ml-40">
         <h2 class="text-2xl font-bold mb-4 text-black p-2">Topscorer</h2>
         <div class="flex items-center">
           <img src="{{ asset('img blades/topscorericon.png') }}" alt="Description de l'image"
             class="h-10 w-10 rounded-full">
-          <h3 class="text-lg font-medium mr-2">{{ $topscorer->user->name }}</h3>
+          <h3 class="text-lg font-medium md:mr-2">{{ $topscorer->user->name }}</h3>
         </div>
-        <div class="flex">
-          <p class="ml-2 pt-8 mb-2">Goals:
+        <div class="flex flex-col md:flex-row">
+          <p class="ml-2 md:pt-8 mb-2 md:mb-0">Goals:</p>
           <p class="text-8xl ml-6">{{ $topscorer->goals }}</p>
-          </p>
         </div>
       </div>
     </div>
