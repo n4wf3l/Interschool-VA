@@ -76,6 +76,18 @@ The programming language used in this project is PHP. A portion of the project h
 -   Styling : HTML, CSS and JS
 -   Styling frameworks : Tailwind and Bootstrap
 
+## Sources/References
+Here are some sources consulted during the development of this project:
+•	https://laravel.com/docs/10.x/readme 
+•	https://www.php.net/docs.php 
+•	https://stackoverflow.com/ 
+•	https://medium.com/
+•	https://laracasts.com/ 
+•	https://www.javatpoint.com/ 
+•	https://www.webdew.com/ 
+
+
+
 ## Contributions
 
 Instructions for those who wish to contribute to the project. This may include information on pull requests, coding conventions, etc. If you're interested in contributing to our project, follow these guidelines:
