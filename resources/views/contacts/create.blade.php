@@ -117,7 +117,8 @@
             <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
             <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem; /* 3px */"></div>
           </div>
-          <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">CONTACTEER ONS</h2>
+          <h2 class="text-4xl md:text-6xl lg:text-8xl font-bold mt-2 mb-4 duration-500 pl-5 pb-15">CONTACTEER ONS
+          </h2>
         </div>
 
         <div class="w-full">
@@ -168,10 +169,10 @@
             </span>
             @enderror
             <button type="submit"
-              class="focus:outline-none text-white bg-teal-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-500 dark:focus:ring-teal-500">Indienen</button>
+              class="mx-auto focus:outline-none text-white bg-teal-500 hover:bg-red-500 focus:ring-4 focus:ring-red-500 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-500 dark:focus:ring-teal-500">Indienen</button>
           </form>
         </div>
-        @if (session('success')) <div class="alert alert-success">
+        @if (session('success')) <div class="alert alert-success ml-60 text-green-500">
           {{ session('success') }}
         </div> @endif
 
