@@ -12,7 +12,7 @@
     <p>{{ $messageContent }}</p>
 
     <p>Met vriendelijke groet,</p>
-    <p>Interschool Voetbal Applicatie</p>
+    <p style="color:red;">EhB Voetbal App</p>
 </body>
 
 </html>
