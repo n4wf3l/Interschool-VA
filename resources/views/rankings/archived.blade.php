@@ -140,6 +140,11 @@
                                 </option>
                                 @endforeach
                             </select>
+                            <p class="text-white mt-2 text-center">
+                                GOAT
+                                <span class="text-teal-500 inline">(All Years)</span>:
+                                Beste prestatie in de geschiedenis
+                            </p>
                             <div
                                 class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                                 <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg"
