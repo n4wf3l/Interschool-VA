@@ -140,39 +140,62 @@ This project uses images from various sources, and we would like to express our 
 
 ## Background Image
 
-1. !backgroundimage.png ([Link](https://stock.adobe.com/jp/images/blue-futsal-ball-in-the-center-of-a-futuristic-indoor-soccer-field-with-glowing-white-lines-background/450869893)  
-*Photo Credit: Martin Piechotta ([Link to Profile](photographer_profile_link))*
-2. !composition.jpg ([Link](https://www.gettyimages.be/detail/illustratie/the-concept-of-development-of-events-and-royalty-free-illustraties/1407376618?adppopup=true)   
+1. !backgroundimage.png ([Link](https://stock.adobe.com/jp/images/blue-futsal-ball-in-the-center-of-a-futuristic-indoor-soccer-field-with-glowing-white-lines-background/450869893))
+
+   *Photo Credit: Martin Piechotta ([Link to Profile](photographer_profile_link))*
+3. !composition.jpg ([Link](https://www.gettyimages.be/detail/illustratie/the-concept-of-development-of-events-and-royalty-free-illustraties/1407376618?adppopup=true))  
    *Photo Credit: Elena Kopusova ([Link to Profile](https://www.gettyimages.be/search/photographer?photographer=Elena%20Kopusova))*
-3. !coveradmin.jpg ([Link](https://www.istockphoto.com/jp/%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF%E3%83%95%E3%82%A9%E3%83%88/%E3%83%90%E3%83%83%E3%82%AF%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E9%81%B8%E6%89%8B%E3%81%AE%E5%89%8D%E3%81%AB%E3%83%95%E3%83%AB%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0-gm94735731-1625308)   
+4. !coveradmin.jpg ([Link](https://www.istockphoto.com/jp/%E3%82%B9%E3%83%88%E3%83%83%E3%82%AF%E3%83%95%E3%82%A9%E3%83%88/%E3%83%90%E3%83%83%E3%82%AF%E3%81%AE%E3%82%B5%E3%83%83%E3%82%AB%E3%83%BC%E9%81%B8%E6%89%8B%E3%81%AE%E5%89%8D%E3%81%AB%E3%83%95%E3%83%AB%E3%82%B9%E3%82%BF%E3%82%B8%E3%82%A2%E3%83%A0-gm94735731-1625308))  
    *Photo Credit: Jan du Bois ([Link to Profile](https://brunswyck-wathelet.brussels/nl/catalogus/erasmus-hogeschool-cvo-brussel-nijverheidskaai-170-materiaalstraat-67-anderlecht))*
 
 ## Other Images
 
-1. !backgroundfoto.jpg ([Link](https://www.wallpapertip.com/wpic/TxbibJ_torneo-de-futsal/)  
+1. !backgroundfoto.jpg ([Link](https://www.wallpapertip.com/wpic/TxbibJ_torneo-de-futsal/))
    *Photo Credit: Cherry Chapstick ([Link to Profile](https://www.wallpapertip.com/uwall/4313/))*
-2. !erasmusgebouw.png ([Link](https://brunswyck-wathelet.brussels/nl/catalogus/erasmus-hogeschool-cvo-brussel-nijverheidskaai-170-materiaalstraat-67-anderlecht)  
+
+2. !erasmusgebouw.png ([Link](https://brunswyck-wathelet.brussels/nl/catalogus/erasmus-hogeschool-cvo-brussel-nijverheidskaai-170-materiaalstraat-67-anderlecht)) 
    *Photo Credit: Cherry Chapstick ([Link to Profile](https://www.wallpapertip.com/uwall/4313/))*
-3.!composition.png ([Link](https://www.freepik.com/premium-vector/football-tactic-scheme-soccer-game-strategy-with-arrows-black-chalk-board-coach-attack-plan-play-field-top-view-vector-concept-illustration-game-line-attack-soccer-instruction_17610604.htm)
-4.!football-image.jpg ([Link](https://www.1zoom.me/fr/wallpaper/240992/z469.6/1920x1080))*
-5.!fustal.jpg ([Link](https://www.futsalinstitute.com/futsal-court-hire))*
-6.!headadminpage.jpg ([Link](https://www.gettyimages.fi/detail/valokuva/the-football-field-rojaltivapaa-kuva/526528685?adppopup=true))*
-7.!topscorericon.png ([Link](https://thenounproject.com/icon/top-scorer-3742479/))*
-8.!positionicon.png ([Link](https://www.flaticon.com/fr/icone-gratuite/broche-de-localisation_1237707))*
-9.!iconyoutube.png([link](https://icon-icons.com/fr/icone/youtube/100150))
-*Photo Credit: Alexis Doreau ([Link to Profile](https://icon-icons.com/fr/users/1HkvyotKrTXxrxMPBXh3y/icon-sets/))
+
+3. !composition.png ([Link](https://www.freepik.com/premium-vector/football-tactic-scheme-soccer-game-strategy-with-arrows-black-chalk-board-coach-attack-plan-play-field-top-view-vector-concept-illustration-game-line-attack-soccer-instruction_17610604.htm))
+   *Photo Credit: /*
+
+4. !football-image.jpg ([Link](https://www.1zoom.me/fr/wallpaper/240992/z469.6/1920x1080))
+   *Photo Credit: /*
+
+5. !fustal.jpg ([Link](https://www.futsalinstitute.com/futsal-court-hire))
+   *Photo Credit: /*
+
+6. !headadminpage.jpg ([Link](https://www.gettyimages.fi/detail/valokuva/the-football-field-rojaltivapaa-kuva/526528685?adppopup=true))
+   *Photo Credit: /*
+
+7. !topscorericon.png ([Link](https://thenounproject.com/icon/top-scorer-3742479/))
+   *Photo Credit: /*
+
+8. !positionicon.png ([Link](https://www.flaticon.com/fr/icone-gratuite/broche-de-localisation_1237707))
+   *Photo Credit: /*
+
+9. !iconyoutube.png ([Link](https://icon-icons.com/fr/icone/youtube/100150))
+   *Photo Credit: Alexis Doreau ([Link to Profile](https://icon-icons.com/fr/users/1HkvyotKrTXxrxMPBXh3y/icon-sets/))*
+
 10. !iconsettings.png ([Link](https://icon-icons.com/fr/icone/param%C3%A8tres-la-sgp/87317))
-*Photo Credit: Pavel Kozlov (Link to Profile([Link](https://icon-icons.com/fr/users/HrviC1xrsweoTQuA97vrJ/icon-sets/)
-11.!iconfacebook.png ([Link](https://icon-icons.com/fr/users/HrviC1xrsweoTQuA97vrJ/icon-sets/))
-*Photo Credit: krystonschwarze ([Link](https://icon-icons.com/fr/users/oF4mCncjumbbdnwSxjSwV/icon-sets/))
-12.!iconlinkedin.png ([Link](https://icon-icons.com/fr/icone/linkedin-signe/73508))
-*Photo Credit: Dave Gandy ([Link](https://icon-icons.com/fr/users/2LUKwJe4QDNsjuhkS98IX/icon-sets/))
-13.!messagelogo.png ([Link](https://icon-icons.com/fr/icone/message-bubble-chat/114816))
-*Photo Credit: HevnGrafix ([Link](https://icon-icons.com/fr/users/cEPU9aHASfjRgRmD9lkCX/icon-sets/))
-14.!positionicon.png([Link](https://www.istockphoto.com/fr/vectoriel/broche-carte-ic%C3%B4ne-vector-plat-silhouette-isol%C3%A9e-gm943476388-257781158?irgwc=1&cid=IS&utm_medium=affiliate&utm_source=icon-icons&clickid=zOUXIMW3jxyPTK3xv9R3I1wpUkH0bvXhDT2Zx00&utm_content=258824&irpid=2205776))*
-*Photo Credit: Esfir Dzhyshkariani ([Link](https://www.istockphoto.com/fr/portfolio/Esfirse?mediatype=illustration))
-15.!fustalcovermyprofile.jpg([Link](https://www.gettyimages.co.uk/detail/photo/empty-colorful-basketball-court-background-royalty-free-image/1423290022?adppopup=true))*
-16.!icontel.png([Link](https://iconduck.com/icons/76831/phone))*
+    *Photo Credit: Pavel Kozlov ([Link to Profile](https://icon-icons.com/fr/users/HrviC1xrsweoTQuA97vrJ/icon-sets/))*
+
+11. !iconfacebook.png ([Link](https://icon-icons.com/fr/users/HrviC1xrsweoTQuA97vrJ/icon-sets/))
+    *Photo Credit: Kryston Schwarze ([Link to Profile](https://icon-icons.com/fr/users/oF4mCncjumbbdnwSxjSwV/icon-sets/))*
+
+12. !iconlinkedin.png ([Link](https://icon-icons.com/fr/icone/linkedin-signe/73508))
+    *Photo Credit: Dave Gandy ([Link to Profile](https://icon-icons.com/fr/users/2LUKwJe4QDNsjuhkS98IX/icon-sets/))*
+
+13. !messagelogo.png ([Link](https://icon-icons.com/fr/icone/message-bubble-chat/114816))
+    *Photo Credit: HevnGrafix ([Link to Profile](https://icon-icons.com/fr/users/cEPU9aHASfjRgRmD9lkCX/icon-sets/))*
+
+14. !positionicon.png([Link](https://www.istockphoto.com/fr/vectoriel/broche-carte-ic%C3%B4ne-vector-plat-silhouette-isol%C3%A9e-gm943476388-257781158?irgwc=1&cid=IS&utm_medium=affiliate&utm_source=icon-icons&clickid=zOUXIMW3jxyPTK3xv9R3I1wpUkH0bvXhDT2Zx00&utm_content=258824&irpid=2205776))
+    *Photo Credit: Esfir Dzhyshkariani ([Link to Profile](https://www.istockphoto.com/fr/portfolio/Esfirse?mediatype=illustration))*
+
+15. !fustalcovermyprofile.jpg([Link](https://www.gettyimages.co.uk/detail/photo/empty-colorful-basketball-court-background-royalty-free-image/1423290022?adppopup=true))
+
+16. !icontel.png([Link](https://iconduck.com/icons/76831/phone))
+
 
   
 
