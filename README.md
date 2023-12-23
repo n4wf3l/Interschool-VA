@@ -134,6 +134,24 @@ This project uses images from various sources, and we would like to express our 
    *Photo Credit: Cherry Chapstick ([Link to Profile](https://www.wallpapertip.com/uwall/4313/))*
 2. !erasmusgebouw.png ([Link](https://brunswyck-wathelet.brussels/nl/catalogus/erasmus-hogeschool-cvo-brussel-nijverheidskaai-170-materiaalstraat-67-anderlecht)  
    *Photo Credit: Cherry Chapstick ([Link to Profile](https://www.wallpapertip.com/uwall/4313/))*
+3.!composition.png ([Link](https://www.freepik.com/premium-vector/football-tactic-scheme-soccer-game-strategy-with-arrows-black-chalk-board-coach-attack-plan-play-field-top-view-vector-concept-illustration-game-line-attack-soccer-instruction_17610604.htm)
+4.!football-image.jpg ([Link](https://www.1zoom.me/fr/wallpaper/240992/z469.6/1920x1080))*
+5.!fustal.jpg ([Link](https://www.futsalinstitute.com/futsal-court-hire))*
+6.!headadminpage.jpg ([Link](https://www.gettyimages.fi/detail/valokuva/the-football-field-rojaltivapaa-kuva/526528685?adppopup=true))*
+7.!topscorericon.png ([Link](https://thenounproject.com/icon/top-scorer-3742479/))*
+8.!positionicon.png ([Link](https://www.flaticon.com/fr/icone-gratuite/broche-de-localisation_1237707))*
+9.!iconyoutube.png([link](https://icon-icons.com/fr/icone/youtube/100150))
+*Photo Credit: Alexis Doreau ([Link to Profile](https://icon-icons.com/fr/users/1HkvyotKrTXxrxMPBXh3y/icon-sets/))
+10. !iconsettings.png ([Link](https://icon-icons.com/fr/icone/param%C3%A8tres-la-sgp/87317))
+*Photo Credit: Pavel Kozlov (Link to Profile([Link](https://icon-icons.com/fr/users/HrviC1xrsweoTQuA97vrJ/icon-sets/)
+11.!iconfacebook.png ([Link](https://icon-icons.com/fr/users/HrviC1xrsweoTQuA97vrJ/icon-sets/))
+*Photo Credit: krystonschwarze ([Link](https://icon-icons.com/fr/users/oF4mCncjumbbdnwSxjSwV/icon-sets/))
+12.!iconlinkedin.png ([Link](https://icon-icons.com/fr/icone/linkedin-signe/73508))
+*Photo Credit: Dave Gandy ([Link](https://icon-icons.com/fr/users/2LUKwJe4QDNsjuhkS98IX/icon-sets/))
+13.!messagelogo.png ([Link](https://icon-icons.com/fr/icone/message-bubble-chat/114816))
+*Photo Credit: HevnGrafix ([Link](https://icon-icons.com/fr/users/cEPU9aHASfjRgRmD9lkCX/icon-sets/))
+14. 
+  
 
 
 We are thankful to these artists for their outstanding visual contributions to our project.
