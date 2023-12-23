@@ -120,7 +120,7 @@
                 </div>
 
                 <!-- Titre -->
-                <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5 text-white">GESCHIEDENIS</h2>
+                <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5 text-white">GESCHIEDENIS</h2>
             </div>
 
             <!-- Conteneur pour le Dropdown -->
@@ -150,14 +150,17 @@
                     </div>
                 </form>
             </div>
-            <div class="flex flex-row w-full">
+            <div class="flex flex-row w-full pr-4 pl-4">
                 <!-- Conteneur pour les Rankings -->
                 <div
                     class="w-full md:w-1/2 md:pr-2 flex flex-col items-center justify-center p-4 rounded-lg shadow-md border rounded-lg shadow-lg">
                     {{-- Displaying the Rankings --}}
                     @if ($rankings->isNotEmpty())
                     <div class="mb-4">
-                        <h2 class="text-white text-lg font-bold mb-2">RANKING IN {{ $selectedYear ?: 'All Years' }}</h2>
+                        <h2 class="text-white text-lg font-bold mb-2 inline">RANKING IN <p class="text-teal-500 inline">
+                                {{ $selectedYear ?: 'All Years' }}</p>
+                        </h2>
+
                         <table class="table-auto text-white">
                             <thead>
                                 <tr>
@@ -183,8 +186,11 @@
                 <!-- Conteneur pour Topscorer -->
                 @if ($rankings->isNotEmpty())
                 <div
-                    class="w-full md:w-1/2 mt-4 md:mt-0 md:pl-2 flex flex-col items-center justify-center p-4 rounded-lg shadow-md border rounded-lg shadow-lg">
-                    <h2 class="text-white text-lg font-bold mb-2">TOPSCORER IN {{ $selectedYear ?: 'All Years' }}</h2>
+                    class="w-full md:w-1/2 md:mt-0 md:pl-2 flex flex-col items-center justify-center p-4 rounded-lg shadow-md border rounded-lg shadow-lg">
+                    <h2 class="text-white text-lg font-bold mb-2 inline">TOPSCORER IN <p class="text-teal-500 inline">{{
+                            $selectedYear ?: 'All Years' }}</p>
+                    </h2>
+
                     <table class="table-auto text-white">
                         <thead>
                             <tr>
