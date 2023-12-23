@@ -51,6 +51,8 @@ Route::get('/registerteams', function () {
 
 
 
+
+
 Route::get('/myteam', function () {
     if (auth()->check()) {
         return view('myteam');
@@ -59,7 +61,6 @@ Route::get('/myteam', function () {
     }
 })->name('myteam');
 
-Route::get('/myteam', [MyTeamController::class, 'index'])->name('myteam');
 Route::post('/myteam', [MyTeamController::class, 'updateTeamName'])->name('updateTeamName');
 
 Route::post('/myteam/update', [MyTeamController::class, 'updatePlayerGoals'])->name('updatePlayerGoals');
@@ -69,8 +70,11 @@ Route::post('/myteam/saveTemporaryScores/{gameId}', [MyTeamController::class, 's
 
 Route::middleware(['auth', 'verified'])->group(function () {
 
-
     Route::get('/dashboard', [DashboardController::class, 'showTeams'])->name('dashboard');
+    Route::get('/myteam', function () {
+        return view('myteam');
+    })->name('myteam');
+    Route::get('/myteam', [MyTeamController::class, 'index'])->name('myteam');
 });
 
 
