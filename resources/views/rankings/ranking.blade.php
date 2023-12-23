@@ -144,11 +144,23 @@
           archieven van voorgaande seizoenen: De ranglijst, de beste prestaties van de 'GOAT'-clubs en de topscorers van
           voorgaande jaren, en probeer de records te overtreffen!</p>
 
+
       </div>
-      <div class="mx-auto pl-1 hidden md:flex md:flex-start md:items-center md:pr-2">
-        <div class="relative flex items-end pb-12">
-          <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-red-500"></div>
-          <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
+      <div class="flex space-x-4 mt-32 pl-20 pb-10">
+        <button type="submit" onclick="window.location.href='{{ url('/rankings/archived') }}'"
+          class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
+          Ranking Previous Competitions</button>
+      </div>
+
+      <div class="mx-auto pl-10">
+        <div class="hidden md:flex md:flex-row md:items-center md:pr-20">
+          <!-- Design 2 Vertical -->
+          <div class="relative flex items-end pb-12">
+            <!-- Red line -->
+            <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-red-500"></div>
+            <!-- Blue line, positioned to overlap the red line -->
+            <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
+          </div>
         </div>
       </div>
     </div>

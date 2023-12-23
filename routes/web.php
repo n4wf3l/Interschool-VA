@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PlayersController;
 use App\Http\Controllers\MyTeamController;
 use App\Http\Controllers\TournamentController;
+use App\Http\Controllers\ArchivedGameController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
 use \App\Http\Middleware\AdminMiddleware;
@@ -103,6 +104,8 @@ Route::middleware('admin')->group(function () {
     Route::post('/admins/games/{game}/save-scores', [AdminController::class, 'saveDefinitiveScores'])->name('admins.save-scores');
 
 });
+
+Route::get('/rankings/archived', [ArchivedGameController::class, 'index'])->name('rankings.archived');
 
 
 
