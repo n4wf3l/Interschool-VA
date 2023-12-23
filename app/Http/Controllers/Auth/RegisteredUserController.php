@@ -24,12 +24,17 @@ class RegisteredUserController extends Controller
     /**
      * toon de registratie pagina
      */
-    public function create(): View
+    public function create(): View|RedirectResponse
     {
         $selectedTeamID = request()->input('TeamID');
         session(['TeamID' => $selectedTeamID]);
 
-        return view('auth.register');
+        if ($selectedTeamID) {
+
+            return view('auth.register');
+        } else {
+            return redirect()->route('registerteams');
+        }
 
 
 
