@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Browser Logo & Title -->
   <title>Ranking — EhB Voetbal App</title>
-  <link rel="icon" href="{{ asset('erasmuslogo2.png') }}" type="image/x-icon" />
+  <link rel="icon" href="{{ asset('img blades/erasmuslogo2.png') }}" type="image/x-icon" />
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link
@@ -22,7 +22,7 @@
     <nav class="p-2 bg-red shadow md:flex md:items-center md:justify-between fixed w-full top-0 z-50"
       style="background-color: red;">
       <div class="flex items-center justify-between">
-        <img class="h-10 inline" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+        <img class="h-10 inline" src="{{ asset('img blades/erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
         <span class="text-3xl cursor-pointer mx-10 mt-2 md:hidden block" onclick="toggleMenu()">
           <ion-icon name="menu" id="menuIcon"></ion-icon>
         </span>
@@ -75,8 +75,8 @@
           class="sm:fixed sm:top-0 sm:right-0 p-4 text-right z-10 transition-transform transform-gpu hover:scale-110">
           <div class="relative">
             <a href="#" @click="open = !open">
-              <img class="h-7 inline @auth bg-green-700 rounded-full @endauth" src="{{ asset('loginicon.png') }}"
-                alt="Login Icon">
+              <img class="h-7 inline @auth bg-green-700 rounded-full @endauth"
+                src="{{ asset('img blades/loginicon.png') }}" alt="Login Icon">
             </a>
             <div x-show="open" @click.away="open = false"
               class="absolute right-0 mt-0 w-30 bg-white border border-red-300 dark:border-gray-700 rounded-md shadow-lg py-0">
@@ -86,7 +86,7 @@
                 <p class="text-white bg-teal-500 text-center text-xs pb-2">{{ Auth::user()->name }} <img
                     onclick="window.location.href='{{ url('profile') }}'"
                     class="hover:bg-red-500 h-3 inline @auth rounded-full @endauth"
-                    src="{{ asset('iconsettings.png') }}" alt="Settings Icon"></p>
+                    src="{{ asset('img blades/iconsettings.png') }}" alt="Settings Icon"></p>
                 <a href="#" class="block px-5 py-2 text-sm text-gray-700 hover:bg-red-500 hover:text-white"
                   onclick="event.preventDefault(); this.closest('form').submit();">Uitloggen</a>
               </form>
@@ -105,25 +105,29 @@
     </nav>
   </header>
 
-  <main class="bg-white flex-1">
+  <main class="bg-yellow-500 flex-1 pt-5 md:p-8 items-center mt-[-100px]">
     <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly">
 
-      <div class="mx-auto pl-10">
+      <div class="mx-auto pl-10 text-center">
         <div class="flex flex-row items-center">
           <div class="relative flex items-end pb-20">
             <div class="-mr-1.5 mb-3 h-32 w-4 bg-red-500"></div>
             <div class="-mr-1.5 mb-3 h-32 w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
           </div>
-          <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">RANKING</h2>
+          <h2 class="text-7xl font-bold mt-2 mb-4 duration-500 pl-5">RANKING</h2>
         </div>
-        <p class="text-2xl text-center md:pl-20">Ontdek nu de actuele ranglijst van de EhB Voetbal App! Met ons
+        <p
+          class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
+          Ontdek nu de actuele ranglijst van de EhB Voetbal App! Met ons
           geavanceerde Puntensysteem worden studententeams van alle campussen van Erasmushogeschool Brussel beoordeeld
           op basis van hun prestaties in verschillende wedstrijden.
           Dit zorgt voor een nauwkeurige weergave van de prestaties van elk team gedurende het seizoen <span
             id="jaartal"></span>.
           Mis niets van de actie en blijf op de hoogte van welk team de koploper is in EhB voetbal excellence!</p>
 
-        <p class="mt-10 text-2xl text-center pb-50 md:pl-20">Als echte sportliefhebber wil je altijd op de hoogte zijn
+        <p
+          class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
+          Als echte sportliefhebber wil je altijd op de hoogte zijn
           van de
           laatste
           ontwikkelingen.
@@ -133,25 +137,32 @@
           handbereik.
           Bovendien houden we niet alleen rekening met teamprestaties, maar handhaven we ook een dynamische ranglijst
           van Top Scorers en Key Passers, waar individuele prestaties worden benadrukt en buitengewone bijdragen aan het
-          team worden erkend.
-          Welkom bij de pinnacle van interschoolvoetbal excellence!</p>
+          team worden erkend.</p>
+        <p
+          class="pl-2 pr-2 sm:pl-2 sm:pr-2 md:pl-2 md:pr-2 lg:pl-80 lg:pr-80 xl:pl-80 xl:pr-80 text-1xl text-center pb-5">
+          Bent u competitief? Schrijf het verhaal: Vind door op de onderstaande knop te klikken, de
+          archieven van voorgaande seizoenen: De ranglijst, de beste prestaties van de 'GOAT'-clubs en de topscorers van
+          voorgaande jaren, en probeer de records te overtreffen!</p>
 
       </div>
-
-
-      <div class="mx-auto pl-10">
-        <div class="hidden md:flex md:flex-row md:items-center md:pr-20">
-          <div class="relative flex items-end pb-12">
-            <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-red-500"></div>
-            <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
-          </div>
+      <div class="mx-auto pl-1 hidden md:flex md:flex-start md:items-center md:pr-2">
+        <div class="relative flex items-end pb-12">
+          <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-red-500"></div>
+          <div class="-mr-1.5 mt-60 h-[500px] w-4 bg-teal-500" style="margin-bottom: -0.375rem;"></div>
         </div>
-  </main>
+      </div>
+    </div>
 
+    <button type="submit" onclick="window.location.href='{{ url('rankings') }}'"
+      class="my-auto sm:ml-40mx-auto bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-yellow-500">
+      GESCHIEDENIS
+    </button>
+
+  </main>
 
   <main class="bg-red-500 items-center justify-center pt-5">
     <div class="bg-white md:p-0 md:flex md:items-center md:justify-evenly w-full bg-cover min-h-screen"
-      style="background-image: url('futsalcover.jpg'); height: 800px;">
+      style="background-image: url('img blades/futsalcover.jpg'); height: 800px;">
       <div class="mx-auto  bg-gray-100 rounded-lg p-4">
         <h1 class="text-center mb-4 text-black">Competitie</h1>
         <table class="w-full border border-gray-300 text-white">
@@ -228,20 +239,20 @@
       <div class="w-full md:w-1/2 flex flex-col items-center mb-4 md:mb-0">
         <div class="flex items-center">
           <a href="{{ url('about') }}#onze-campussen">
-            <img src="{{asset('positionicon.png')}}" class="h-6">
+            <img src="{{asset('img blades/positionicon.png')}}" class="h-6">
           </a>
           <p class="ml-2 text-sm">Nijverheidskaai, Anderlecht 1070</p>
         </div>
         <div class="flex items-center mt-2">
           <a href="tel:+32499842525">
-            <img src="{{asset('icontel.png')}}" class="h-6">
+            <img src="{{asset('img blades/icontel.png')}}" class="h-6">
             <p class="ml-2 text-sm">
               <a href="tel:+32499842525">+32 499 84 25 25
             </p>
         </div>
         <div class="flex items-center mt-2">
           <a href="mailto:info.va.ehb@gmail.com">
-            <img src="{{asset('messagelogo.png')}}" class="h-6">
+            <img src="{{asset('img blades/messagelogo.png')}}" class="h-6">
             <p class="ml-2 text-sm">
               <a href="mailto:info.va.ehb@gmail.com"></a> info.va.ehb@gmail.com
             </p>
@@ -250,7 +261,7 @@
 
       <!-- Tweede kolom (logo erasmus) -->
       <div class="w-full md:w-1/2 flex flex-col items-center">
-        <img class="h-5" src="{{ asset('erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
+        <img class="h-5" src="{{ asset('img blades/erasmuslogo2.png') }}" alt="Erasmushogeschool Logo">
         <p class="mt-2 text-sm">&#169 Erasmushogeschool</p>
       </div>
 
@@ -258,11 +269,11 @@
       <div class="w-full md:w-1/2 flex flex-col items-center">
         <div class="flex space-x-2">
           <a href="https://www.facebook.com/erasmushogeschool" class="text-white"><img
-              src="{{asset('iconfacebook.png')}}" class="h-6"></a>
+              src="{{asset('img blades/iconfacebook.png')}}" class="h-6"></a>
           <a href="https://www.linkedin.com/school/erasmushogeschool-brussel/" class="text-white"><img
-              src="{{asset('iconlinkedin.png')}}" class="h-6"></a>
-          <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img src="{{asset('iconyoutube.png')}}"
-              class="h-6"></a>
+              src="{{asset('img blades/iconlinkedin.png')}}" class="h-6"></a>
+          <a href="https://www.youtube.com/user/ehbrussel" class="text-white"><img
+              src="{{asset('img blades/iconyoutube.png')}}" class="h-6"></a>
         </div>
         <div class="text-center mt-2">
           <p class="text-sm mx-2 pl-4 pr-6">
