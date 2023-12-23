@@ -26,7 +26,7 @@ class UnsolvedScoreNotificationMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Unsolved Score Notification Mail',
+            subject: 'Onopgeloste resultaten notificatie',
         );
     }
 

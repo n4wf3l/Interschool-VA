@@ -32,7 +32,7 @@ class MyTeamController extends Controller
 
             // Check if the player exists
             if (!$player) {
-                return redirect()->route('myteam')->with('error', 'Player not found for the logged-in user.');
+                return redirect()->route('myteam')->with('error', 'Speler niet gevonden voor de ingelogde gebruiker.');
             }
 
             // Retrieve player's team and their goals attribute
@@ -46,7 +46,7 @@ class MyTeamController extends Controller
 
             // Check if the player with goals exists
             if (!$playerWithGoals) {
-                return redirect()->route('myteam')->with('error', 'Player with goals not found for the team.');
+                return redirect()->route('myteam')->with('error', 'Speler met doelpunten niet gevonden voor het team.');
             }
 
             // Check if the logged-in user is a team leader
@@ -69,7 +69,7 @@ class MyTeamController extends Controller
 
         // Check if the logged-in user is a team leader
         if ($player->teamleader !== 1) {
-            return redirect()->route('myteam')->with('error', 'You are not authorized to update the team name.');
+            return redirect()->route('myteam')->with('error', 'Je bent niet toegestaan om de teamnaam aan te passen.');
         }
 
         // Validate the form data
@@ -87,7 +87,7 @@ class MyTeamController extends Controller
         $team->Teamnaam = $request->input('newTeamName');
         $team->save();
 
-        return redirect()->route('updateTeamName')->with('status', 'Team name updated successfully.');
+        return redirect()->route('updateTeamName')->with('status', 'Teamnaam succesvol aangepast.');
     }
 
     public function updatePlayerGoals(updatePlayerGoalsRequest $request)
@@ -98,7 +98,7 @@ class MyTeamController extends Controller
 
         // Check if the logged-in user is a team leader
         if ($player->teamleader !== 1) {
-            return redirect()->route('myteam')->with('error', 'You are not authorized to update the team name.');
+            return redirect()->route('myteam')->with('error', 'Je bent niet toegestaan om de teamnaam aan te passen.');
         }
 
         // Validate the form data
@@ -114,7 +114,7 @@ class MyTeamController extends Controller
             $player->save();
         }
 
-        return redirect()->route('myteam')->with('status', 'Player goals updated successfully.');
+        return redirect()->route('myteam')->with('status', 'Player goals succesvol bijgewerkt.');
     }
 
 
@@ -127,7 +127,7 @@ class MyTeamController extends Controller
 
         // Check if the logged-in user is a team leader
         if ($player->teamleader !== 1) {
-            return redirect()->route('myteam')->with('error', 'You are not authorized to update the team name.');
+            return redirect()->route('myteam')->with('error', 'Je bent niet toegestaan om de teamnaam aan te passen.');
         }
 
         // Validate the form data
@@ -150,7 +150,7 @@ class MyTeamController extends Controller
                 $player->save();
 
             }
-            $message = 'Player goals updated successfully.';
+            $message = 'Player goals succesvol bijgewerkt.';
         }
 
         if ($team->TeamID == $game->team1ID) {
@@ -163,7 +163,7 @@ class MyTeamController extends Controller
                         $player->save();
 
                     }
-                    $message = 'Player goals updated successfully.';
+                    $message = 'Player goals succesvol bijgewerkt.';
                 }
 
                 return redirect()->back()->with('Alert!', 'Score komt niet overeen met aantal aangegeven goals')->with('showAlert', true);
@@ -179,7 +179,7 @@ class MyTeamController extends Controller
                         $player->save();
 
                     }
-                    $message = 'Player goals updated successfully.';
+                    $message = 'Player goals succesvol bijgewerkt.';
                 }
 
                 return redirect()->back()->with('Alert!', 'Score komt niet overeen met aantal aangegeven goals')->with('showAlert', true);
