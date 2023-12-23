@@ -16,7 +16,7 @@
     <p>Bedankt voor jullie snelle reactie.</p>
 
     <p>Met vriendelijke groet,</p>
-    <p>Interschool Voetbal Applicatie</p>
+    <p>EhB Voetbal App</p>
 </body>
 
 </html>
