@@ -183,12 +183,11 @@
               <h2 class="text-2xl font-bold mb-4 duration-500 bg-red-500 text-white pl-2 pr-2 ">Geef de
                 score in : </h2>
 
-              <label for="tijdelijkScoreTeam1"><span class="text-red-500 ml-2">TS</span> Tegenstander:</label>
+              <label for="tijdelijkScoreTeam1"><span class="text-red-500 ml-2">TS</span> {{ $game->team1->Teamnaam }}</label>
               <input class="w-7 bg-gray-200" type="number" id="tijdelijkScoreTeam1" name="tijdelijkScoreTeam1" value="0"
                 min="0" required {{ $disableInput ? 'disabled' : '' }}>
 
-              <label for="tijdelijkScoreTeam2"><span class="text-red-500">TS</span> {!!
-                $playerWithGoals->first()->Team->Teamnaam !!}:</label>
+              <label for="tijdelijkScoreTeam2"><span class="text-red-500">TS</span> {{ $game->team2->Teamnaam }} </label>
               <input class="w-7 bg-gray-200" type="number" id="tijdelijkScoreTeam2" name="tijdelijkScoreTeam2" value="0"
                 min="0" required {{ $disableInput ? 'disabled' : '' }}>
 
