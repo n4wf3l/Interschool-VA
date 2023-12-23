@@ -163,7 +163,7 @@
             <div class="w-full md:w-1/3 mb-8 md:mb-0 mt-[-300px]">
                 <div class="w-full h-screen flex items-center justify-center ml-3">
                     <div class="p-8 rounded-lg shadow-md text-white border rounded-lg shadow-lg">
-                        <h2 class="text-2xl font-bold mb-4">Bericht alle aanvoerders</h2>
+                        <h2 class="text-2xl font-bold mb-4">Bericht alle spelers</h2>
                         <form action="{{ route('send-message') }}" method="POST" class="text-center">
                             @csrf
                             <label for="notif" class="block mb-2">Bericht</label>

@@ -40,7 +40,8 @@
             @endauth
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
-            <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">OVER ONS</a>
+            <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">OVER ONS</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500"
@@ -322,6 +323,45 @@
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
   <script src="{{ asset('js blades/register.blade.js') }}"></script>
+
+  <!-- Add this script to your HTML file -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const aanvoerderYes = document.getElementById("aanvoerder_yes");
+    const aanvoerderNo = document.getElementById("aanvoerder_no");
+    const reservespelerYes = document.getElementById("reservespeler_yes");
+    const reservespelerNo = document.getElementById("reservespeler_no");
+
+    // Event listener for aanvoerder radio buttons
+    aanvoerderYes.addEventListener("change", function () {
+      if (aanvoerderYes.checked) {
+        reservespelerYes.disabled = true;
+        reservespelerNo.checked = true;
+      }
+    });
+
+    aanvoerderNo.addEventListener("change", function () {
+      if (aanvoerderNo.checked) {
+        reservespelerYes.disabled = false;
+      }
+    });
+
+    // Event listener for reservespeler radio buttons
+    reservespelerYes.addEventListener("change", function () {
+      if (reservespelerYes.checked) {
+        aanvoerderYes.disabled = true;
+        aanvoerderNo.checked = true;
+      }
+    });
+
+    reservespelerNo.addEventListener("change", function () {
+      if (reservespelerNo.checked) {
+        aanvoerderYes.disabled = false;
+      }
+    });
+  });
+</script>
+
 </body>
 
 </html>

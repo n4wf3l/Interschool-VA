@@ -105,7 +105,7 @@
     </nav>
   </header>
 
-  <main class="bg-yellow-500 flex-1 pt-5 md:p-8 items-center mt-[-100px]">
+  <main class="bg-yellow-500 flex-1 pt-5 md:p-8 items-center mt-0 md:mt-50">
     <div class="bg-gray-100 p-8 md:p-0 md:flex md:items-center md:justify-evenly">
 
       <div class="mx-auto pl-10 text-center">
@@ -226,16 +226,19 @@
         </div>
         <h2 class="text-8xl font-bold mt-2 mb-4 duration-500 pl-5">ZIE OOK</h2>
       </div>
-      <div class="flex space-x-4 mt-32 pl-20 pb-10">
+      <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4 mt-4 pl-10 pb-10">
         <button type="submit" onclick="window.location.href='{{ url('calendars') }}'"
           class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
-          KALENDER</button>
-        <button type="submit" onclick="window.location.href='{{ route('register') }}'"
+          KALENDER
+        </button>
+        <button type="submit" onclick="window.location.href='{{ route('registerteams') }}'"
           class="bg-teal-500 text-2xl text-white px-10 py-3 rounded transition duration-500 hover:bg-red-500">
-          INSCHRIJVING </button>
+          INSCHRIJVING
+        </button>
       </div>
     </div>
   </main>
+
 
 
   <footer>
