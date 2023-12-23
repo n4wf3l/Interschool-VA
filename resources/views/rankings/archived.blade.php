@@ -133,7 +133,7 @@
                             <select name="year" id="year"
                                 class="form-select block w-full leading-5 appearance-none bg-gray-200 border border-gray-300 hover:border-gray-500 px-4 py-2 rounded-md focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out"
                                 onchange="this.form.submit()">
-                                <option value="">GOAT</option>
+                                <option class="text-center" value="">GOAT</option>
                                 @foreach ($years as $year)
                                 <option class="text-center" value="{{ $year }}" {{ $selectedYear==$year ? 'selected'
                                     : '' }}>{{ $year }}
@@ -153,11 +153,12 @@
             </div>
             <div class="flex flex-row w-full pr-4 pl-4">
                 <!-- Conteneur pour les Rankings -->
+                <!-- Conteneur pour les Rankings -->
                 <div
                     class="w-full md:w-1/2 md:pr-2 flex flex-col items-center justify-center p-4 rounded-lg shadow-md border rounded-lg shadow-lg">
                     {{-- Displaying the Rankings --}}
                     @if ($rankings->isNotEmpty())
-                    <div class="mb-4">
+                    <div class="mb-4 text-center">
                         <h2 class="text-white text-lg font-bold mb-2 inline">RANKING IN <p class="text-teal-500 inline">
                                 {{ $selectedYear ?: 'All Years' }}</p>
                         </h2>
@@ -165,13 +166,15 @@
                         <table class="table-auto text-white">
                             <thead>
                                 <tr>
+                                    <th class="text-center">Nr</th>
                                     <th class="px-4 py-2 text-center">Team</th>
                                     <th class="px-4 py-2 text-center">Aantal Pt.</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($rankings->take(10) as $ranking)
+                                @foreach ($rankings->take(10) as $index => $ranking)
                                 <tr>
+                                    <td class="border px-4 py-2 text-center">{{ $index + 1 }}</td>
                                     <td class="border px-4 py-2 text-center">{{ $ranking->teamname }}</td>
                                     <td class="border px-4 py-2 text-center">{{ $ranking->points }}</td>
                                 </tr>
@@ -183,6 +186,7 @@
                     <p class="text-white">Geen ranglijsten beschikbaar voor het geselecteerde jaar.</p>
                     @endif
                 </div>
+
 
                 <!-- Conteneur pour Topscorer -->
                 @if ($rankings->isNotEmpty())
