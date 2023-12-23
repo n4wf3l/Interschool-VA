@@ -166,7 +166,7 @@
                         <table class="table-auto text-white">
                             <thead>
                                 <tr>
-                                    <th class="text-center">Nr</th>
+                                    <th class="text-center">Pos.</th>
                                     <th class="px-4 py-2 text-center">Team</th>
                                     <th class="px-4 py-2 text-center">Aantal Pt.</th>
                                 </tr>
