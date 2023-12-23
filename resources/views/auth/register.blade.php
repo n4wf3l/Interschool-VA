@@ -40,7 +40,8 @@
             @endauth
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
-            <a href="#" class="text x1 hover:text-teal-500 duration-500" style="background-color: red;">OVER ONS</a>
+            <a href="{{ url('/about') }}" class="text x1 hover:text-teal-500 duration-500"
+              style="background-color: red;">OVER ONS</a>
           </li>
           <li class="mx-4 my-0 md:my-0 bg-red">
             <a href="{{ url('/calendars') }}" class="text x1 hover:text-teal-500 duration-500"
