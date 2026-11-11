@@ -32,14 +32,14 @@ Now open your browser on [http://127.0.0.1:8000] and enjoy our website!
 
 ## Configurations and Structure
 
--   Go to the .env file and copy this code from line 31 to 38:
+-   Go to the .env file and fill in your own SMTP settings (never commit real credentials):
     MAIL_MAILER=smtp
     MAIL_HOST=smtp.googlemail.com
     MAIL_PORT=465
-    MAIL_USERNAME=info.va.ehb@gmail.com
-    MAIL_PASSWORD=***REMOVED***
+    MAIL_USERNAME=your-address@gmail.com
+    MAIL_PASSWORD=your-gmail-app-password
     MAIL_ENCRYPTION=ssl
-    MAIL_FROM_ADDRESS=info.va.ehb@gmail.com
+    MAIL_FROM_ADDRESS=your-address@gmail.com
     MAIL_FROM_NAME="Interschool Voetbal App"
 
 The XAMPP software is essential to activate the Apache and MySQL modules. By clicking the 'Admin' button next to start for MySQL, you will have access to the database with PhpMyAdmin.

@@ -68,7 +68,7 @@ class MyTeamController extends Controller
         $player = Players::where('userID', $user->userID)->first();
 
         // Check if the logged-in user is a team leader
-        if ($player->teamleader !== 1) {
+        if (!$player || $player->teamleader !== 1) {
             return redirect()->route('myteam')->with('error', 'Je bent niet toegestaan om de teamnaam aan te passen.');
         }
 
@@ -97,7 +97,7 @@ class MyTeamController extends Controller
         $player = Players::where('userID', $user->userID)->first();
 
         // Check if the logged-in user is a team leader
-        if ($player->teamleader !== 1) {
+        if (!$player || $player->teamleader !== 1) {
             return redirect()->route('myteam')->with('error', 'Je bent niet toegestaan om de teamnaam aan te passen.');
         }
 
@@ -107,11 +107,19 @@ class MyTeamController extends Controller
             'player_goals.*' => 'integer|min:0',
         ]);
 
+        // Only players of the team leader's own team may be updated
+        $teamID = $player->teamID;
+        $playerIds = array_keys($request->input('player_goals'));
+        $teamPlayers = Players::whereIn('playerID', $playerIds)->where('teamID', $teamID)->get()->keyBy('playerID');
+        if ($teamPlayers->count() !== count($playerIds)) {
+            abort(403);
+        }
+
         // Update the goals for each player
         foreach ($request->input('player_goals') as $playerId => $goals) {
-            $player = Players::find($playerId);
-            $player->goals = $goals;
-            $player->save();
+            $teamPlayer = $teamPlayers[$playerId];
+            $teamPlayer->goals = $goals;
+            $teamPlayer->save();
         }
 
         return redirect()->route('myteam')->with('status', 'Player goals succesvol bijgewerkt.');
@@ -123,10 +131,9 @@ class MyTeamController extends Controller
     {
         $user = Auth::user();
         $player = Players::where('userID', $user->userID)->first();
-        $team = teams::where('teamID', $player->teamID)->first();
 
         // Check if the logged-in user is a team leader
-        if ($player->teamleader !== 1) {
+        if (!$player || $player->teamleader !== 1) {
             return redirect()->route('myteam')->with('error', 'Je bent niet toegestaan om de teamnaam aan te passen.');
         }
 
@@ -138,7 +145,20 @@ class MyTeamController extends Controller
             'tijdelijkScoreTeam2' => 'required|integer',
         ]);
 
-        $game = Games::find($gameId);
+        $team = teams::where('teamID', $player->teamID)->first();
+        $game = Games::findOrFail($gameId);
+
+        // The team leader may only score games their own team plays in
+        if ($game->team1ID != $team->TeamID && $game->team2ID != $team->TeamID) {
+            abort(403);
+        }
+
+        // ...and only for players of their own team
+        $playerIds = array_keys($request->input('player_goals', []));
+        if (Players::whereIn('playerID', $playerIds)->where('teamID', $team->TeamID)->count() !== count($playerIds)) {
+            abort(403);
+        }
+
         $totscoreteam = 0;
 
         if ($request->has('player_goals')) {
